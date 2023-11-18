@@ -7,13 +7,13 @@
         "lint": "tsc --noEmit && eslint src/**/*.ts{,x} --cache --max-warnings=0",
         "lint:fix": "eslint src/**/*.ts{,x} --fix",
         "start": "react-app-rewired start",
-        "start:local": "cp .config/env.environment.local .env && react-app-rewired start",
-        "start:dev": "cp .config/env.environment.dev .env && react-app-rewired start",
+        "start:local": "cp .config/env.local .env && react-app-rewired start",
+        "start:dev": "cp .config/env.dev .env && react-app-rewired start",
         "build": "GENERATE_SOURCEMAP=false react-app-rewired build",
-        "build:local": "cp .config/env.environment.local .env && GENERATE_SOURCEMAP=false react-app-rewired build",
-        "build:dev": "cp .config/env.environment.dev .env && GENERATE_SOURCEMAP=false react-app-rewired build",
+        "build:local": "cp .config/env.local .env && GENERATE_SOURCEMAP=false react-app-rewired build",
+        "build:dev": "cp .config/env.dev .env && GENERATE_SOURCEMAP=false react-app-rewired build",
         "prepare": "husky install",
-        "deploy:dev": "ssh sm@psmever.iptime.org -p42022 -t 'bash -ic \"bash ~/Workspaces/deploy/bora/bora-ora/frontend-deploy.sh\"'"
+        "deploy:dev": "ssh sm@psmever.iptime.org -p42022 -t 'bash -ic \"bash ~/Workspaces/deploy/bora/bora-ora-frontend/frontend-deploy.sh\"'"
     },
     "browserslist": {
         "production": [
