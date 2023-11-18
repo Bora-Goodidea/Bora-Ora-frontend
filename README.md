@@ -24,8 +24,8 @@
 > env.environment.* 파일 생성
 
 ```sh
-# cp .config/env.environment.sample .config/env.environment.local
-# cp .config/env.environment.sample .config/env.environment.dev
+# cp .config/env.sample .config/env.local
+# cp .config/env.sample .config/env.dev
 
 # yarn start
 ```
