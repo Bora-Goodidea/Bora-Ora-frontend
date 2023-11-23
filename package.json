@@ -13,6 +13,12 @@
         "build:local": "cp .config/env.local .env && GENERATE_SOURCEMAP=false react-app-rewired build",
         "build:dev": "cp .config/env.dev .env && GENERATE_SOURCEMAP=false react-app-rewired build",
         "prepare": "husky install",
+        "docker:build": "docker-compose build --force-rm",
+        "docker:up": "docker-compose up -d",
+        "docker:down": "docker-compose down",
+        "docker:run": "docker-compose run -p 3000:3000 bora-ora-frontend yarn start",
+        "docker:module": "docker-compose run bora-ora-frontend rm -rf node_modules && docker-compose run bora-ora-frontend yarn install",
+        "docker:shell": "docker-compose run bora-ora-frontend /bin/bash",
         "deploy:dev": "ssh sm@psmever.iptime.org -p42022 -t 'bash -ic \"bash ~/Workspaces/deploy/bora/bora-ora-frontend/frontend-deploy.sh\"'"
     },
     "browserslist": {
