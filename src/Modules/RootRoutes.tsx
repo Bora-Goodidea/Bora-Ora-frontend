@@ -4,7 +4,6 @@ import lodash from 'lodash';
 import { ConstRouters } from '@Commons';
 import { BlankLayout } from '@Components';
 import { /*PageNotFound,*/ TemporaryMainPage } from '@Pages';
-import { LoginMain } from '@Page/Auth/Detail';
 
 const RootRoutes = () => {
     return (
@@ -42,11 +41,27 @@ const RootRoutes = () => {
                         );
                     })}
                 </Route>
+                <Route>
+                    {lodash.map(ConstRouters.Publish, (element, index) => {
+                        const PageComponent = element.Component;
+                        return (
+                            <Route
+                                key={`root-routers-publish-${index}`}
+                                path={`/publish${element.pathName}`}
+                                element={
+                                    <React.Suspense>
+                                        <PageComponent />
+                                    </React.Suspense>
+                                }
+                            />
+                        );
+                    })}
+                </Route>
                 {/*임시 메인 start*/}
-                <Route path={`/temp`} element={<TemporaryMainPage />} />
+                <Route path={`/`} element={<TemporaryMainPage />} />
                 {/*임시 메인 end*/}
                 {/* <Route path="*" element={<PageNotFound />} /> */}
-                <Route path="*" element={<LoginMain />} />
+                {/*<Route path="*" element={<LoginMain />} />*/}
             </Routes>
         </BrowserRouter>
     );

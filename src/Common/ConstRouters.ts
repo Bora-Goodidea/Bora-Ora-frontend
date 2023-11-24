@@ -28,35 +28,13 @@ export default {
             pathName: `/login`,
             Component: React.lazy(() => import('@Page/Auth/LoginPage')),
         },
+    ],
+    Publish: [
         {
-            page: `auth-login`,
-            name: `로그아웃`,
-            pathName: `/logout`,
-            Component: React.lazy(() => import('@Page/Auth/LogoutPage')),
-        },
-        {
-            page: `auth-register`,
-            name: `회원가입`,
-            pathName: `/register`,
-            Component: React.lazy(() => import('@Page/Auth/RegisterPage')),
-        },
-        {
-            page: `auth-password-reset`,
-            name: `패스워드 리셋`,
-            pathName: `/password-reset`,
-            Component: React.lazy(() => import('@Page/Auth/PasswordResetPage')),
-        },
-        {
-            page: `auth-password-change`,
-            name: `패스워드 변경`,
-            pathName: `/:ResetCode/password-change`,
-            Component: React.lazy(() => import('@Page/Auth/PasswordChangePage')),
-        },
-        {
-            page: `auth-email-auth`,
-            name: `이메일 인증`,
-            pathName: `/:AuthCode/email-auth`,
-            Component: React.lazy(() => import('@Page/Auth/EmailAuthPage')),
+            page: `main`,
+            name: `퍼블리싱-메인`,
+            pathName: `/main`,
+            Component: React.lazy(() => import('@Page/Publish/MainPage')),
         },
     ],
 };
