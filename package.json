@@ -19,7 +19,7 @@
         "docker:run": "docker-compose run -p 3000:3000 bora-ora-frontend yarn start",
         "docker:module": "docker-compose run bora-ora-frontend rm -rf node_modules && docker-compose run bora-ora-frontend yarn install",
         "docker:shell": "docker-compose run bora-ora-frontend /bin/bash",
-        "deploy:dev": "ssh sm@psmever.iptime.org -p42022 -t 'bash -ic \"bash ~/Workspaces/deploy/bora/bora-ora-frontend/frontend-deploy.sh\"'"
+        "deploy:dev": "ssh sm@psmever.iptime.org -p42022 -t 'bash -ic \"bash ~/Workspaces/deploy/bora/bora-ora/frontend-deploy.sh\"'"
     },
     "browserslist": {
         "production": [
