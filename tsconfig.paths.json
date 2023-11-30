@@ -16,6 +16,7 @@
             "@Elements": ["src/Component/Element"],
             "@Icons": ["src/Component/Element/Icon"],
             "@CommonType": ["src/Types/CommonType"],
+            "@Type/*": ["src/Types/*"],
             "@ServiceInterface": ["src/Types/ServiceInterface"],
             "@RecoilInterface": ["src/Types/RecoilInterface"],
             "@Hooks": ["src/Hooks"],

@@ -1,4 +1,6 @@
 import tw from 'twin.macro';
+import styled from '@emotion/styled';
+import { ColorType } from '@Type/StylesInterface';
 
 export default {
     OraModalStyle: {
@@ -12,6 +14,22 @@ export default {
         ButtonWapper: tw.div`bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6`,
     },
     OramButtonStyle: {
-        DefaultButton: tw.button`mt-3 inline-flex w-full justify-center rounded-md bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto`,
+        DefaultButton: styled.button(({ Color }: { Color?: ColorType }) => {
+            const returnTw = [
+                tw`mt-3 inline-flex w-full justify-center rounded-md px-2 py-1 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0`,
+            ];
+
+            if (Color === 'red') {
+                returnTw.push(tw`bg-red-600 text-white`);
+            } else if (Color === 'blue') {
+                returnTw.push(tw`bg-blue-600 text-white`);
+            } else if (Color === 'gray') {
+                returnTw.push(tw`bg-gray-300 text-gray-500`);
+            } else {
+                returnTw.push(tw`bg-white text-black`);
+            }
+
+            return returnTw;
+        }),
     },
 };
