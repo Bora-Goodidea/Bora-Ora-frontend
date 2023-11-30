@@ -175,3 +175,54 @@ export const getAccessToken = (): string => storageMaster.get(Const.Naming.acces
  * @param emailString
  */
 export const emailValidate = (emailString: string): boolean => /^[^@]+@\w+(\.\w+)+\w$/.test(emailString);
+
+/**
+ * 배열을 페이징처리
+ * @param param0
+ * @returns
+ */
+export const arrayToPaginate = <T>({ items, page = 1, perPage = 10 }: { items: T[]; page: number; perPage: number }) => {
+    const offset = perPage * (page - 1);
+    const totalPages = Math.ceil(items.length / perPage);
+    const paginatedItems = items.slice(offset, perPage * page);
+
+    return {
+        previousPage: page - 1 ? page - 1 : null,
+        nextPage: totalPages > page ? page + 1 : null,
+        total: items.length,
+        totalPages: totalPages,
+        items: paginatedItems,
+    };
+};
+
+export const splitIntoChunk = <T>({ list, chunk }: { list: T[]; chunk: number }) => {
+    // 빈 배열 생성
+    const result = [];
+
+    while (list.length > 0) {
+        result.push(list.splice(0, chunk));
+    }
+
+    return result;
+};
+
+/*
+                                {lodash.map(mainModalMatchList, list => {
+                                    return lodash.map(list, e => {
+                                        // return (
+                                        //     <div className="flex border h-14 items-center">
+                                        //         <div className="">
+                                        //             <img src={`${e.image}`} alt="..." />
+                                        //         </div>
+                                        //         <div className="text-xs">{`${e.name}`}</div>
+                                        //     </div>
+                                        // );
+
+                                        return (
+                                            <div className="flex border h-14 items-center">
+
+                                            </div>
+                                        );
+                                    });
+                                })}
+ */
