@@ -56,6 +56,7 @@ const initializeState = {
         gender: false,
         level: false,
     },
+    searchDropDown: false,
     mainModalMatch: [],
 };
 
@@ -67,6 +68,7 @@ const MainPage = () => {
             gender: boolean;
             level: boolean;
         };
+        searchDropDown: boolean;
         mainModalMatch: Array<{ image: string; name: string }>;
     }>(initializeState);
 
@@ -180,12 +182,88 @@ const MainPage = () => {
                                         </svg>
                                         <span className="sr-only">Search icon</span>
                                     </div>
-                                    <input
-                                        type="text"
-                                        id="search-navbar"
-                                        className="p-2 ps-10 hidden md:block md:w-[300px] text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                                        placeholder="지역, 구장, 팀 이름으로 찾기"
-                                    />
+                                    <div className="flex flex-col">
+                                        <div className="flex">
+                                            <input
+                                                type="text"
+                                                id="search-navbar"
+                                                className="p-2 ps-10 hidden md:block md:w-[300px] text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                                                placeholder="지역, 구장, 팀 이름으로 찾기"
+                                                onFocus={() =>
+                                                    setPageState(prevState => ({
+                                                        ...prevState,
+                                                        searchDropDown: true,
+                                                    }))
+                                                }
+                                                onBlur={() =>
+                                                    setPageState(prevState => ({
+                                                        ...prevState,
+                                                        searchDropDown: false,
+                                                    }))
+                                                }
+                                            />
+                                        </div>
+                                        <div className="flex">
+                                            {pageState.searchDropDown && (
+                                                <div className="absolute rounded shadow bg-white overflow-hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200 p-5 z-50">
+                                                    <div className="flex flex-col gap-4 h-[50vh] overflow-scroll">
+                                                        <div className="flex flex-nowrap gap-3">
+                                                            <div className="text-lg font-semibold">구장</div>
+                                                            <div className="text-lg">팀</div>
+                                                        </div>
+                                                        <div className="flex flex-col gap-3">
+                                                            <div className="text-lg font-semibold">최근 검색어</div>
+                                                            <div className="text-sm px-4">하영이, 바보</div>
+                                                        </div>
+                                                        <div className="flex flex-col gap-3">
+                                                            <div className="text-lg font-semibold">인기 키워드</div>
+                                                            <div className="flex flex-nowrap gap-2 px-4">
+                                                                <div className="border rounded-full px-2 text-sm text-gray-500">수원</div>
+                                                                <div className="border rounded-full px-2 text-sm text-gray-500">부천</div>
+                                                                <div className="border rounded-full px-2 text-sm text-gray-500">안산</div>
+                                                                <div className="border rounded-full px-2 text-sm text-gray-500">천안</div>
+                                                                <div className="border rounded-full px-2 text-sm text-gray-500">안양</div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="flex flex-col gap-3">
+                                                            <div className="text-lg font-semibold">새로운 구장</div>
+                                                            <div className="flex flex-col gap-2 px-4">
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    동대문 토모 풋살피치
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">오산 풋살파크</div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    고양 솔레아스풋볼 일산 중산점
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    하남 야구 풋살 스포츠 아카데미
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    하남 감일 키커스스포츠
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    경산 월드 풋살클럽
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    구리 워커힐 아천 축구장
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    전주 오풋살 풋살장
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    김포 싸커코어 축구교실
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 border-b-2 py-3">
+                                                                    대구 유천 풋살장
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+
                                     <div className="flex flex-nowrap pl-1">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -318,26 +396,34 @@ const MainPage = () => {
                                             key={`publish-main-page-claendar-slide-item-${index}`}>
                                             <div className="flex flex-col w-full justify-center items-center">
                                                 {(() => {
-                                                    if (dayOfWeek === 0) {
+                                                    // TODO: if 로 되어 있는걸 style 컴포넌트로 만들어서 props 로 받아서 style 을 변경 할것
+                                                    if (index === 0) {
                                                         return (
-                                                            <>
+                                                            <div className="flex flex-col-reverse w-full items-center justify-center rounded-full bg-blue-400 py-2">
+                                                                <div className="text-lg text-white">{e + 1}</div>
+                                                                <div className="text-sm text-white">{weekString[dayOfWeek]}</div>
+                                                            </div>
+                                                        );
+                                                    } else if (dayOfWeek === 0) {
+                                                        return (
+                                                            <div className="flex flex-col-reverse w-full items-center justify-center rounded-full py-2">
                                                                 <div className="text-lg text-red-700">{e + 1}</div>
                                                                 <div className="text-sm text-red-700">{weekString[dayOfWeek]}</div>
-                                                            </>
+                                                            </div>
                                                         );
                                                     } else if (dayOfWeek === 6) {
                                                         return (
-                                                            <>
+                                                            <div className="flex flex-col-reverse w-full items-center justify-center rounded-full py-2">
                                                                 <div className="text-lg text-blue-700">{e + 1}</div>
                                                                 <div className="text-sm text-blue-700">{weekString[dayOfWeek]}</div>
-                                                            </>
+                                                            </div>
                                                         );
                                                     } else {
                                                         return (
-                                                            <>
+                                                            <div className="flex flex-col-reverse w-full items-center justify-center rounded-full py-2">
                                                                 <div className="text-lg">{e + 1}</div>
                                                                 <div className="text-sm">{weekString[dayOfWeek]}</div>
-                                                            </>
+                                                            </div>
                                                         );
                                                     }
                                                 })()}
@@ -609,6 +695,7 @@ const MainPage = () => {
                     </div>
                 </section>
             </footer>
+            {/* TODO: modal 은 레이아웃에서 처리 할것 */}
             {pageState.modal.mainMenu && pageState.mainModalMatch.length > 0 && (
                 <OraModal
                     Children={
