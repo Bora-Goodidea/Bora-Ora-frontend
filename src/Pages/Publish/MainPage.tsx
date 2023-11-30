@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TemporaryData from '@Common/TemporaryData';
 import MatMatchList from '@Common/MatchList.json';
 import lodash from 'lodash';
 import Slider from 'react-slick';
-import { styled } from 'twin.macro';
+import styled from '@emotion/styled';
+import { OraModal, OraButton, OraCheckBox } from '@Elements';
 
 const StyledSlider = styled(Slider)`
     width: 100%;
@@ -37,17 +38,36 @@ const NextButton = styled.div`
     line-height: 30px;
 `;
 
+const modalMatcgSlidersettings = {
+    dots: true,
+    className: 'center',
+    // centerMode: true,
+    infinite: false,
+    centerPadding: '',
+    speed: 500,
+    rows: 2,
+    slidesPerRow: 4,
+};
+
 const initializeState = {
     modal: {
         mainMenu: false,
+        area: false,
+        gender: false,
+        level: false,
     },
+    mainModalMatch: [],
 };
 
 const MainPage = () => {
-    const [, setPageState] = useState<{
+    const [pageState, setPageState] = useState<{
         modal: {
             mainMenu: boolean;
+            area: boolean;
+            gender: boolean;
+            level: boolean;
         };
+        mainModalMatch: Array<{ image: string; name: string }>;
     }>(initializeState);
 
     const bannerSlidersettings = {
@@ -105,15 +125,12 @@ const MainPage = () => {
 
     const weekString = ['일', '월', '화', '수', '목', '금', '토'];
 
-    const handleMenuModal = () => {
+    useEffect(() => {
         setPageState(prevState => ({
             ...prevState,
-            modal: {
-                ...prevState.modal,
-                mainMenu: true,
-            },
+            mainModalMatch: TemporaryData.Main.MainModalList.Match.map(e => e),
         }));
-    };
+    }, []);
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -121,7 +138,17 @@ const MainPage = () => {
                 <div className="bg-gray-200 w-full md:max-w-screen-lg">
                     <nav className="bg-white">
                         <div className="flex flex-nowrap items-center justify-between py-1">
-                            <div className="flex items-center space-x-3 rtl:space-x-reverse" onClick={() => handleMenuModal()}>
+                            <div
+                                className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer"
+                                onClick={() =>
+                                    setPageState(prevState => ({
+                                        ...prevState,
+                                        modal: {
+                                            ...prevState.modal,
+                                            mainMenu: true,
+                                        },
+                                    }))
+                                }>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -265,9 +292,9 @@ const MainPage = () => {
                                     <figure
                                         className="relative transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
                                         key={`publish-main-page-banner-slide-item-${index}`}>
-                                        <a href="#">
+                                        <div className="">
                                             <img className="rounded-2xl" src={`${e.url}`} alt="..." />
-                                        </a>
+                                        </div>
                                         <figcaption className="flex absolute bottom-8 right-10 rounded-full w-24 items-center justify-center backdrop-blur-sm bg-white/30 cursor-pointer">
                                             <p className="text-white text-lg">{slideCurrent} | 6 +</p>
                                         </figcaption>
@@ -281,12 +308,14 @@ const MainPage = () => {
                     <div className="flex flex-col w-full md:max-w-screen-lg">
                         <div className="flex w-full">
                             <StyledSlider {...calendarSlidersettings}>
-                                {lodash.map(calendarArray, e => {
+                                {lodash.map(calendarArray, (e, index) => {
                                     const dayOfWeek = new Date(
                                         `${date.getFullYear()}-${date.getMonth() + 1}-${String(e + 1).padStart(2, '0')}`
                                     ).getDay();
                                     return (
-                                        <div className="flex w-full pl-1 items-center justify-center">
+                                        <div
+                                            className="flex w-full pl-1 items-center justify-center"
+                                            key={`publish-main-page-claendar-slide-item-${index}`}>
                                             <div className="flex flex-col w-full justify-center items-center">
                                                 {(() => {
                                                     if (dayOfWeek === 0) {
@@ -321,7 +350,17 @@ const MainPage = () => {
                         <div className="flex w-full h-full pt-5">
                             <div className="grid grid-row-1 grid-flow-col gap-2">
                                 <div className="flex">
-                                    <button className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center">
+                                    <button
+                                        className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center"
+                                        onClick={() => {
+                                            setPageState(prevState => ({
+                                                ...prevState,
+                                                modal: {
+                                                    ...prevState.modal,
+                                                    area: true,
+                                                },
+                                            }));
+                                        }}>
                                         <span>모든지역</span>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -358,7 +397,17 @@ const MainPage = () => {
                                     </button>
                                 </div>
                                 <div className="flex">
-                                    <button className="bg-white text-sm text-blue-700 py-1 p-3 rounded-full border border-blue-700 inline-flex items-center">
+                                    <button
+                                        className="bg-white text-sm text-blue-700 py-1 p-3 rounded-full border border-blue-700 inline-flex items-center"
+                                        onClick={() => {
+                                            setPageState(prevState => ({
+                                                ...prevState,
+                                                modal: {
+                                                    ...prevState.modal,
+                                                    gender: true,
+                                                },
+                                            }));
+                                        }}>
                                         <span>남자</span>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -372,7 +421,17 @@ const MainPage = () => {
                                     </button>
                                 </div>
                                 <div className="flex">
-                                    <button className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center">
+                                    <button
+                                        className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center"
+                                        onClick={() => {
+                                            setPageState(prevState => ({
+                                                ...prevState,
+                                                modal: {
+                                                    ...prevState.modal,
+                                                    level: true,
+                                                },
+                                            }));
+                                        }}>
                                         <span>레벨</span>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -393,9 +452,9 @@ const MainPage = () => {
                 <section className="flex w-full justify-center h-100 overflow-auto">
                     <div className="w-full md:max-w-screen-lg">
                         <div className="flex w-full flex-col divide-y scroll-m-0">
-                            {lodash.map(MatMatchList, e => {
+                            {lodash.map(MatMatchList, (e, index) => {
                                 return (
-                                    <div className="flex w-full border-b h-20">
+                                    <div className="flex w-full border-b h-20" key={`publish-main-page-match-list-item-${index}`}>
                                         <div className="flex flex-none h-full w-32 pl-5 items-center justify-start">
                                             <p>{e.label_schedule9.slice(-5)}</p>
                                         </div>
@@ -479,7 +538,7 @@ const MainPage = () => {
                 </section>
                 <section className="flex w-full justify-center bg-black">
                     <div className="w-full md:max-w-screen-lg">
-                        <div className="flex flex-nowrap pt-10">
+                        <div className="flex flex-nowrap py-10">
                             <div className="flex flex-nowrap w-1/2 ustify-start gap-10">
                                 <div className="flex flex-col">
                                     <div className="text-white text-sm py-2">매치</div>
@@ -493,22 +552,15 @@ const MainPage = () => {
                                 </div>
                                 <div className="flex flex-col">
                                     <div className="text-white text-sm py-2">서비스 지역</div>
-                                    <div className="text-gray-500 text-xs py-1">서울</div>
-                                    <div className="text-gray-500 text-xs py-1">경기</div>
-                                    <div className="text-gray-500 text-xs py-1">인천</div>
-                                    <div className="text-gray-500 text-xs py-1">강원</div>
-                                    <div className="text-gray-500 text-xs py-1">대전</div>
-                                    <div className="text-gray-500 text-xs py-1">충남/세종</div>
-                                    <div className="text-gray-500 text-xs py-1">충북</div>
-                                    <div className="text-gray-500 text-xs py-1">대구</div>
-                                    <div className="text-gray-500 text-xs py-1">경북</div>
-                                    <div className="text-gray-500 text-xs py-1">부산</div>
-                                    <div className="text-gray-500 text-xs py-1">울산</div>
-                                    <div className="text-gray-500 text-xs py-1">경남</div>
-                                    <div className="text-gray-500 text-xs py-1">광주</div>
-                                    <div className="text-gray-500 text-xs py-1">전남</div>
-                                    <div className="text-gray-500 text-xs py-1">전북</div>
-                                    <div className="text-gray-500 text-xs py-1">제주</div>
+                                    {lodash.map(TemporaryData.Main.AreaList, (e, index) => {
+                                        return (
+                                            <div
+                                                className="text-gray-500 text-xs py-1"
+                                                key={`publish-main-page-footer-area-list-item-${index}`}>
+                                                {e}
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                                 <div className="flex flex-col">
                                     <div className="text-white text-sm py-2">오라풋볼</div>
@@ -545,6 +597,255 @@ const MainPage = () => {
                     </div>
                 </section>
             </footer>
+            {pageState.modal.mainMenu && pageState.mainModalMatch.length > 0 && (
+                <OraModal
+                    Children={
+                        <div className="w-full">
+                            <div className="w-full">
+                                <div className="w-full text-sm pl-5">소셜 매치</div>
+                                <div className="w-full">
+                                    <Slider {...modalMatcgSlidersettings}>
+                                        {lodash.map(pageState.mainModalMatch, (ml, index) => {
+                                            return (
+                                                <div className="flex pt-5" key={`publish-main-page-main-modal-match-slide-item-${index}`}>
+                                                    <div className="flex justify-center h-10">
+                                                        <img src={`${ml.image}`} alt="..." className="w-8 h-6" />
+                                                    </div>
+                                                    <div className="flex justify-center text-xs">{`${ml.name}`}</div>
+                                                </div>
+                                            );
+                                        })}
+                                    </Slider>
+                                </div>
+                            </div>
+                            <div className="w-full pt-10">
+                                <div className="w-full text-sm pl-5">팀</div>
+                                <div className="flex flex-nowrap w-full gap-10 pl-10">
+                                    {lodash.map(TemporaryData.Main.MainModalList.Team, (ml, index) => {
+                                        return (
+                                            <div className="flex flex-col pt-5" key={`publish-main-page-main-modal-temp-item-${index}`}>
+                                                <div className="flex justify-center">
+                                                    <img src={`${ml.image}`} alt="..." />
+                                                </div>
+                                                <div className="flex justify-center text-xs">{`${ml.name}`}</div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                            <div className="w-full pt-10">
+                                <div className="w-full text-sm pl-5">
+                                    <div className="flex items-center">
+                                        <div className="flex">구장 예약</div>
+                                        <div className="flex pl-2">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-4 h-4">
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full pt-10">
+                                <div className="w-full text-sm pl-5 border-b"></div>
+                            </div>
+                            <div className="w-full pt-10">
+                                <div className="flex flex-nowrap w-full text-sm pl-5">
+                                    <div className="flex items-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth={1.5}
+                                            stroke="currentColor"
+                                            className="w-4 h-4">
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div className="pl-2">매니저 지원</div>
+                                </div>
+                            </div>
+                            <div className="w-full pt-1">
+                                <div className="flex flex-nowrap w-full text-sm pl-5">
+                                    <div className="flex items-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth={1.5}
+                                            stroke="currentColor"
+                                            className="w-4 h-4">
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div className="pl-2">구장 제휴</div>
+                                </div>
+                            </div>
+                            <div className="w-full pt-1">
+                                <div className="flex flex-nowrap w-full text-sm pl-5">
+                                    <div className="flex items-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth={1.5}
+                                            stroke="currentColor"
+                                            className="w-4 h-4">
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div className="pl-2">매거진</div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    Buttons={
+                        <OraButton
+                            ButtonName={`확인`}
+                            HandleClick={() =>
+                                setPageState(prevState => ({
+                                    ...prevState,
+                                    modal: {
+                                        ...prevState.modal,
+                                        mainMenu: false,
+                                    },
+                                }))
+                            }
+                        />
+                    }
+                />
+            )}
+            {pageState.modal.area && (
+                <OraModal
+                    Children={
+                        <div className="w-full">
+                            <div className="w-full text-sm pl-5">지역</div>
+                            <div className="w-full pt-3">
+                                {lodash.map(TemporaryData.Main.AreaList, (e, index) => {
+                                    return (
+                                        <div
+                                            className="w-full pl-10 border-b cursor-pointer"
+                                            key={`publish-main-page-area-modal-area-item-${index}`}>
+                                            <p className="text-xs py-3">{e}</p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    }
+                    Buttons={
+                        <OraButton
+                            ButtonName={`확인`}
+                            HandleClick={() =>
+                                setPageState(prevState => ({
+                                    ...prevState,
+                                    modal: {
+                                        ...prevState.modal,
+                                        area: false,
+                                    },
+                                }))
+                            }
+                        />
+                    }
+                />
+            )}
+            {pageState.modal.gender && (
+                <OraModal
+                    Children={
+                        <div className="w-full">
+                            <div className="w-full text-sm pl-5">성별</div>
+                            <div className="flex flex-col w-full pt-3">
+                                {lodash.map(TemporaryData.Main.GenderList, (e, index) => {
+                                    return (
+                                        <div className="flex pl-10 py-3 border-b" key={`publish-main-page-gender-modal-item-${index}`}>
+                                            <OraCheckBox
+                                                LavelName={e}
+                                                Checked={false}
+                                                HandleOnChange={() => {
+                                                    //
+                                                }}
+                                            />
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    }
+                    Buttons={
+                        <OraButton
+                            ButtonName={`적용`}
+                            HandleClick={() =>
+                                setPageState(prevState => ({
+                                    ...prevState,
+                                    modal: {
+                                        ...prevState.modal,
+                                        gender: false,
+                                    },
+                                }))
+                            }
+                        />
+                    }
+                />
+            )}
+            {pageState.modal.level && (
+                <OraModal
+                    Children={
+                        <div className="w-full">
+                            <div className="w-full text-sm pl-5">레벨</div>
+                            <div className="flex flex-col w-full pt-3">
+                                {lodash.map(TemporaryData.Main.LevelList, (e, index) => {
+                                    return (
+                                        <div className="flex pl-10 py-3 border-b" key={`publish-main-page-level-modal-item-${index}`}>
+                                            <OraCheckBox
+                                                LavelName={e}
+                                                Checked={false}
+                                                HandleOnChange={() => {
+                                                    //
+                                                }}
+                                            />
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    }
+                    Buttons={
+                        <OraButton
+                            ButtonName={`적용`}
+                            HandleClick={() =>
+                                setPageState(prevState => ({
+                                    ...prevState,
+                                    modal: {
+                                        ...prevState.modal,
+                                        level: false,
+                                    },
+                                }))
+                            }
+                        />
+                    }
+                />
+            )}
         </div>
     );
 };
