@@ -484,29 +484,41 @@ const MainPage = () => {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="flex flex-none justify-end">
-                                            <div className="flex items-center">
+                                        <div className="flex flex-none justify-end md:w-28">
+                                            <div className="flex w-full items-center">
                                                 {(() => {
                                                     if (e.is_finish === true) {
                                                         return (
-                                                            <button className="w-20 bg-gray-400 hover:bg-gray-400 text-white text-sm py-1 px-3 rounded">
-                                                                마감
-                                                            </button>
+                                                            <OraButton
+                                                                ButtonName={`마감`}
+                                                                ButtonColor={`gray`}
+                                                                HandleClick={() => {
+                                                                    //
+                                                                }}
+                                                            />
                                                         );
                                                     }
 
                                                     if (e.apply_status === `hurry`) {
                                                         return (
-                                                            <button className="w-20 bg-red-500 hover:bg-red-700 text-white text-sm py-1 px-3 rounded">
-                                                                마감입박!
-                                                            </button>
+                                                            <OraButton
+                                                                ButtonName={`마감입박!`}
+                                                                ButtonColor={`red`}
+                                                                HandleClick={() => {
+                                                                    //
+                                                                }}
+                                                            />
                                                         );
                                                     }
 
                                                     return (
-                                                        <button className="w-20 bg-blue-500 hover:bg-blue-700 text-white text-sm py-1 px-3 rounded">
-                                                            신청 가능
-                                                        </button>
+                                                        <OraButton
+                                                            ButtonName={`신청 가능`}
+                                                            ButtonColor={`blue`}
+                                                            HandleClick={() => {
+                                                                //
+                                                            }}
+                                                        />
                                                     );
                                                 })()}
                                             </div>
