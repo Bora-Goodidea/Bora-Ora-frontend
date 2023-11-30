@@ -37,7 +37,19 @@ const NextButton = styled.div`
     line-height: 30px;
 `;
 
+const initializeState = {
+    modal: {
+        mainMenu: false,
+    },
+};
+
 const MainPage = () => {
+    const [, setPageState] = useState<{
+        modal: {
+            mainMenu: boolean;
+        };
+    }>(initializeState);
+
     const bannerSlidersettings = {
         dots: false,
         infinite: true,
@@ -93,13 +105,23 @@ const MainPage = () => {
 
     const weekString = ['일', '월', '화', '수', '목', '금', '토'];
 
+    const handleMenuModal = () => {
+        setPageState(prevState => ({
+            ...prevState,
+            modal: {
+                ...prevState.modal,
+                mainMenu: true,
+            },
+        }));
+    };
+
     return (
         <div className="min-h-screen flex flex-col">
             <header className="flex w-full justify-center">
                 <div className="bg-gray-200 w-full md:max-w-screen-lg">
                     <nav className="bg-white">
                         <div className="flex flex-nowrap items-center justify-between py-1">
-                            <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                            <div className="flex items-center space-x-3 rtl:space-x-reverse" onClick={() => handleMenuModal()}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -111,7 +133,7 @@ const MainPage = () => {
                                 </svg>
 
                                 <span className="self-center text-2xl font-semibold whitespace-nowrap">보라 오라</span>
-                            </a>
+                            </div>
                             <div className="flex flex-nowrap md:order-2">
                                 <div className="relative items-center flex flex-nowrap">
                                     <div className="hidden md:flex md:absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">

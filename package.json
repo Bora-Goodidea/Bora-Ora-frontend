@@ -55,7 +55,6 @@
         "@types/react-router-dom": "^5.3.3",
         "@types/react-slick": "^0.23.12",
         "@types/recoil": "^0.0.9",
-        "@types/socket.io-client": "^3.0.0",
         "axios": "^1.5.0",
         "husky": "^8.0.3",
         "lodash": "^4.17.21",
@@ -67,9 +66,6 @@
         "react-slick": "^0.29.0",
         "recoil": "^0.7.7",
         "slick-carousel": "^1.8.1",
-        "socket.io-client": "^4.7.2",
-        "sweetalert2": "^11.7.28",
-        "sweetalert2-react-content": "^5.0.7",
         "typescript": "^4.9.5",
         "web-vitals": "^2.1.4"
     },
