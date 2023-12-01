@@ -11,7 +11,7 @@ export default {
         {
             page: `not-found`,
             name: `not-found`,
-            pathName: `/messenger`,
+            pathName: `/not-found`,
             Component: React.lazy(() => import('@Page/Common/PageNotFound')),
         },
         {
@@ -21,20 +21,18 @@ export default {
             Component: React.lazy(() => import('@Page/Common/UnderConstructionPage')),
         },
     ],
-    Auth: [
-        {
-            page: `auth-login`,
-            name: `로그인`,
-            pathName: `/login`,
-            Component: React.lazy(() => import('@Page/Auth/LoginPage')),
-        },
-    ],
     Publish: [
         {
             page: `main`,
             name: `퍼블리싱-메인`,
             pathName: `/main`,
             Component: React.lazy(() => import('@Page/Publish/MainPage')),
+        },
+        {
+            page: `login`,
+            name: `퍼블리싱-로그인`,
+            pathName: `/login`,
+            Component: React.lazy(() => import('@Page/Publish/LoginPage')),
         },
     ],
 };

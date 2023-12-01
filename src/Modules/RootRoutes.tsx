@@ -25,22 +25,6 @@ const RootRoutes = () => {
                         );
                     })}
                 </Route>
-                <Route element={<BlankLayout />}>
-                    {lodash.map(ConstRouters.Auth, (element, index) => {
-                        const PageComponent = element.Component;
-                        return (
-                            <Route
-                                key={`root-routers-auth-${index}`}
-                                path={`/auth${element.pathName}`}
-                                element={
-                                    <React.Suspense>
-                                        <PageComponent />
-                                    </React.Suspense>
-                                }
-                            />
-                        );
-                    })}
-                </Route>
                 <Route>
                     {lodash.map(ConstRouters.Publish, (element, index) => {
                         const PageComponent = element.Component;
