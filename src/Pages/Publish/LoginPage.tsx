@@ -6,7 +6,7 @@ import { OraButton, OraModal } from '@Elements';
 
 const initializeState = {
     modal: {
-        register: true,
+        register: false,
     },
 };
 
@@ -68,7 +68,7 @@ const Login = () => {
                                         <h1 className="text-xl font-bold leading-tight tracking-tight text-blue-700 md:text-2xl">
                                             오라 풋볼
                                         </h1>
-                                        <form className="space-y-4 md:space-y-6" action="#">
+                                        <div className="space-y-4 md:space-y-6">
                                             <div>
                                                 <input
                                                     type="email"
@@ -120,7 +120,7 @@ const Login = () => {
                                                     회원가입
                                                 </p>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="w-full sm:max-w-md pt-1 md:pt-40">
