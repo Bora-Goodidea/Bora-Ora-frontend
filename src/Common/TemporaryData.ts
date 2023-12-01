@@ -144,4 +144,18 @@ export default {
             ],
         },
     },
+    Login: {
+        LoginLeftImage: [
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/img_quote1.png`,
+                title: `"언제든 풋살하고 싶을 떄 풋살할 수 있어요"`,
+                name: `하영`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/img_quote2.jpg`,
+                title: `"오라가 있어서 타지에서도 즐겁게 운동하고 있습니다"`,
+                name: `의명`,
+            },
+        ],
+    },
 };
