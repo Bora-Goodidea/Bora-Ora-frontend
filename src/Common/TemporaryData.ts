@@ -158,4 +158,56 @@ export default {
             },
         ],
     },
+    RegisterComplete: {
+        MatchTime: [
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_sunrise.svg`,
+                name: `06:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_sunny.svg`,
+                name: `08:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_sunny.svg`,
+                name: `10:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_sunny.svg`,
+                name: `12:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_sunny.svg`,
+                name: `14:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_sunny.svg`,
+                name: `16:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_night.svg`,
+                name: `18:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_night.svg`,
+                name: `20:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_night.svg`,
+                name: `22:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_midnight.svg`,
+                name: `24:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_midnight.svg`,
+                name: `02:00`,
+            },
+            {
+                image: `https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_midnight.svg`,
+                name: `04:00`,
+            },
+        ],
+    },
 };

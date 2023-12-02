@@ -1,4 +1,21 @@
+import { useState } from 'react';
+import { OraModal, OraButton } from '@Elements';
+import TemporaryData from '@Common/TemporaryData';
+import lodash from 'lodash';
+
+const initializeState = {
+    modal: {
+        selectInfo: true,
+    },
+};
+
 const RegisterComplete = () => {
+    const [pageState, setPageState] = useState<{
+        modal: {
+            selectInfo: boolean;
+        };
+    }>(initializeState);
+
     return (
         <div className="min-h-screen flex flex-col">
             <header className="flex w-full justify-center">
@@ -212,6 +229,156 @@ const RegisterComplete = () => {
             </main>
 
             <footer className="flex-1 w-full"></footer>
+            {pageState.modal.selectInfo && (
+                <OraModal
+                    Children={
+                        <div className="w-full overflow-auto h-96">
+                            <div className="flex flex-col w-full space-y-4">
+                                <div className="flex w-full">
+                                    <img
+                                        className=""
+                                        src="https://d31wz4d3hgve8q.cloudfront.net/static/img/img_cover_favorite_summer.jpg"
+                                        alt="..."></img>
+                                </div>
+                                <div className="flex w-full">
+                                    <div className="flex w-full">
+                                        <div className="flex flex-col w-full justify-start">
+                                            <span className="text-3xl">선호하는 지역과 시간을</span>
+                                            <span className="text-3xl">알려 주세요</span>
+                                            <span className="text-sm pt-3">주변에 더 많은 매치를 열고 찾기 쉽게 도와드릴게요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex w-full divide-y-2">
+                                    <div className="flex flex-col w-full space-y-3">
+                                        <div className="flex flex-col w-full justify-start">
+                                            <span className="text-sm font-semibold">선호 지역</span>
+                                            <span className="text-xs font-semibold">주로 활동하는 지역을 선택해주세요</span>
+                                        </div>
+                                        <div className="flex flex-nowrap w-full gap-1">
+                                            <div className="flex w-1/2">
+                                                <div className="w-full">
+                                                    <label className="block mb-2 text-xs font-medium text-gray-900">도시</label>
+                                                    <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                        <option selected>선택</option>
+                                                        <option value="">서울</option>
+                                                        <option value="">경기</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className="flex w-1/2">
+                                                <div className="w-full">
+                                                    <label className="block mb-2 text-xs font-medium text-gray-900">지역</label>
+                                                    <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                        <option selected>선택</option>
+                                                        <option value="">구로</option>
+                                                        <option value="">강남</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex w-full divide-y-2">
+                                    <div className="flex flex-col w-full space-y-3">
+                                        <div className="flex flex-col w-full justify-start">
+                                            <span className="text-sm font-semibold">활동 반경</span>
+                                            <span className="text-xs font-semibold">플랩하러 어디까지 갈 수 있나요?</span>
+                                        </div>
+                                        <div className="flex flex-nowrap w-full gap-1">
+                                            <div className="flex w-1/4">
+                                                <button className="w-full bg-white hover:bg-gray-100 text-sm text-gray-800 py-2 px-4 border border-gray-200 rounded shadow">
+                                                    10Km
+                                                </button>
+                                            </div>
+                                            <div className="flex w-1/4">
+                                                <button className="w-full bg-white hover:bg-gray-100 text-sm text-gray-800 py-2 px-4 border border-gray-200 rounded shadow">
+                                                    20Km
+                                                </button>
+                                            </div>
+                                            <div className="flex w-1/4">
+                                                <button className="w-full bg-white hover:bg-gray-100 text-sm text-gray-800 py-2 px-4 border border-gray-200 rounded shadow">
+                                                    30Km
+                                                </button>
+                                            </div>
+                                            <div className="flex w-1/4">
+                                                <button className="w-full bg-white hover:bg-gray-100 text-sm text-gray-800 py-2 px-4 border border-gray-200 rounded shadow">
+                                                    40Km
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col w-full justify-start">
+                                            <span className="text-xs font-semibold">풋살하러 어디까지 갈 수 있나요?</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex w-full divide-y-2">
+                                    <div className="flex flex-col w-full space-y-3">
+                                        <div className="flex flex-col w-full justify-start">
+                                            <span className="text-sm font-semibold">평일 선호 시간</span>
+                                            <span className="text-xs font-semibold">중복으로 선택할수 있어요</span>
+                                        </div>
+                                        <div className="flex flex-nowrap w-full gap-1">
+                                            <div className="grid grid-cols-4 w-full gap-2">
+                                                {lodash.map(TemporaryData.RegisterComplete.MatchTime, (e, index) => {
+                                                    return (
+                                                        <button
+                                                            key={`publish-register-complete-page-weekday-item-${index}`}
+                                                            className="w-full bg-white hover:bg-gray-100 text-sm text-gray-800 py-2 px-4 border border-gray-200 rounded shadow">
+                                                            <div className="flex flex-col object-center justify-center items-center">
+                                                                <img className="h-3 w-3" src={`${e.image}`} alt="" />
+                                                                <span>{e.name}</span>
+                                                            </div>
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex w-full divide-y-2">
+                                    <div className="flex flex-col w-full space-y-3">
+                                        <div className="flex flex-col w-full justify-start">
+                                            <span className="text-sm font-semibold">주말/휴일 선호 시간</span>
+                                            <span className="text-xs font-semibold">중복으로 선택할 수 있습니다</span>
+                                        </div>
+                                        <div className="flex flex-nowrap w-full gap-1">
+                                            <div className="grid grid-cols-4 w-full gap-2">
+                                                {lodash.map(TemporaryData.RegisterComplete.MatchTime, (e, index) => {
+                                                    return (
+                                                        <button
+                                                            key={`publish-register-complete-page-weekend-item-${index}`}
+                                                            className="w-full bg-white hover:bg-gray-100 text-sm text-gray-800 py-2 px-4 border border-gray-200 rounded shadow">
+                                                            <div className="flex flex-col object-center justify-center items-center">
+                                                                <img className="h-3 w-3" src={`${e.image}`} alt="" />
+                                                                <span>{e.name}</span>
+                                                            </div>
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    Buttons={
+                        <OraButton
+                            ButtonName={`저장`}
+                            HandleClick={() =>
+                                setPageState(prevState => ({
+                                    ...prevState,
+                                    modal: {
+                                        ...prevState.modal,
+                                        level: false,
+                                    },
+                                }))
+                            }
+                        />
+                    }
+                />
+            )}
         </div>
     );
 };
