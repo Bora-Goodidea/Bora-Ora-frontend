@@ -5,7 +5,7 @@ const {
     OraModalStyle: { ModalWapper, BackGroundBlur, FixedWapper, FlexWapper, RelativeWapper, ContentWapper, Contents, ButtonWapper },
 } = ElementStyles;
 
-const OraModal = ({ Children, Buttons }: { Children: ReactNode; Buttons: ReactNode }) => {
+const OraModal = ({ Children, Buttons }: { Children: ReactNode; Buttons?: ReactNode }) => {
     return (
         <ModalWapper>
             <BackGroundBlur />
@@ -16,7 +16,7 @@ const OraModal = ({ Children, Buttons }: { Children: ReactNode; Buttons: ReactNo
                         <ContentWapper>
                             <Contents>{Children}</Contents>
                         </ContentWapper>
-                        <ButtonWapper>{Buttons}</ButtonWapper>
+                        {Buttons && <ButtonWapper>{Buttons}</ButtonWapper>}
                     </RelativeWapper>
                 </FlexWapper>
             </FixedWapper>
