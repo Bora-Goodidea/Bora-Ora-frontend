@@ -366,12 +366,14 @@ const RegisterComplete = () => {
                     Buttons={
                         <OraButton
                             ButtonName={`저장`}
+                            ButtonHeight={`lg`}
+                            ButtonColor={`blue`}
                             HandleClick={() =>
                                 setPageState(prevState => ({
                                     ...prevState,
                                     modal: {
                                         ...prevState.modal,
-                                        level: false,
+                                        selectInfo: false,
                                     },
                                 }))
                             }
