@@ -15,7 +15,6 @@ export default {
     },
     OramButtonStyle: {
         DefaultButton: styled.button(({ Color, Height }: { Color?: ColorType; Height: TwMacroSizeType }) => {
-            console.debug(Height);
             const returnTw = [
                 tw`mt-3 inline-flex w-full justify-center rounded-md px-2 text-sm font-semibold shadow-sm ring-1 ring-inset hover:bg-gray-50 sm:mt-0`,
             ];
@@ -34,5 +33,10 @@ export default {
 
             return returnTw;
         }),
+    },
+    OraSelectStyle: {
+        Wapper: tw.div`w-full`,
+        SelectLabel: tw.label`block mb-2 text-xs font-medium text-gray-900`,
+        Select: tw.select`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5`,
     },
 };

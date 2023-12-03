@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { OraModal, OraButton } from '@Elements';
+import { OraModal, OraButton, OraSelect, OraInput } from '@Elements';
 import TemporaryData from '@Common/TemporaryData';
 import lodash from 'lodash';
 
@@ -57,16 +57,8 @@ const RegisterComplete = () => {
                                         <span className="sr-only">Search icon</span>
                                     </div>
                                     <div className="flex flex-col">
-                                        <div className="flex">
-                                            <input
-                                                type="text"
-                                                id="search-navbar"
-                                                className="p-2 ps-10 hidden md:block md:w-[300px] text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                                                placeholder="지역, 구장, 팀 이름으로 찾기"
-                                                onFocus={() => console.debug('')}
-                                                onBlur={() => console.debug('')}
-                                            />
-                                        </div>
+                                        {/* 상단 검색 깨지는데 그냥 두세요 페이지에서 수정 예정 */}
+                                        <OraInput InputType={`text`} InputValue={``} Placeholder={`지역, 구장, 팀 이름으로 찾기`} />
                                         <div className="flex"></div>
                                     </div>
 
@@ -98,32 +90,6 @@ const RegisterComplete = () => {
                                             />
                                         </svg>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-                                <div className="relative mt-3 md:hidden border">
-                                    <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                        <svg
-                                            className="w-4 h-4 text-gray-500"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        id="search-navbar"
-                                        className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                                        placeholder="Search..."
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -204,17 +170,18 @@ const RegisterComplete = () => {
                                                 <div className="flex flex-col w-2/4">
                                                     <div className="flex">
                                                         <div className="relative w-full">
-                                                            <input
-                                                                type="search"
-                                                                className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                                                placeholder=""
-                                                                required
+                                                            <OraInput
+                                                                InputType={`text`}
+                                                                InputValue={``}
+                                                                Placeholder={`스카운 코드`}
+                                                                InputButton={
+                                                                    <button
+                                                                        type="submit"
+                                                                        className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                                        <span className="">입력</span>
+                                                                    </button>
+                                                                }
                                                             />
-                                                            <button
-                                                                type="submit"
-                                                                className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                                <span className="">입력</span>
-                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -257,24 +224,24 @@ const RegisterComplete = () => {
                                         </div>
                                         <div className="flex flex-nowrap w-full gap-1">
                                             <div className="flex w-1/2">
-                                                <div className="w-full">
-                                                    <label className="block mb-2 text-xs font-medium text-gray-900">도시</label>
-                                                    <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option selected>선택</option>
-                                                        <option value="">서울</option>
-                                                        <option value="">경기</option>
-                                                    </select>
-                                                </div>
+                                                <OraSelect
+                                                    Label={`도시`}
+                                                    Options={[
+                                                        { text: `서울`, value: '01' },
+                                                        { text: `경기`, value: '02' },
+                                                    ]}
+                                                    Value={``}
+                                                />
                                             </div>
                                             <div className="flex w-1/2">
-                                                <div className="w-full">
-                                                    <label className="block mb-2 text-xs font-medium text-gray-900">지역</label>
-                                                    <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option selected>선택</option>
-                                                        <option value="">구로</option>
-                                                        <option value="">강남</option>
-                                                    </select>
-                                                </div>
+                                                <OraSelect
+                                                    Label={`선택`}
+                                                    Options={[
+                                                        { text: `구로`, value: '01' },
+                                                        { text: `강남`, value: '02' },
+                                                    ]}
+                                                    Value={``}
+                                                />
                                             </div>
                                         </div>
                                     </div>
