@@ -1,6 +1,6 @@
-import tw from 'twin.macro';
-import styled from '@emotion/styled';
-import { ColorType } from '@Type/StylesInterface';
+import tw, { styled } from 'twin.macro';
+import { ColorType, TwMacroSizeType } from '@Type/StylesInterface';
+import ConstStyle from '@Common/ConstStyle';
 
 export default {
     OraModalStyle: {
@@ -14,10 +14,12 @@ export default {
         ButtonWapper: tw.div`bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6`,
     },
     OramButtonStyle: {
-        DefaultButton: styled.button(({ Color }: { Color?: ColorType }) => {
+        DefaultButton: styled.button(({ Color, Height }: { Color?: ColorType; Height: TwMacroSizeType }) => {
             const returnTw = [
-                tw`mt-3 inline-flex w-full justify-center rounded-md px-2 py-1 text-sm font-semibold shadow-sm ring-1 ring-inset hover:bg-gray-50 sm:mt-0`,
+                tw`mt-3 inline-flex w-full justify-center rounded-md px-2 text-sm font-semibold shadow-sm ring-1 ring-inset hover:bg-gray-50 sm:mt-0`,
             ];
+
+            returnTw.push(ConstStyle.PySize(Height));
 
             if (Color === 'red') {
                 returnTw.push(tw`bg-red-600 ring-red-300 text-white`);
@@ -31,5 +33,10 @@ export default {
 
             return returnTw;
         }),
+    },
+    OraSelectStyle: {
+        Wapper: tw.div`w-full`,
+        SelectLabel: tw.label`block mb-2 text-xs font-medium text-gray-900`,
+        Select: tw.select`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5`,
     },
 };

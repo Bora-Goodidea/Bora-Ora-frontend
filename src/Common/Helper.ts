@@ -205,24 +205,3 @@ export const splitIntoChunk = <T>({ list, chunk }: { list: T[]; chunk: number })
 
     return result;
 };
-
-/*
-                                {lodash.map(mainModalMatchList, list => {
-                                    return lodash.map(list, e => {
-                                        // return (
-                                        //     <div className="flex border h-14 items-center">
-                                        //         <div className="">
-                                        //             <img src={`${e.image}`} alt="..." />
-                                        //         </div>
-                                        //         <div className="text-xs">{`${e.name}`}</div>
-                                        //     </div>
-                                        // );
-
-                                        return (
-                                            <div className="flex border h-14 items-center">
-
-                                            </div>
-                                        );
-                                    });
-                                })}
- */
