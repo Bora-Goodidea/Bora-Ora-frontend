@@ -1,7 +1,21 @@
+import { useState } from 'react';
+import { OraModal, OraButton } from '@Elements';
 import Header from './Header';
 import Footer from './Footer';
 
+const initializeState = {
+    modal: {
+        qrCode: false,
+    },
+};
+
 const MyPagePage = () => {
+    const [pageState, setPageState] = useState<{
+        modal: {
+            qrCode: boolean;
+        };
+    }>(initializeState);
+
     return (
         <div className="min-h-screen flex flex-col">
             <Header />
@@ -31,7 +45,17 @@ const MyPagePage = () => {
                                                         </span>
                                                     </div>
                                                     <div className="flex">
-                                                        <div className="flex bg-gray-100 items-center rounded-md p-2">
+                                                        <div
+                                                            className="flex bg-gray-100 items-center rounded-md p-2 cursor-pointer"
+                                                            onClick={() => {
+                                                                setPageState(prevState => ({
+                                                                    ...prevState,
+                                                                    modal: {
+                                                                        ...prevState.modal,
+                                                                        qrCode: true,
+                                                                    },
+                                                                }));
+                                                            }}>
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 fill="none"
@@ -315,6 +339,43 @@ const MyPagePage = () => {
             </main>
 
             <Footer />
+
+            {pageState.modal.qrCode && (
+                <OraModal
+                    Children={
+                        <div className="w-full">
+                            <div className="w-full text-sm pl-5">공유하기</div>
+                            <div className="flex flex-col w-full pt-3">
+                                <div className="flex items-center justify-center">
+                                    <img
+                                        className="w-full"
+                                        src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https://plabfootball.com/player/HkiXi"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <span className="text-sm text-blue-600">내 프로필을 QR코드로 공유해요</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    Buttons={
+                        <OraButton
+                            ButtonName={`링크복사`}
+                            ButtonColor={`blue`}
+                            HandleClick={() =>
+                                setPageState(prevState => ({
+                                    ...prevState,
+                                    modal: {
+                                        ...prevState.modal,
+                                        qrCode: false,
+                                    },
+                                }))
+                            }
+                        />
+                    }
+                />
+            )}
         </div>
     );
 };
