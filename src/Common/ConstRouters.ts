@@ -23,6 +23,12 @@ export default {
     ],
     Publish: [
         {
+            page: `default-layout`,
+            name: `퍼블리싱-기본-레이아웃`,
+            pathName: `/default-layout`,
+            Component: React.lazy(() => import('@Page/Publish/DefaultLayout')),
+        },
+        {
             page: `main`,
             name: `퍼블리싱-메인`,
             pathName: `/main`,
@@ -45,6 +51,12 @@ export default {
             name: `퍼블리싱-회원가입 완료`,
             pathName: `/register-complete`,
             Component: React.lazy(() => import('@Page/Publish/RegisterComplete')),
+        },
+        {
+            page: `my-page`,
+            name: `퍼블리싱-마이 페이지`,
+            pathName: `/my-page`,
+            Component: React.lazy(() => import('@Page/Publish/MyPagePage')),
         },
     ],
 };

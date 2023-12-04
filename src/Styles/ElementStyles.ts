@@ -16,19 +16,19 @@ export default {
     OramButtonStyle: {
         DefaultButton: styled.button(({ Color, Height }: { Color?: ColorType; Height: TwMacroSizeType }) => {
             const returnTw = [
-                tw`mt-3 inline-flex w-full justify-center rounded-md px-2 text-sm font-semibold shadow-sm ring-1 ring-inset hover:bg-gray-50 sm:mt-0`,
+                tw`mt-3 inline-flex w-full justify-center rounded-md px-2 text-sm font-semibold shadow-sm ring-1 ring-inset sm:mt-0`,
             ];
 
             returnTw.push(ConstStyle.PySize(Height));
 
             if (Color === 'red') {
-                returnTw.push(tw`bg-red-600 ring-red-300 text-white`);
+                returnTw.push(tw`bg-red-600 ring-red-300 text-white hover:bg-red-50`);
             } else if (Color === 'blue') {
-                returnTw.push(tw`bg-blue-600 ring-blue-300 text-white`);
+                returnTw.push(tw`bg-blue-600 ring-blue-300 text-white hover:bg-blue-400`);
             } else if (Color === 'gray') {
-                returnTw.push(tw`bg-gray-300 ring-gray-300 text-gray-500`);
+                returnTw.push(tw`bg-gray-300 ring-gray-300 text-gray-500 hover:bg-gray-50`);
             } else {
-                returnTw.push(tw`bg-white ring-gray-300 text-black`);
+                returnTw.push(tw`bg-white ring-gray-300 text-black hover:bg-gray-50`);
             }
 
             return returnTw;
