@@ -64,5 +64,11 @@ export default {
             pathName: `/change-my-profile`,
             Component: React.lazy(() => import('@Page/Publish/ChangeProfilePage')),
         },
+        {
+            page: `match-detail`,
+            name: `퍼블리싱-상세 페이지`,
+            pathName: `/match-detail`,
+            Component: React.lazy(() => import('@Page/Publish/MatchDetailPage')),
+        },
     ],
 };
