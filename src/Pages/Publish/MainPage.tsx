@@ -326,7 +326,7 @@ const MainPage = () => {
                     </div>
                 </section>
 
-                <section className="flex w-full justify-center h-100 overflow-auto">
+                <section className="flex w-full justify-center overflow-auto">
                     <div className="w-full md:max-w-screen-lg">
                         <div className="flex w-full flex-col divide-y scroll-m-0">
                             {lodash.map(MatMatchList, (e, index) => {
@@ -408,7 +408,7 @@ const MainPage = () => {
                 </section>
             </main>
 
-            <Footer />
+            <Footer IsMain={true} />
 
             {/* TODO: modal 은 레이아웃에서 처리 할것 */}
             {pageState.modal.area && (

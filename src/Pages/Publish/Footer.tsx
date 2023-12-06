@@ -1,25 +1,27 @@
 import TemporaryData from '@Common/TemporaryData';
 import lodash from 'lodash';
 
-const Footer = () => {
+const Footer = ({ IsMain }: { IsMain?: boolean }) => {
     return (
         <footer className="flex-1 w-full">
-            <section className="flex w-full justify-center bg-green-500">
-                <div className="w-full md:max-w-screen-lg">
-                    <div className="flex flex-nowrap h-52">
-                        <div className="flex flex-col w-1/2">
-                            <p className="text-lg text-white pt-10">원하는 매치가 없다면</p>
-                            <p className="text-sm pt-2">보라하고 싶은 곳을 추천해 주세요</p>
-                            <div className="flex items-center pt-5">
-                                <button className="w-20 bg-white text-gray-600 text-sm py-1 px-3 rounded">추천 하기</button>
+            {IsMain && (
+                <section className="flex w-full justify-center bg-green-500">
+                    <div className="w-full md:max-w-screen-lg">
+                        <div className="flex flex-nowrap h-52">
+                            <div className="flex flex-col w-1/2">
+                                <p className="text-lg text-white pt-10">원하는 매치가 없다면</p>
+                                <p className="text-sm pt-2">보라하고 싶은 곳을 추천해 주세요</p>
+                                <div className="flex items-center pt-5">
+                                    <button className="w-20 bg-white text-gray-600 text-sm py-1 px-3 rounded">추천 하기</button>
+                                </div>
+                            </div>
+                            <div className="flex flex-col w-1/2 items-end justify-end">
+                                <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/img_thunder.png" className="w-60" alt=""></img>
                             </div>
                         </div>
-                        <div className="flex flex-col w-1/2 items-end justify-end">
-                            <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/img_thunder.png" className="w-60" alt=""></img>
-                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
             <section className="flex w-full justify-center bg-black">
                 <div className="w-full md:max-w-screen-lg">
                     <div className="flex flex-nowrap py-10">

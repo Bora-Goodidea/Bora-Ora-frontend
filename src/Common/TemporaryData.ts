@@ -210,4 +210,11 @@ export default {
             },
         ],
     },
+    Detail: {
+        slideList: [
+            'https://d31wz4d3hgve8q.cloudfront.net/media/ydp_thef_half.jpeg',
+            'https://d31wz4d3hgve8q.cloudfront.net/media/ydp_thef_goal.jpeg',
+            'https://d31wz4d3hgve8q.cloudfront.net/media/ydp_thef_half.jpeg',
+        ],
+    },
 };
