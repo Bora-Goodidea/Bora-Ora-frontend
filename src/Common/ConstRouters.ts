@@ -70,5 +70,17 @@ export default {
             pathName: `/match-detail`,
             Component: React.lazy(() => import('@Page/Publish/MatchDetailPage')),
         },
+        {
+            page: `admin-layout`,
+            name: `퍼블리싱-어드민-레이아웃`,
+            pathName: `/admin-layout`,
+            Component: React.lazy(() => import('@Page/Publish/Admin/AdminLayoutPage')),
+        },
+        {
+            page: `admin-layout`,
+            name: `퍼블리싱-어드민-회원 리스트`,
+            pathName: `/admin-member-list`,
+            Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberListPage')),
+        },
     ],
 };
