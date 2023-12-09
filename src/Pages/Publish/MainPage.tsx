@@ -124,10 +124,6 @@ const MainPage = () => {
                                 <div className="flex text-lg font-bold">소셜매치</div>
                             </div>
                             <div className="flex flex-nowrap items-center">
-                                <div className="flex text-lg text-gray-500">팀</div>
-                                <span className="h-4 text-xs rounded-full bg-blue-700 text-white">new</span>
-                            </div>
-                            <div className="flex flex-nowrap items-center">
                                 <div className="flex text-lg text-gray-500">구장 예약</div>
                             </div>
                         </div>
@@ -357,7 +353,7 @@ const MainPage = () => {
                                                     />
                                                 </svg>
                                                 <p className="flex items-center content-center pl-1 text-gray-400 text-xs">
-                                                    남녀모두 · 6vs6 · 3파전 · 모든 레벨
+                                                    남녀모두 · 6vs6 · 모든 레벨
                                                 </p>
                                             </div>
                                         </div>

@@ -118,25 +118,6 @@ const MyPagePage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col w-full">
-                                        <div className="flex flex-row flex-nowrap justify-between p-5">
-                                            <div className="flex w-full py-5 px-5 bg-blue-600 rounded-xl justify-between">
-                                                <div className="flex flex-col">
-                                                    <div className="flex">
-                                                        <span className="text-sm text-white">나의 캐시</span>
-                                                    </div>
-                                                    <div className="flex">
-                                                        <span className="text-xl font-bold text-white">0원</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-center">
-                                                    <span className="py-2 px-2 text-black text-sm rounded-md items-center bg-yellow-500">
-                                                        충전하기
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div className="flex flex-col md:w-3/5 bg-blue-50 space-y-3">
                                     <div className="flex flex-col bg-white p-2">
@@ -153,73 +134,7 @@ const MyPagePage = () => {
                                                             alt="..."></img>
                                                     </div>
                                                     <div className="flex">
-                                                        <span className="text-md font-semibold text-black">신청 내역</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="flex">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_point_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">충전 내역</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_coupon_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">쿠폰</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_fire.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">챌린지</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_friend.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">친구</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_friend_match.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">친구가 신청한 매치</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_email.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">친구초대</span>
+                                                        <span className="text-md font-semibold text-black">매칭 내역</span>
                                                     </div>
                                                 </div>
                                                 <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
@@ -231,17 +146,6 @@ const MyPagePage = () => {
                                                     </div>
                                                     <div className="">
                                                         <span className="text-md font-semibold text-black">프로필 수정</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_setting_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">설정</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -257,75 +161,11 @@ const MyPagePage = () => {
                                                     <div className="flex">
                                                         <img
                                                             className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_faq_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="flex">
-                                                        <span className="text-md font-semibold text-black">자주 묻는 질문</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="flex">
-                                                        <img
-                                                            className="h-6 w-6"
                                                             src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_notice_color.svg"
                                                             alt="..."></img>
                                                     </div>
                                                     <div className="">
                                                         <span className="text-md font-semibold text-black">공지사항</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col bg-white p-2">
-                                        <div className="flex w-full bg-white">
-                                            <span className="text-sm font-semibold text-black">더보기</span>
-                                        </div>
-                                        <div className="flex w-full bg-white">
-                                            <div className="flex flex-col w-full py-3 space-y-5 px-2">
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="flex">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_about_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="flex">
-                                                        <span className="text-md font-semibold text-black">보라오라 소개</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="flex">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_magazine_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">매거진</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="flex">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_manager_color.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">매니저 지원</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-nowrap w-full items-center object-center justify-start gap-2">
-                                                    <div className="flex">
-                                                        <img
-                                                            className="h-6 w-6"
-                                                            src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_bk.svg"
-                                                            alt="..."></img>
-                                                    </div>
-                                                    <div className="">
-                                                        <span className="text-md font-semibold text-black">구장 제휴</span>
                                                     </div>
                                                 </div>
                                             </div>
