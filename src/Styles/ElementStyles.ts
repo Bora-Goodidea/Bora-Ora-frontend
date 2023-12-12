@@ -4,7 +4,7 @@ import ConstStyle from '@Common/ConstStyle';
 
 export default {
     OraModalStyle: {
-        ModalWapper: tw.div`relative z-10`,
+        ModalWapper: tw.div`relative z-50`,
         BackGroundBlur: tw.div`fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity`,
         FixedWapper: tw.div`fixed inset-0 z-10 w-screen overflow-y-auto`,
         FlexWapper: tw.div`flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0`,
