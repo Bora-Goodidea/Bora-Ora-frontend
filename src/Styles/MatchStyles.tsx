@@ -1,0 +1,45 @@
+import tw from 'twin.macro';
+
+export default {
+    MatchLayoutStyle: {
+        MainContainer: tw.main`flex-1 w-full`,
+        HeaderSection: {
+            HeaderSectionContainer: tw.section`flex w-full justify-center`,
+            HeaderDivContainer: tw.div`w-full md:max-w-screen-lg`,
+            HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
+            HeaderTab: tw.div`flex flex-nowrap items-center`,
+            HeaderTitle: tw.div`flex text-lg font-bold`,
+            HeaderClickTitle: tw.div`flex text-lg text-gray-500`,
+            HeaderIconWrapper: tw.div`flex w-full justify-between pt-2`,
+            HeaderDivIcon: tw.div`flex cursor-pointer`,
+            HeaderDivIcon1: tw.div`flex flex-col items-center py-2`,
+            HeaderDivIcon2: tw.div`flex`,
+            HeaderPIcon: tw.div`text-xs pt-1`,
+        },
+        MainSection: {
+            MainSectionContainer: tw.section`flex w-full justify-center bg-gray-100 p-5 border-b-2`,
+            MainSlideFigure: tw.figure`relative transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0`,
+            MainEmptyDiv: tw.div``,
+            MainImg: tw.img`rounded-2xl`,
+            MainFigcaption: tw.figcaption`flex absolute bottom-8 right-10 rounded-full w-24 items-center justify-center backdrop-blur-sm bg-white/30 cursor-pointer`,
+            MainP: tw.p`text-white text-lg`,
+        },
+        DateSection: {
+            DateSectionContainer: tw.section`flex w-full justify-center p-5 bg-white sticky top-0`,
+            DateSectionWrapper: tw.div`flex flex-col w-full md:max-w-screen-lg`,
+            DateSectionDiv: tw.div`flex w-full`,
+            DateSliderSection: tw.div`flex w-full pl-1 items-center justify-center`,
+            DateSliderDiv: tw.div`flex flex-col w-full justify-center items-center`,
+            DateIndexZeroDiv: tw.div`flex flex-col-reverse w-full items-center justify-center rounded-full bg-blue-400 py-2`,
+            TextLargeWhite: tw.div`text-lg text-white`,
+            TextSmallWhite: tw.div`text-sm text-white`,
+            DateWeeZeroDiv: tw.div`flex flex-col-reverse w-full items-center justify-center rounded-full py-2`,
+            TextLargeRed: tw.div`text-lg text-red-700`,
+            TextSmallRed: tw.div`text-sm text-red-700`,
+            TextLargeBlue: tw.div`text-lg text-blue-700`,
+            TextSmallBlue: tw.div`text-sm text-blue-700`,
+            TextLarge: tw.div`text-lg`,
+            TextSmall: tw.div`text-sm`,
+        },
+    },
+};

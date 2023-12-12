@@ -41,6 +41,22 @@ const RootRoutes = () => {
                         );
                     })}
                 </Route>
+                <Route>
+                    {lodash.map(ConstRouters.Match, (element, index) => {
+                        const PageComponent = element.Component;
+                        return (
+                            <Route
+                                key={`root-routers-page-${index}`}
+                                path={`/match${element.pathName}`}
+                                element={
+                                    <React.Suspense>
+                                        <PageComponent />
+                                    </React.Suspense>
+                                }
+                            />
+                        );
+                    })}
+                </Route>
                 {/*임시 메인 start*/}
                 <Route path={`/`} element={<TemporaryMainPage />} />
                 {/*임시 메인 end*/}
