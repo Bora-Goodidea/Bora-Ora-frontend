@@ -11,7 +11,7 @@ export default {
         RelativeWapper: tw.div`relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg`,
         ContentWapper: tw.div`bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4`,
         Contents: tw.div`sm:flex sm:items-start`,
-        ButtonWapper: tw.div`bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6`,
+        ButtonWapper: tw.div`bg-gray-50 px-4 py-3 sm:flex sm:px-6`,
     },
     OramButtonStyle: {
         DefaultButton: styled.button(({ Color, Height }: { Color?: ColorType; Height: TwMacroSizeType }) => {
