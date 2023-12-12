@@ -278,7 +278,7 @@ const RentalPage = () => {
                 </section>
                 <section className="flex w-full justify-center overflow-auto">
                     <div className="w-full md:max-w-screen-lg">
-                        <div className="flex w-full flex-col space-y-5 divide-y scroll-m-0">
+                        <div className="flex w-full flex-col space-y-5">
                             {(() => {
                                 const templists = lodash.map(RentalList.results, (r: any) => {
                                     const mainStadiumName = r.name;
@@ -460,7 +460,9 @@ const RentalPage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="flex w-full border"></div>
+                                            <div className="flex w-full pt-3">
+                                                <div className="flex w-full border-b"></div>
+                                            </div>
                                         </div>
                                     );
                                 });
