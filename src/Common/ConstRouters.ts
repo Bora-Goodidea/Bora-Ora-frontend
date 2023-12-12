@@ -35,6 +35,12 @@ export default {
             Component: React.lazy(() => import('@Page/Publish/MainPage')),
         },
         {
+            page: `rental`,
+            name: `퍼블리싱-구장 예약`,
+            pathName: `/rental`,
+            Component: React.lazy(() => import('@Page/Publish/RentalPage')),
+        },
+        {
             page: `login`,
             name: `퍼블리싱-로그인`,
             pathName: `/login`,

@@ -144,6 +144,66 @@ export default {
             ],
         },
     },
+    Rental: {
+        BannerSlide: [
+            {
+                url: `https://d31wz4d3hgve8q.cloudfront.net/media/banner-new_stadium_pc_gangnamdgfc_rental.jpg`,
+            },
+        ],
+        TimeModal: [
+            {
+                start: 6,
+                end: 8,
+            },
+            {
+                start: 8,
+                end: 10,
+            },
+            {
+                start: 10,
+                end: 12,
+            },
+            {
+                start: 12,
+                end: 14,
+            },
+            {
+                start: 14,
+                end: 16,
+            },
+            {
+                start: 16,
+                end: 18,
+            },
+            {
+                start: 18,
+                end: 20,
+            },
+            {
+                start: 20,
+                end: 22,
+            },
+            {
+                start: 22,
+                end: 24,
+            },
+            {
+                start: 24,
+                end: 26,
+            },
+            {
+                start: 26,
+                end: 28,
+            },
+            {
+                start: 28,
+                end: 30,
+            },
+        ],
+        StadiumSize: [`3vs3`, `4vs4`, `5vs5`, `6vs6`, `6vs6`, `11vs11`],
+        InOut: [`실내`, `실외`],
+        floor: [`인조단지`, `천연잔디`, `인도어`, `모래`],
+    },
     Login: {
         LoginLeftImage: [
             {
