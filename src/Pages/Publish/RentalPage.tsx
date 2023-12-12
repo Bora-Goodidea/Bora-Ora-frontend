@@ -360,7 +360,7 @@ const RentalPage = () => {
                                     return (
                                         <div
                                             key={`publish-rentel-page-rental-list-item-${index}`}
-                                            className="flex w-full flex-col space-y-2">
+                                            className="flex w-full flex-col space-y-2 cursor-pointer">
                                             <div className="flex flex-nowrap w-full items-center justify-between">
                                                 <div className="flex flex-col">
                                                     <div className="flex items-center">
