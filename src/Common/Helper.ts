@@ -195,6 +195,11 @@ export const arrayToPaginate = <T>({ items, page = 1, perPage = 10 }: { items: T
     };
 };
 
+/**
+ *
+ * @param param0
+ * @returns
+ */
 export const splitIntoChunk = <T>({ list, chunk }: { list: T[]; chunk: number }) => {
     // 빈 배열 생성
     const result = [];
@@ -204,4 +209,14 @@ export const splitIntoChunk = <T>({ list, chunk }: { list: T[]; chunk: number })
     }
 
     return result;
+};
+
+/**
+ * 숫자에 , 붙이기
+ * @param num
+ */
+export const addComma = (num: number): string => {
+    if (isNaN(num)) return '';
+    const regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ',');
 };
