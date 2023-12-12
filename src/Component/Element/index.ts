@@ -3,3 +3,4 @@ export { default as OraButton } from './Ora/OraButton';
 export { default as OraCheckBox } from './Ora/OraCheckBox';
 export { default as OraSelect } from './Ora/OraSelect';
 export { default as OraInput } from './Ora/OraInput';
+export { default as OraSpinner } from './Ora/OraSpinner';
