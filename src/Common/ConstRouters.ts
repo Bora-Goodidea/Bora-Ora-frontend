@@ -94,6 +94,12 @@ export default {
             pathName: `/admin-member-list`,
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberListPage')),
         },
+        {
+            page: `payment`,
+            name: `퍼블리싱-결제`,
+            pathName: `/payment`,
+            Component: React.lazy(() => import('@Page/Publish/PaymentPage')),
+        },
     ],
     Match: [
         {
