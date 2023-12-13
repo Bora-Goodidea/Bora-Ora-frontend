@@ -204,6 +204,15 @@ export default {
         InOut: [`실내`, `실외`],
         floor: [`인조단지`, `천연잔디`, `인도어`, `모래`],
     },
+    RentalDetail: {
+        slider: [
+            `https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner.jpg?w=1920`,
+            `https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_half.jpg?w=1920`,
+            `https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_goal.jpg?w=1920`,
+            `https://d31wz4d3hgve8q.cloudfront.net/media/DSC07845_l4piKiA.jpg?w=1920`,
+            `https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner2.jpg?w=1920`,
+        ],
+    },
     Login: {
         LoginLeftImage: [
             {

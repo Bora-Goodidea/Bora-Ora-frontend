@@ -1,0 +1,84 @@
+{
+    "id": 544,
+    "name": "다목적 구장",
+    "size_x": 90,
+    "size_y": 50,
+    "inout_door": "OUTDOOR",
+    "inout_door_nm": "실외",
+    "is_rental": true,
+    "stadium_type": "ARTIGRASS",
+    "stadium_type_nm": "인조잔디",
+    "product_cnt": 3,
+    "products": [
+        {
+            "id": 1050589,
+            "max_player_cnt": null,
+            "confirm_cnt": null,
+            "stadium_id": 544,
+            "stadium_nm": "광주팀업다목적구장",
+            "order": null,
+            "stadium_product_time_id": null,
+            "start_dt": "2023-12-11T16:00:00+09:00",
+            "end_dt": "2023-12-11T18:00:00+09:00",
+            "product_type": "RENTAL",
+            "product_status": "RELEASE",
+            "product_price": 80000,
+            "date": "2023-12-11",
+            "start_t": "16:00:00",
+            "end_t": "18:00:00",
+            "stadium_product_reserve": null
+        },
+        {
+            "id": 1050610,
+            "max_player_cnt": null,
+            "confirm_cnt": null,
+            "stadium_id": 544,
+            "stadium_nm": "광주팀업다목적구장",
+            "order": null,
+            "stadium_product_time_id": null,
+            "start_dt": "2023-12-11T18:00:00+09:00",
+            "end_dt": "2023-12-11T20:00:00+09:00",
+            "product_type": "RENTAL",
+            "product_status": "RELEASE",
+            "product_price": 80000,
+            "date": "2023-12-11",
+            "start_t": "18:00:00",
+            "end_t": "20:00:00",
+            "stadium_product_reserve": null
+        },
+        {
+            "id": 1050652,
+            "max_player_cnt": null,
+            "confirm_cnt": null,
+            "stadium_id": 544,
+            "stadium_nm": "광주팀업다목적구장",
+            "order": null,
+            "stadium_product_time_id": null,
+            "start_dt": "2023-12-11T22:00:00+09:00",
+            "end_dt": "2023-12-12T00:00:00+09:00",
+            "product_type": "RENTAL",
+            "product_status": "RELEASE",
+            "product_price": 80000,
+            "date": "2023-12-11",
+            "start_t": "22:00:00",
+            "end_t": "00:00:00",
+            "stadium_product_reserve": null
+        }
+    ],
+    "images": [
+        {
+            "id": 1340,
+            "image": "https://d31wz4d3hgve8q.cloudfront.net/media/KakaoTalk_Photo_2023-01-30-16-09-56_001.jpeg",
+            "is_thumbnail": false,
+            "is_ad": false,
+            "stadium": 544
+        },
+        {
+            "id": 1341,
+            "image": "https://d31wz4d3hgve8q.cloudfront.net/media/KakaoTalk_Photo_2023-01-30-16-09-56_003.jpeg",
+            "is_thumbnail": false,
+            "is_ad": false,
+            "stadium": 544
+        }
+    ]
+}
