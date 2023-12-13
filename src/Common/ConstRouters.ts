@@ -95,4 +95,12 @@ export default {
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberListPage')),
         },
     ],
+    Match: [
+        {
+            page: `match`,
+            name: `메인`,
+            pathName: `/list`,
+            Component: React.lazy(() => import('@Page/Match/MatchPage')),
+        },
+    ],
 };
