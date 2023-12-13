@@ -11,15 +11,13 @@ import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import Footer from '@Page/Publish/Footer';
 
 const { DafalutMainContainer } = LayoutStyles.DafalutLayoutStyle;
-const { MainContainer } = MatchStyles.MatchLayoutStyle;
+const { MainContainer, SectionContainer, SectionWrapper } = MatchStyles.MatchLayoutStyle;
 const {
-    HeaderSectionContainer,
-    HeaderDivContainer,
     HeaderTabSection,
     HeaderTab,
     HeaderTitle,
     HeaderClickTitle,
-    HeaderIconWrapper,
+    HeaderIconContainer,
     HeaderDivIcon,
     HeaderDivIcon1,
     HeaderDivIcon2,
@@ -45,6 +43,25 @@ const {
     TextLarge,
     TextSmall,
 } = MatchStyles.MatchLayoutStyle.DateSection;
+
+const { FilteringContainer, FilteringSectionContainer, FilteringButton, FilteringSelectedButton, Span, FilteringSvg } =
+    MatchStyles.MatchLayoutStyle.FilteringSection;
+
+const {
+    MatchListContainer,
+    MatchListWrapper,
+    MatchInfoContainer,
+    MatchInfoTime,
+    P,
+    MatchInfoWrapper,
+    MatchTitle,
+    MatchSubTitle,
+    MatchSvg,
+    MatchSubInfo,
+    MatchButtonContainer,
+    MatchButtonWrapper,
+} = MatchStyles.MatchLayoutStyle.MatchListSection;
+
 const StyledSlider = styled(Slider)`
     width: 100%;
     position: relative;
@@ -153,8 +170,8 @@ const MatchMain = () => {
         <DafalutMainContainer>
             <Header />
             <MainContainer>
-                <HeaderSectionContainer>
-                    <HeaderDivContainer>
+                <SectionContainer>
+                    <SectionWrapper>
                         <HeaderTabSection>
                             <HeaderTab>
                                 <HeaderTitle>
@@ -167,12 +184,12 @@ const MatchMain = () => {
                                 </HeaderTitle>
                             </HeaderTab>
                         </HeaderTabSection>
-                    </HeaderDivContainer>
-                </HeaderSectionContainer>
+                    </SectionWrapper>
+                </SectionContainer>
 
-                <HeaderSectionContainer>
-                    <HeaderDivContainer>
-                        <HeaderIconWrapper>
+                <SectionContainer>
+                    <SectionWrapper>
+                        <HeaderIconContainer>
                             {lodash.map(TemporaryData.Main.ExploreCategory.SocialMatch, (e, index) => {
                                 return (
                                     <HeaderDivIcon key={`publish-main-page-explore-category-social-match-item-${index}`}>
@@ -192,12 +209,12 @@ const MatchMain = () => {
                                     </HeaderDivIcon2>
                                 </HeaderDivIcon1>
                             </HeaderDivIcon>
-                        </HeaderIconWrapper>
-                    </HeaderDivContainer>
-                </HeaderSectionContainer>
+                        </HeaderIconContainer>
+                    </SectionWrapper>
+                </SectionContainer>
 
                 <MainSectionContainer>
-                    <HeaderDivContainer>
+                    <SectionWrapper>
                         <Slider {...bannerSlidersettings}>
                             {lodash.map(TemporaryData.Main.BannerSlide, (e, index) => {
                                 return (
@@ -212,7 +229,7 @@ const MatchMain = () => {
                                 );
                             })}
                         </Slider>
-                    </HeaderDivContainer>
+                    </SectionWrapper>
                 </MainSectionContainer>
 
                 <DateSectionContainer>
@@ -264,11 +281,10 @@ const MatchMain = () => {
                                 })}
                             </StyledSlider>
                         </DateSectionDiv>
-                        <div className="flex w-full h-full pt-5">
+                        <FilteringContainer>
                             <div className="grid grid-row-1 grid-flow-col gap-2">
-                                <div className="flex">
-                                    <button
-                                        className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center"
+                                <FilteringSectionContainer>
+                                    <FilteringButton
                                         onClick={() => {
                                             setPageState(prevState => ({
                                                 ...prevState,
@@ -278,44 +294,41 @@ const MatchMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <span>모든지역</span>
-                                        <svg
+                                        <Span>모든지역</Span>
+                                        <FilteringSvg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
-                                            stroke="currentColor"
-                                            className="w-4 h-4">
+                                            stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div className="flex">
-                                    <button className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center">
-                                        <svg
+                                        </FilteringSvg>
+                                    </FilteringButton>
+                                </FilteringSectionContainer>
+                                <FilteringSectionContainer>
+                                    <FilteringButton>
+                                        <FilteringSvg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
-                                            stroke="currentColor"
-                                            className="w-4 h-4">
+                                            stroke="currentColor">
                                             <path
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
                                                 d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
                                             />
-                                        </svg>
-                                        <span>혜택</span>
-                                    </button>
-                                </div>
-                                <div className="flex">
-                                    <button className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center">
-                                        <span>마감 가리기</span>
-                                    </button>
-                                </div>
-                                <div className="flex">
-                                    <button
-                                        className="bg-white text-sm text-blue-700 py-1 p-3 rounded-full border border-blue-700 inline-flex items-center"
+                                        </FilteringSvg>
+                                        <Span>혜택</Span>
+                                    </FilteringButton>
+                                </FilteringSectionContainer>
+                                <FilteringSectionContainer>
+                                    <FilteringButton>
+                                        <Span>마감 가리기</Span>
+                                    </FilteringButton>
+                                </FilteringSectionContainer>
+                                <FilteringSectionContainer>
+                                    <FilteringSelectedButton
                                         onClick={() => {
                                             setPageState(prevState => ({
                                                 ...prevState,
@@ -325,21 +338,19 @@ const MatchMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <span>남자</span>
-                                        <svg
+                                        <Span>남자</Span>
+                                        <FilteringSvg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
-                                            stroke="currentColor"
-                                            className="w-4 h-4">
+                                            stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div className="flex">
-                                    <button
-                                        className="bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center"
+                                        </FilteringSvg>
+                                    </FilteringSelectedButton>
+                                </FilteringSectionContainer>
+                                <FilteringSectionContainer>
+                                    <FilteringButton
                                         onClick={() => {
                                             setPageState(prevState => ({
                                                 ...prevState,
@@ -349,42 +360,40 @@ const MatchMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <span>레벨</span>
-                                        <svg
+                                        <Span>레벨</Span>
+                                        <FilteringSvg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
-                                            stroke="currentColor"
-                                            className="w-4 h-4">
+                                            stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </svg>
-                                    </button>
-                                </div>
+                                        </FilteringSvg>
+                                    </FilteringButton>
+                                </FilteringSectionContainer>
                             </div>
-                        </div>
+                        </FilteringContainer>
                     </DateSectionWrapper>
                 </DateSectionContainer>
 
-                <section className="flex w-full justify-center overflow-auto">
-                    <div className="w-full md:max-w-screen-lg">
-                        <div className="flex w-full flex-col divide-y scroll-m-0">
+                <MatchListContainer>
+                    <SectionWrapper>
+                        <MatchListWrapper>
                             {lodash.map(MatMatchList, (e, index) => {
                                 return (
-                                    <div className="flex w-full border-b h-20" key={`publish-main-page-match-list-item-${index}`}>
-                                        <div className="flex flex-none h-full w-32 pl-5 items-center justify-start">
-                                            <p>{e.label_schedule9.slice(-5)}</p>
-                                        </div>
-                                        <div className="flex flex-col grow pl-3 justify-center">
-                                            <p className="text-gray-600 text-base font-semibold">{e.label_title}</p>
-                                            <div className="flex items-center">
-                                                <svg
+                                    <MatchInfoContainer key={`publish-main-page-match-list-item-${index}`}>
+                                        <MatchInfoTime>
+                                            <MatchTitle>{e.label_schedule9.slice(-5)}</MatchTitle>
+                                        </MatchInfoTime>
+                                        <MatchInfoWrapper>
+                                            <MatchTitle>{e.label_title}</MatchTitle>
+                                            <MatchSubTitle>
+                                                <MatchSvg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
                                                     viewBox="0 0 24 24"
                                                     strokeWidth={0.5}
-                                                    stroke="orange"
-                                                    className="w-3 h-3">
+                                                    stroke="orange">
                                                     <path
                                                         strokeLinecap="round"
                                                         strokeLinejoin="round"
@@ -395,14 +404,12 @@ const MatchMain = () => {
                                                         strokeLinejoin="round"
                                                         d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z"
                                                     />
-                                                </svg>
-                                                <p className="flex items-center content-center pl-1 text-gray-400 text-xs">
-                                                    남녀모두 · 6vs6 · 모든 레벨
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-none justify-end md:w-28">
-                                            <div className="flex w-full items-center">
+                                                </MatchSvg>
+                                                <MatchSubInfo>남녀모두 · 6vs6 · 모든 레벨</MatchSubInfo>
+                                            </MatchSubTitle>
+                                        </MatchInfoWrapper>
+                                        <MatchButtonContainer>
+                                            <MatchButtonWrapper>
                                                 {(() => {
                                                     if (e.is_finish === true) {
                                                         return (
@@ -419,7 +426,7 @@ const MatchMain = () => {
                                                     if (e.apply_status === `hurry`) {
                                                         return (
                                                             <OraButton
-                                                                ButtonName={`마감입박!`}
+                                                                ButtonName={`마감임박!`}
                                                                 ButtonColor={`red`}
                                                                 HandleClick={() => {
                                                                     //
@@ -438,14 +445,14 @@ const MatchMain = () => {
                                                         />
                                                     );
                                                 })()}
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </MatchButtonWrapper>
+                                        </MatchButtonContainer>
+                                    </MatchInfoContainer>
                                 );
                             })}
-                        </div>
-                    </div>
-                </section>
+                        </MatchListWrapper>
+                    </SectionWrapper>
+                </MatchListContainer>
             </MainContainer>
 
             <Footer IsMain={true} />
