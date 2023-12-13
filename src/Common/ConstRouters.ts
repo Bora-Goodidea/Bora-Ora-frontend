@@ -77,6 +77,12 @@ export default {
             Component: React.lazy(() => import('@Page/Publish/ChangeProfilePage')),
         },
         {
+            page: `payment`,
+            name: `퍼블리싱-결제`,
+            pathName: `/payment`,
+            Component: React.lazy(() => import('@Page/Publish/PaymentPage')),
+        },
+        {
             page: `match-detail`,
             name: `퍼블리싱-상세 페이지`,
             pathName: `/match-detail`,
@@ -93,12 +99,6 @@ export default {
             name: `퍼블리싱-어드민-회원 리스트`,
             pathName: `/admin-member-list`,
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberListPage')),
-        },
-        {
-            page: `payment`,
-            name: `퍼블리싱-결제`,
-            pathName: `/payment`,
-            Component: React.lazy(() => import('@Page/Publish/PaymentPage')),
         },
     ],
     Match: [
