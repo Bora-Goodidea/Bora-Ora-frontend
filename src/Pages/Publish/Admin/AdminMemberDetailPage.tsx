@@ -20,6 +20,25 @@ const AdminMemberDetailPage = () => {
                             <div className="flex flex-col w-full items-center justify-center">
                                 <div className="flex w-full items-center justify-center px-2">
                                     <div className="flex flex-col w-full p-5">
+                                        <div className="flex flex-col gap-6 mb-6 md:grid-cols-2">
+                                            <div className="flex w-full items-center justify-center">
+                                                <img
+                                                    className="h-auto max-w-lg rounded-lg"
+                                                    src="https://d31wz4d3hgve8q.cloudfront.net/static/img/img_profile_default.png"
+                                                    alt="image description"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                                    이미지 업로드
+                                                </label>
+                                                <input
+                                                    className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                                    id="file_input"
+                                                    type="file"
+                                                />
+                                            </div>
+                                        </div>
                                         <div className="grid gap-6 mb-6 md:grid-cols-2">
                                             <div>
                                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
