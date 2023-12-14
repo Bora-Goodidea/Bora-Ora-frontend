@@ -95,10 +95,16 @@ export default {
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminLayoutPage')),
         },
         {
-            page: `admin-layout`,
+            page: `admin-member-list`,
             name: `퍼블리싱-어드민-회원 리스트`,
             pathName: `/admin-member-list`,
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberListPage')),
+        },
+        {
+            page: `admin-member-detail`,
+            name: `퍼블리싱-어드민-회원 상세`,
+            pathName: `/admin-member-detail`,
+            Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberDetailPage')),
         },
     ],
     Match: [
