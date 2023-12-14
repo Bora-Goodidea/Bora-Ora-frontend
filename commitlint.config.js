@@ -30,6 +30,7 @@ module.exports = {
                 'translation',
                 'security',
                 'changeset',
+                'publish',
             ],
         ],
     },
