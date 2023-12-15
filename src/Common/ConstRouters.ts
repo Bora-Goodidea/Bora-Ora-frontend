@@ -106,6 +106,18 @@ export default {
             pathName: `/admin-member-detail`,
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminMemberDetailPage')),
         },
+        {
+            page: `admin-stadium-list`,
+            name: `퍼블리싱-어드민-구장-리스트`,
+            pathName: `/admin-stadium-list`,
+            Component: React.lazy(() => import('@Page/Publish/Admin/AdminStadiumList')),
+        },
+        {
+            page: `admin-stadium-detail`,
+            name: `퍼블리싱-어드민-구장-상세`,
+            pathName: `/admin-stadium-detail`,
+            Component: React.lazy(() => import('@Page/Publish/Admin/AdminStadiumDetail')),
+        },
     ],
     Match: [
         {
