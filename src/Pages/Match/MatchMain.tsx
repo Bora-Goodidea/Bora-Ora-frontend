@@ -52,7 +52,6 @@ const {
     MatchListWrapper,
     MatchInfoContainer,
     MatchInfoTime,
-    P,
     MatchInfoWrapper,
     MatchTitle,
     MatchSubTitle,
@@ -61,6 +60,9 @@ const {
     MatchButtonContainer,
     MatchButtonWrapper,
 } = MatchStyles.MatchLayoutStyle.MatchListSection;
+
+const { ModalSection, ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } =
+    LayoutStyles.ModalLayout.ModalChildren;
 
 const StyledSlider = styled(Slider)`
     width: 100%;
@@ -222,7 +224,7 @@ const MatchMain = () => {
                                         <MainEmptyDiv>
                                             <MainImg src={`${e.url}`} alt="..." />
                                         </MainEmptyDiv>
-                                        <MainFigcaption className="flex absolute bottom-8 right-10 rounded-full w-24 items-center justify-center backdrop-blur-sm bg-white/30 cursor-pointer">
+                                        <MainFigcaption>
                                             <MainP>{slideCurrent} | 6 +</MainP>
                                         </MainFigcaption>
                                     </MainSlideFigure>
@@ -461,20 +463,18 @@ const MatchMain = () => {
             {pageState.modal.area && (
                 <OraModal
                     Children={
-                        <div className="w-full">
-                            <div className="w-full text-sm pl-5">지역</div>
-                            <div className="w-full pt-3">
+                        <ModalSection>
+                            <ModalTitle>지역</ModalTitle>
+                            <ModalContentSection>
                                 {lodash.map(TemporaryData.Main.AreaList, (e, index) => {
                                     return (
-                                        <div
-                                            className="w-full pl-10 border-b cursor-pointer"
-                                            key={`publish-main-page-area-modal-area-item-${index}`}>
-                                            <p className="text-xs py-3">{e}</p>
-                                        </div>
+                                        <ModalContent key={`publish-main-page-area-modal-area-item-${index}`}>
+                                            <ModalItem>{e}</ModalItem>
+                                        </ModalContent>
                                     );
                                 })}
-                            </div>
-                        </div>
+                            </ModalContentSection>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton
@@ -496,24 +496,18 @@ const MatchMain = () => {
             {pageState.modal.gender && (
                 <OraModal
                     Children={
-                        <div className="w-full">
-                            <div className="w-full text-sm pl-5">성별</div>
-                            <div className="flex flex-col w-full pt-3">
+                        <ModalSection>
+                            <ModalTitle>성별</ModalTitle>
+                            <ModalFlexTitle>
                                 {lodash.map(TemporaryData.Main.GenderList, (e, index) => {
                                     return (
-                                        <div className="flex pl-10 py-3 border-b" key={`publish-main-page-gender-modal-item-${index}`}>
-                                            <OraCheckBox
-                                                LavelName={e}
-                                                Checked={false}
-                                                HandleOnChange={() => {
-                                                    //
-                                                }}
-                                            />
-                                        </div>
+                                        <ModalItemList key={`publish-main-page-gender-modal-item-${index}`}>
+                                            <OraCheckBox LavelName={e} Checked={false} HandleOnChange={() => {}} />
+                                        </ModalItemList>
                                     );
                                 })}
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton
@@ -535,12 +529,12 @@ const MatchMain = () => {
             {pageState.modal.level && (
                 <OraModal
                     Children={
-                        <div className="w-full">
-                            <div className="w-full text-sm pl-5">레벨</div>
-                            <div className="flex flex-col w-full pt-3">
+                        <ModalSection>
+                            <ModalTitle>레벨</ModalTitle>
+                            <ModalFlexTitle>
                                 {lodash.map(TemporaryData.Main.LevelList, (e, index) => {
                                     return (
-                                        <div className="flex pl-10 py-3 border-b" key={`publish-main-page-level-modal-item-${index}`}>
+                                        <ModalItemList key={`publish-main-page-level-modal-item-${index}`}>
                                             <OraCheckBox
                                                 LavelName={e}
                                                 Checked={false}
@@ -548,11 +542,11 @@ const MatchMain = () => {
                                                     //
                                                 }}
                                             />
-                                        </div>
+                                        </ModalItemList>
                                     );
                                 })}
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton
