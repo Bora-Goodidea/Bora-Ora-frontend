@@ -1,0 +1,19 @@
+import { Helmet } from 'react-helmet-async';
+import Const from '@Const';
+import MemberListMain from './MemberListMain';
+
+const pageName = '관리자-회원목록';
+
+const MemberListPage = () => {
+    return (
+        <>
+            <Helmet>
+                <title>{`${Const.Site.title} | ${pageName}`}</title>
+                <meta name="description" content={`${pageName} 페이지`} />
+            </Helmet>
+            <MemberListMain />
+        </>
+    );
+};
+
+export default MemberListPage;
