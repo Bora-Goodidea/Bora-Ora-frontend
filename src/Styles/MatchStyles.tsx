@@ -3,26 +3,10 @@ import tw from 'twin.macro';
 export default {
     MatchLayoutStyle: {
         MainContainer: tw.main`flex-1 w-full`,
-        SectionContainer: tw.section`flex w-full justify-center`,
-        SectionWrapper: tw.div`w-full md:max-w-screen-lg`,
         HeaderSection: {
-            HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
-            HeaderTab: tw.div`flex flex-nowrap items-center`,
-            HeaderTitle: tw.div`flex text-lg font-bold`,
-            HeaderClickTitle: tw.div`flex text-lg text-gray-500`,
-            HeaderIconContainer: tw.div`flex w-full justify-between pt-2`,
             HeaderDivIcon: tw.div`flex cursor-pointer`,
             HeaderDivIcon1: tw.div`flex flex-col items-center py-2`,
-            HeaderDivIcon2: tw.div`flex`,
             HeaderPIcon: tw.div`text-xs pt-1`,
-        },
-        MainSection: {
-            MainSectionContainer: tw.section`flex w-full justify-center bg-gray-100 p-5 border-b-2`,
-            MainSlideFigure: tw.figure`relative transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0`,
-            MainEmptyDiv: tw.div``,
-            MainImg: tw.img`rounded-2xl`,
-            MainFigcaption: tw.figcaption`flex absolute bottom-8 right-10 rounded-full w-24 items-center justify-center backdrop-blur-sm bg-white/30 cursor-pointer`,
-            MainP: tw.p`text-white text-lg`,
         },
         DateSection: {
             DateSectionContainer: tw.section`flex w-full justify-center p-5 bg-white sticky top-0`,
@@ -45,10 +29,7 @@ export default {
             FilteringContainer: tw.div`flex w-full h-full pt-5`,
             // FilteringWrapper: tw.div`grid grid-row-1 grid-flow-col gap-2`,
             FilteringSectionContainer: tw.div`flex`,
-            FilteringButton: tw.button`bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center`,
             FilteringSelectedButton: tw.button`bg-white text-sm text-blue-700 py-1 p-3 rounded-full border border-blue-700 inline-flex items-center`,
-            Span: tw.span``,
-            FilteringSvg: tw.svg`w-4 h-4`,
         },
         MatchListSection: {
             MatchListContainer: tw.section`flex w-full justify-center overflow-auto`,

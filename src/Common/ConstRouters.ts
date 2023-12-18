@@ -119,6 +119,14 @@ export default {
             Component: React.lazy(() => import('@Page/Publish/Admin/AdminStadiumDetail')),
         },
     ],
+    Rental: [
+        {
+            page: `rental`,
+            name: `구장 예약`,
+            pathName: `/list`,
+            Component: React.lazy(() => import('@Page/Rental/RentalPage')),
+        },
+    ],
     Match: [
         {
             page: `match`,
