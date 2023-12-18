@@ -42,6 +42,22 @@ const RootRoutes = () => {
                     })}
                 </Route>
                 <Route>
+                    {lodash.map(ConstRouters.Rental, (element, index) => {
+                        const PageComponent = element.Component;
+                        return (
+                            <Route
+                                key={`root-routers-page-${index}`}
+                                path={`/rental${element.pathName}`}
+                                element={
+                                    <React.Suspense>
+                                        <PageComponent />
+                                    </React.Suspense>
+                                }
+                            />
+                        );
+                    })}
+                </Route>
+                <Route>
                     {lodash.map(ConstRouters.Match, (element, index) => {
                         const PageComponent = element.Component;
                         return (
