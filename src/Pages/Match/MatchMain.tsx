@@ -13,7 +13,7 @@ import Footer from '@Page/Publish/Footer';
 const { DefalutMainContainer, SectionContainer, SectionWrapper } = LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderDivIcon2, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton, Span, FilteringSvg4 } = LayoutStyles.FilteringLayoutStyle;
-const { MainSectionContainer, MainSlideFigure, MainEmptyDiv, MainImg, MainFigcaption, MainP } = LayoutStyles.MainLayoutStyle;
+const { MainSectionContainer, MainSlideFigure, MainEmptyDiv, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
 const { MainContainer } = MatchStyles.MatchLayoutStyle;
 const { HeaderDivIcon, HeaderDivIcon1, HeaderPIcon } = MatchStyles.MatchLayoutStyle.HeaderSection;
 
@@ -44,7 +44,6 @@ const {
     MatchInfoTime,
     MatchInfoWrapper,
     MatchTitle,
-    MatchSubTitle,
     MatchSvg,
     MatchSubInfo,
     MatchButtonContainer,
@@ -379,7 +378,7 @@ const MatchMain = () => {
                                         </MatchInfoTime>
                                         <MatchInfoWrapper>
                                             <MatchTitle>{e.label_title}</MatchTitle>
-                                            <MatchSubTitle>
+                                            <SubTitle>
                                                 <MatchSvg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
@@ -398,7 +397,7 @@ const MatchMain = () => {
                                                     />
                                                 </MatchSvg>
                                                 <MatchSubInfo>남녀모두 · 6vs6 · 모든 레벨</MatchSubInfo>
-                                            </MatchSubTitle>
+                                            </SubTitle>
                                         </MatchInfoWrapper>
                                         <MatchButtonContainer>
                                             <MatchButtonWrapper>

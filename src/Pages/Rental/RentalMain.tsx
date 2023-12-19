@@ -10,10 +10,12 @@ import lodash from 'lodash';
 import { addComma } from '@Helper';
 import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import MatchStyles from '@Style/MatchStyles';
+import RentalStyles from '@Style/RentalStyles';
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper, PrepareButton } = LayoutStyles.DefalutLayoutStyle;
+const { DefalutMainContainer, SectionContainer, SectionWrapper, SectionDiv, PrepareButton, ItemCenter, TextXs } =
+    LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderDivIcon2, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
-const { FilteringButton, FilteringSvg4, FilteringSvg6, Span } = LayoutStyles.FilteringLayoutStyle;
+const { FilteringButton, FilteringSvg4, FilteringSvg5, FilteringSvg6, Span } = LayoutStyles.FilteringLayoutStyle;
 const {
     MainSectionContainer,
     MainContainer,
@@ -28,11 +30,37 @@ const {
     BtnBlue,
     TextGray,
     BtnGray,
+    InfoSection,
+    InfoWrapper,
+    SubTitle,
+    SubInfo,
+    TextSmBlack,
+    TextSmGray,
+    SubContent,
+    ItemSection,
+    ItemContainer,
 } = LayoutStyles.MainLayoutStyle;
 
 const { MatchListContainer } = MatchStyles.MatchLayoutStyle.MatchListSection;
 
-const { ModalTitle } = LayoutStyles.ModalLayout.ModalChildren;
+const { ModalTitle, ModalSection, ModalFlexTitle } = LayoutStyles.ModalLayout.ModalChildren;
+
+const {
+    RentalSection,
+    RentalFigure,
+    RentalImg,
+    RentalFigcaption,
+    RentalContainer,
+    CheckTimeBlue,
+    CheckTimeGray,
+    RentalTimeSection,
+    RentalPt3,
+    RentalBorder,
+    RentalSpinner,
+    RentalMoreSection,
+    RentalModalSection,
+    RentalModalDiv,
+} = RentalStyles.RentalLayoutStyle;
 
 const initializeState = {
     modal: {
@@ -286,7 +314,7 @@ const RentalMain = () => {
                 </ReserContainer>
                 <MatchListContainer>
                     <SectionWrapper>
-                        <div className="flex w-full flex-col space-y-5">
+                        <SectionDiv>
                             {(() => {
                                 const templists = lodash.map(RentalList.results, (r: any) => {
                                     const mainStadiumName = r.name;
@@ -366,44 +394,38 @@ const RentalMain = () => {
 
                                 return lodash.map(lists, (l, index) => {
                                     return (
-                                        <div
-                                            key={`publish-rentel-page-rental-list-item-${index}`}
-                                            className="flex w-full flex-col space-y-2 cursor-pointer">
-                                            <div className="flex flex-nowrap w-full items-center justify-between">
-                                                <div className="flex flex-col">
-                                                    <div className="flex items-center">
+                                        <RentalSection key={`publish-rentel-page-rental-list-item-${index}`}>
+                                            <InfoSection>
+                                                <InfoWrapper>
+                                                    <SubTitle>
                                                         <span className="text-md font-bold">{l.name}</span>
-                                                    </div>
-                                                    <div className="flex w-full items-center gap-1">
+                                                    </SubTitle>
+                                                    <SubInfo>
                                                         {lodash.map(l.product_option, (po, indexPo) => {
                                                             if (indexPo === 0) {
                                                                 return (
-                                                                    <span
-                                                                        key={`publish-rental-page-rental-product-option-item-${index}-${indexPo}`}
-                                                                        className="text-sm text-black">
+                                                                    <TextSmBlack
+                                                                        key={`publish-rental-page-rental-product-option-item-${index}-${indexPo}`}>
                                                                         {po}
-                                                                    </span>
+                                                                    </TextSmBlack>
                                                                 );
                                                             } else {
                                                                 return (
                                                                     <React.Fragment
                                                                         key={`publish-rental-page-rental-product-option-item-${index}-${indexPo}`}>
-                                                                        <span className="">•</span>
-                                                                        <span className="text-sm text-gray-400">{po}</span>
+                                                                        <Span>•</Span>
+                                                                        <TextSmGray>{po}</TextSmGray>
                                                                     </React.Fragment>
                                                                 );
                                                             }
                                                         })}
-                                                    </div>
-                                                    <div className="flex w-full items-center">
-                                                        <span className="text-sm text-gray-400">{`${addComma(l.price)}원~${addComma(
-                                                            l.price
-                                                        )}원/시간`}</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex">
-                                                    <figure
-                                                        className="relative transition-all duration-300 cursor-pointer z-10"
+                                                    </SubInfo>
+                                                    <SubContent>
+                                                        <TextSmGray>{`${addComma(l.price)}원~${addComma(l.price)}원/시간`}</TextSmGray>
+                                                    </SubContent>
+                                                </InfoWrapper>
+                                                <HeaderDivIcon2>
+                                                    <RentalFigure
                                                         onClick={() =>
                                                             setPageState(prevState => ({
                                                                 ...prevState,
@@ -413,30 +435,29 @@ const RentalMain = () => {
                                                                 },
                                                             }))
                                                         }>
-                                                        <div className="flex">
-                                                            <img src={l.images[0]} alt="..." className="w-24 rounded-lg" />
-                                                        </div>
-                                                        <figcaption className="flex absolute bottom-1 right-1">
-                                                            <svg
+                                                        <HeaderDivIcon2>
+                                                            <RentalImg src={l.images[0]} alt="..." />
+                                                        </HeaderDivIcon2>
+                                                        <RentalFigcaption>
+                                                            <FilteringSvg5
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 fill="none"
                                                                 viewBox="0 0 24 24"
                                                                 strokeWidth={1.5}
-                                                                stroke="currentColor"
-                                                                className="w-5 h-5">
+                                                                stroke="currentColor">
                                                                 <path
                                                                     strokeLinecap="round"
                                                                     strokeLinejoin="round"
                                                                     d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
                                                                 />
-                                                            </svg>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                            <div className="flex flex-nowrap w-full items-center">
-                                                <div className="flex flex-col w-full">
-                                                    <div className="flex flex-nowrap w-full justify-center gap-1">
+                                                            </FilteringSvg5>
+                                                        </RentalFigcaption>
+                                                    </RentalFigure>
+                                                </HeaderDivIcon2>
+                                            </InfoSection>
+                                            <ItemSection>
+                                                <ItemContainer>
+                                                    <RentalContainer>
                                                         {lodash.map(rentalTimeArray, (e, index) => {
                                                             // TODO: 현재 예약 시간 처리를 해야 하는데 좀 복잡하네?? 추후 의논으로 해결 필요.
                                                             let checkTime = false;
@@ -447,58 +468,56 @@ const RentalMain = () => {
                                                             });
                                                             if (checkTime) {
                                                                 return (
-                                                                    <div
-                                                                        key={`publish-rental-page-rental-time-item-${index}`}
-                                                                        className="border border-blue-400 w-1/2"></div>
+                                                                    <CheckTimeBlue
+                                                                        key={`publish-rental-page-rental-time-item-${index}`}></CheckTimeBlue>
                                                                 );
                                                             } else {
                                                                 return (
-                                                                    <div
-                                                                        key={`publish-rental-page-rental-time-item-${index}`}
-                                                                        className="border border-gray-200 w-1/2"></div>
+                                                                    <CheckTimeGray
+                                                                        key={`publish-rental-page-rental-time-item-${index}`}></CheckTimeGray>
                                                                 );
                                                             }
                                                         })}
-                                                    </div>
-                                                    <div className="flex flex-nowrap w-full pt-1">
+                                                    </RentalContainer>
+                                                    <RentalTimeSection>
                                                         <TextGray>6시</TextGray>
                                                         <TextGray>12시</TextGray>
                                                         <TextGray>18시</TextGray>
                                                         <TextGray>24시</TextGray>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="flex w-full pt-3">
-                                                <div className="flex w-full border-b"></div>
-                                            </div>
-                                        </div>
+                                                    </RentalTimeSection>
+                                                </ItemContainer>
+                                            </ItemSection>
+                                            <RentalPt3>
+                                                <RentalBorder></RentalBorder>
+                                            </RentalPt3>
+                                        </RentalSection>
                                     );
                                 });
                             })()}
-                        </div>
+                        </SectionDiv>
                     </SectionWrapper>
                 </MatchListContainer>
-                <section className="flex w-full justify-center">
+                <SectionContainer>
                     <SectionWrapper>
-                        <div className="flex w-full flex-col space-y-2 py-4 items-center justify-center">
+                        <RentalSpinner>
                             <OraSpinner />
-                        </div>
+                        </RentalSpinner>
                     </SectionWrapper>
-                </section>
-                <section className="flex w-full justify-center">
+                </SectionContainer>
+                <SectionContainer>
                     <SectionWrapper>
-                        <div className="flex w-full flex-col space-y-2 py-4">
-                            <div className="flex flex-col w-full items-center justify-center">
-                                <div className="flex">
-                                    <span className="text-sm text-gray-400">비제휴 구장 더보기</span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-xs text-gray-400">예약 가능 여부는 구장에 직접 확인해 주세요.</span>
-                                </div>
-                            </div>
-                        </div>
+                        <RentalMoreSection>
+                            <ItemCenter>
+                                <HeaderDivIcon2>
+                                    <TextSmGray>비제휴 구장 더보기</TextSmGray>
+                                </HeaderDivIcon2>
+                                <HeaderDivIcon2>
+                                    <TextGray>예약 가능 여부는 구장에 직접 확인해 주세요.</TextGray>
+                                </HeaderDivIcon2>
+                            </ItemCenter>
+                        </RentalMoreSection>
                     </SectionWrapper>
-                </section>
+                </SectionContainer>
             </MainContainer>
 
             <Footer IsMain={false} />
@@ -506,14 +525,14 @@ const RentalMain = () => {
             {pageState.modal.area && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>지역</ModalTitle>
-                            <div className="flex flex-col w-full pt-3">
-                                <div className="flex pl-5 py-3 border-b justify-between">
-                                    <div className="flex items-center">
-                                        <span className="text-xs">내 지역</span>
-                                    </div>
-                                    <div className="flex">
+                            <ModalFlexTitle>
+                                <RentalModalSection>
+                                    <SubTitle>
+                                        <TextXs>내 지역</TextXs>
+                                    </SubTitle>
+                                    <HeaderDivIcon2>
                                         <OraButton
                                             ButtonName={`편집하기`}
                                             ButtonColor={`blue`}
@@ -528,17 +547,17 @@ const RentalMain = () => {
                                                 }))
                                             }
                                         />
-                                    </div>
-                                </div>
+                                    </HeaderDivIcon2>
+                                </RentalModalSection>
                                 {lodash.map(TemporaryData.Main.AreaList.slice(1, -1), (e, index) => {
                                     return (
-                                        <div className="flex pl-5 py-3 border-b" key={`publish-rent-page-search-area-modal-item-${index}`}>
-                                            <span className="text-xs">{e}</span>
-                                        </div>
+                                        <RentalModalDiv key={`publish-rent-page-search-area-modal-item-${index}`}>
+                                            <TextXs>{e}</TextXs>
+                                        </RentalModalDiv>
                                     );
                                 })}
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton
@@ -560,13 +579,13 @@ const RentalMain = () => {
             {pageState.modal.areaChange && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>내 지역</ModalTitle>
-                            <div className="flex flex-col w-full pt-3">
+                            <ModalFlexTitle>
                                 <div className="flex flex-nowrap w-full">
                                     <div className="flex flex-col w-2/6">
                                         <div className="flex pl-5 py-3 bg-gray-100 cursor-pointer">
-                                            <span className="text-xs">내지역</span>
+                                            <TextXs>내지역</TextXs>
                                         </div>
                                         {lodash.map(TemporaryData.Main.AreaList.slice(1, -1), (e, index) => {
                                             if (index === 1) {
@@ -574,7 +593,7 @@ const RentalMain = () => {
                                                     <div
                                                         className="flex pl-5 py-3 bg-white cursor-pointer"
                                                         key={`publish-rent-page-search-my-area-modal-area-item-${index}`}>
-                                                        <span className="text-xs">{e}</span>
+                                                        <TextXs>{e}</TextXs>
                                                     </div>
                                                 );
                                             } else {
@@ -582,7 +601,7 @@ const RentalMain = () => {
                                                     <div
                                                         className="flex pl-5 py-3 bg-gray-100 cursor-pointer"
                                                         key={`publish-rent-page-search-my-area-modal-area-item-${index}`}>
-                                                        <span className="text-xs">{e}</span>
+                                                        <TextXs>{e}</TextXs>
                                                     </div>
                                                 );
                                             }
@@ -606,11 +625,11 @@ const RentalMain = () => {
                                                         />
                                                     </svg>
                                                 </div>
-                                                <span className="text-xs">은평</span>
-                                                <span className="text-xs">∙</span>
-                                                <span className="text-xs">서대문</span>
-                                                <span className="text-xs">∙</span>
-                                                <span className="text-xs">마포</span>
+                                                <TextXs>은평</TextXs>
+                                                <TextXs>∙</TextXs>
+                                                <TextXs>서대문</TextXs>
+                                                <TextXs>∙</TextXs>
+                                                <TextXs>마포</TextXs>
                                                 <span className="text-xs text-red-600 pl-2">2</span>
                                             </div>
                                             <div className="flex flex-nowrap border-b items-center py-3">
@@ -629,18 +648,18 @@ const RentalMain = () => {
                                                         />
                                                     </svg>
                                                 </div>
-                                                <span className="text-xs">노원</span>
-                                                <span className="text-xs">∙</span>
-                                                <span className="text-xs">도봉</span>
-                                                <span className="text-xs">∙</span>
-                                                <span className="text-xs">성동</span>
+                                                <TextXs>노원</TextXs>
+                                                <TextXs>∙</TextXs>
+                                                <TextXs>도봉</TextXs>
+                                                <TextXs>∙</TextXs>
+                                                <TextXs>성동</TextXs>
                                                 <span className="text-xs text-red-600 pl-2">2</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton
@@ -663,14 +682,14 @@ const RentalMain = () => {
             {pageState.modal.time && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>시간</ModalTitle>
                             <div className="w-full text-xs pl-5">시작시간 기준</div>
-                            <div className="flex flex-col w-full pt-3">
+                            <ModalFlexTitle>
                                 <div className="grid grid-cols-4 w-full gap-1">
                                     {lodash.map(TemporaryData.Rental.TimeModal, (e, index) => {
                                         return (
-                                            <div className="flex" key={`publish-rent-page-time-select-modal-item-${index}`}>
+                                            <HeaderDivIcon2 key={`publish-rent-page-time-select-modal-item-${index}`}>
                                                 <OraButton
                                                     ButtonName={`${e.start}~${e.end}시`}
                                                     ButtonColor={`default`}
@@ -684,12 +703,12 @@ const RentalMain = () => {
                                                         }))
                                                     }
                                                 />
-                                            </div>
+                                            </HeaderDivIcon2>
                                         );
                                     })}
                                 </div>
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <>
@@ -726,9 +745,9 @@ const RentalMain = () => {
             {pageState.modal.size && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>구장크기</ModalTitle>
-                            <div className="flex flex-col w-full pt-3">
+                            <ModalFlexTitle>
                                 <div className="flex flex-col w-full gap-1">
                                     {lodash.map(TemporaryData.Rental.StadiumSize, (e, index) => {
                                         return (
@@ -738,8 +757,8 @@ const RentalMain = () => {
                                         );
                                     })}
                                 </div>
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <>
@@ -776,20 +795,20 @@ const RentalMain = () => {
             {pageState.modal.inout && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>실내외</ModalTitle>
-                            <div className="flex flex-col w-full pt-3">
+                            <ModalFlexTitle>
                                 <div className="flex flex-col w-full gap-1">
                                     {lodash.map(TemporaryData.Rental.InOut, (e, index) => {
                                         return (
-                                            <div className="flex" key={`publish-rent-page-size-check-box-modal-item-${index}`}>
+                                            <HeaderDivIcon2 key={`publish-rent-page-size-check-box-modal-item-${index}`}>
                                                 <OraCheckBox Checked={false} HandleOnChange={() => console.debug('check')} LavelName={e} />
-                                            </div>
+                                            </HeaderDivIcon2>
                                         );
                                     })}
                                 </div>
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <>
@@ -826,9 +845,9 @@ const RentalMain = () => {
             {pageState.modal.floor && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>바닥 종류</ModalTitle>
-                            <div className="flex flex-col w-full pt-3">
+                            <ModalFlexTitle>
                                 <div className="flex flex-col w-full gap-1">
                                     {lodash.map(TemporaryData.Rental.floor, (e, index) => {
                                         return (
@@ -838,8 +857,8 @@ const RentalMain = () => {
                                         );
                                     })}
                                 </div>
-                            </div>
-                        </div>
+                            </ModalFlexTitle>
+                        </ModalSection>
                     }
                     Buttons={
                         <>
@@ -876,7 +895,7 @@ const RentalMain = () => {
             {pageState.modal.image && (
                 <OraModal
                     Children={
-                        <div className="w-full">
+                        <ModalSection>
                             <ModalTitle>전체 보기</ModalTitle>
                             <div className="flex flex-col w-full pt-3 overflow-auto h-80">
                                 <div className="flex flex-col w-full gap-1 divide-y scroll-m-0">
@@ -927,7 +946,7 @@ const RentalMain = () => {
                                     </figure>
                                 </div>
                             </div>
-                        </div>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton

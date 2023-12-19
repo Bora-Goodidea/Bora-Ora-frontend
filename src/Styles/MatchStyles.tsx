@@ -39,7 +39,6 @@ export default {
             P: tw.p``,
             MatchInfoWrapper: tw.div`flex flex-col grow pl-3 justify-center`,
             MatchTitle: tw.p`text-gray-600 text-base font-semibold`,
-            MatchSubTitle: tw.div`flex items-center`,
             MatchSvg: tw.svg`w-3 h-3`,
             MatchSubInfo: tw.p`flex items-center content-center pl-1 text-gray-400 text-xs`,
             MatchButtonContainer: tw.div`flex flex-none justify-end md:w-28`,
