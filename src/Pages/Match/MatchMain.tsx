@@ -52,7 +52,6 @@ const {
     MatchListWrapper,
     MatchInfoContainer,
     MatchInfoTime,
-    P,
     MatchInfoWrapper,
     MatchTitle,
     MatchSubTitle,
