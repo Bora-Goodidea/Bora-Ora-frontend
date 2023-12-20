@@ -1,20 +1,18 @@
 import AdminStyles from '@Style/AdminStyles';
-import AdminHeader from './AdminHeader';
-import AdminFooter from './AdminFooter';
-import AdminNav from './AdminNav';
-import { JsxElement } from 'typescript';
-
-type ContentElement = JsxElement | any; // element child
+import { AdminHeader, AdminFooter, AdminNav } from '@Elements';
+import { Outlet } from 'react-router';
 
 const { AdminLayoutContainer } = AdminStyles.AdminLayoutStyle;
 const { ContentContainer, MainContainer } = AdminStyles.ContentWrapperStyle;
 
-const AdminLayout = ({ children }: ContentElement) => {
+const AdminLayout = () => {
     return (
         <AdminLayoutContainer>
             <AdminHeader />
             <ContentContainer>
-                <MainContainer>{children}</MainContainer>
+                <MainContainer>
+                    <Outlet />
+                </MainContainer>
                 <AdminNav />
             </ContentContainer>
             <AdminFooter />
