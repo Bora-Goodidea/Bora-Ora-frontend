@@ -130,9 +130,15 @@ export default {
     Admin: [
         {
             page: `match`,
-            name: `관리자-회원목록`,
+            name: `관리자-회원 리스트`,
             pathName: `/member-list`,
             Component: React.lazy(() => import('@Page/Admin/MemberListPage')),
+        },
+        {
+            page: `match`,
+            name: `관리자-회원 상세`,
+            pathName: `/member-detail`,
+            Component: React.lazy(() => import('@Page/Admin/MemberDetailPage')),
         },
     ],
 };

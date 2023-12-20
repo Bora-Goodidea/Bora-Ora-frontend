@@ -8,3 +8,6 @@ export { default as OraSpinner } from './Ora/OraSpinner';
 export { default as AdminHeader } from './Admin/AdminHeader';
 export { default as AdminFooter } from './Admin/AdminFooter';
 export { default as AdminNav } from './Admin/AdminNav';
+export { default as MemberDetailInfoItem } from './Admin/MemberDetailInfoItem';
+export { default as MemberDetailInfoSelectItem } from './Admin/MemberDetailInfoSelectItem';
+export { default as MemberDetailInfoSelectItemBirth } from './Admin/MemberDetailInfoSelectItemBirth';
