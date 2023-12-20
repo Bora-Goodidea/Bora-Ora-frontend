@@ -39,11 +39,12 @@ const {
     SubContent,
     ItemSection,
     ItemContainer,
+    InfoTitle,
 } = LayoutStyles.MainLayoutStyle;
 
 const { MatchListContainer } = MatchStyles.MatchLayoutStyle.MatchListSection;
 
-const { ModalTitle, ModalSection, ModalFlexTitle } = LayoutStyles.ModalLayout.ModalChildren;
+const { ModalTitle, ModalSection, ModalFlexTitle, ModalListSection, ModalListTitle } = LayoutStyles.ModalLayout;
 
 const {
     RentalSection,
@@ -60,6 +61,20 @@ const {
     RentalMoreSection,
     RentalModalSection,
     RentalModalDiv,
+    RentalImgSection,
+    RentalImgContainer,
+    RentalImgWrapper,
+    RentalModalContainer,
+    RentalBtnGray,
+    RentalBtnWhite,
+    EditSection,
+    EditContainer,
+    EditWrapper,
+    EditList,
+    ItemIcon,
+    ItemCount,
+    BoxItem,
+    CheckContainer,
 } = RentalStyles.RentalLayoutStyle;
 
 const initializeState = {
@@ -398,7 +413,7 @@ const RentalMain = () => {
                                             <InfoSection>
                                                 <InfoWrapper>
                                                     <SubTitle>
-                                                        <span className="text-md font-bold">{l.name}</span>
+                                                        <InfoTitle>{l.name}</InfoTitle>
                                                     </SubTitle>
                                                     <SubInfo>
                                                         {lodash.map(l.product_option, (po, indexPo) => {
@@ -582,82 +597,75 @@ const RentalMain = () => {
                         <ModalSection>
                             <ModalTitle>내 지역</ModalTitle>
                             <ModalFlexTitle>
-                                <div className="flex flex-nowrap w-full">
-                                    <div className="flex flex-col w-2/6">
-                                        <div className="flex pl-5 py-3 bg-gray-100 cursor-pointer">
+                                <ModalListSection>
+                                    <RentalModalContainer>
+                                        <RentalBtnGray>
                                             <TextXs>내지역</TextXs>
-                                        </div>
+                                        </RentalBtnGray>
                                         {lodash.map(TemporaryData.Main.AreaList.slice(1, -1), (e, index) => {
                                             if (index === 1) {
                                                 return (
-                                                    <div
-                                                        className="flex pl-5 py-3 bg-white cursor-pointer"
-                                                        key={`publish-rent-page-search-my-area-modal-area-item-${index}`}>
+                                                    <RentalBtnWhite key={`publish-rent-page-search-my-area-modal-area-item-${index}`}>
                                                         <TextXs>{e}</TextXs>
-                                                    </div>
+                                                    </RentalBtnWhite>
                                                 );
                                             } else {
                                                 return (
-                                                    <div
-                                                        className="flex pl-5 py-3 bg-gray-100 cursor-pointer"
-                                                        key={`publish-rent-page-search-my-area-modal-area-item-${index}`}>
+                                                    <RentalBtnGray key={`publish-rent-page-search-my-area-modal-area-item-${index}`}>
                                                         <TextXs>{e}</TextXs>
-                                                    </div>
+                                                    </RentalBtnGray>
                                                 );
                                             }
                                         })}
-                                    </div>
-                                    <div className="flex w-4/6">
-                                        <div className="flex flex-col w-full px-2 space-y-1">
-                                            <div className="flex flex-nowrap border-b items-center py-3">
-                                                <div className="flex pr-2">
-                                                    <svg
+                                    </RentalModalContainer>
+                                    <EditSection>
+                                        <EditContainer>
+                                            <EditWrapper>
+                                                <EditList>
+                                                    <ItemIcon
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="gray"
-                                                        className="w-4 h-4 cursor-pointer">
+                                                        stroke="gray">
                                                         <path
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
                                                         />
-                                                    </svg>
-                                                </div>
+                                                    </ItemIcon>
+                                                </EditList>
                                                 <TextXs>은평</TextXs>
                                                 <TextXs>∙</TextXs>
                                                 <TextXs>서대문</TextXs>
                                                 <TextXs>∙</TextXs>
                                                 <TextXs>마포</TextXs>
-                                                <span className="text-xs text-red-600 pl-2">2</span>
-                                            </div>
-                                            <div className="flex flex-nowrap border-b items-center py-3">
-                                                <div className="flex pr-2">
-                                                    <svg
+                                                <ItemCount>2</ItemCount>
+                                            </EditWrapper>
+                                            <EditWrapper>
+                                                <EditList>
+                                                    <ItemIcon
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
-                                                        strokeWidth={1.5}
-                                                        stroke="gray"
-                                                        className="w-4 h-4 cursor-pointer">
+                                                        strokeWidth={1.5}>
                                                         <path
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
                                                         />
-                                                    </svg>
-                                                </div>
+                                                    </ItemIcon>
+                                                </EditList>
                                                 <TextXs>노원</TextXs>
                                                 <TextXs>∙</TextXs>
                                                 <TextXs>도봉</TextXs>
                                                 <TextXs>∙</TextXs>
                                                 <TextXs>성동</TextXs>
-                                                <span className="text-xs text-red-600 pl-2">2</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                <ItemCount>2</ItemCount>
+                                            </EditWrapper>
+                                        </EditContainer>
+                                    </EditSection>
+                                </ModalListSection>
                             </ModalFlexTitle>
                         </ModalSection>
                     }
@@ -684,9 +692,9 @@ const RentalMain = () => {
                     Children={
                         <ModalSection>
                             <ModalTitle>시간</ModalTitle>
-                            <div className="w-full text-xs pl-5">시작시간 기준</div>
+                            <ModalListTitle>시작시간 기준</ModalListTitle>
                             <ModalFlexTitle>
-                                <div className="grid grid-cols-4 w-full gap-1">
+                                <BoxItem>
                                     {lodash.map(TemporaryData.Rental.TimeModal, (e, index) => {
                                         return (
                                             <HeaderDivIcon2 key={`publish-rent-page-time-select-modal-item-${index}`}>
@@ -706,7 +714,7 @@ const RentalMain = () => {
                                             </HeaderDivIcon2>
                                         );
                                     })}
-                                </div>
+                                </BoxItem>
                             </ModalFlexTitle>
                         </ModalSection>
                     }
@@ -748,15 +756,15 @@ const RentalMain = () => {
                         <ModalSection>
                             <ModalTitle>구장크기</ModalTitle>
                             <ModalFlexTitle>
-                                <div className="flex flex-col w-full gap-1">
+                                <CheckContainer>
                                     {lodash.map(TemporaryData.Rental.StadiumSize, (e, index) => {
                                         return (
-                                            <div className="flex" key={`publish-rent-page-size-check-box-modal-item-${index}`}>
+                                            <HeaderDivIcon2 key={`publish-rent-page-size-check-box-modal-item-${index}`}>
                                                 <OraCheckBox Checked={false} HandleOnChange={() => console.debug('check')} LavelName={e} />
-                                            </div>
+                                            </HeaderDivIcon2>
                                         );
                                     })}
-                                </div>
+                                </CheckContainer>
                             </ModalFlexTitle>
                         </ModalSection>
                     }
@@ -798,7 +806,7 @@ const RentalMain = () => {
                         <ModalSection>
                             <ModalTitle>실내외</ModalTitle>
                             <ModalFlexTitle>
-                                <div className="flex flex-col w-full gap-1">
+                                <CheckContainer>
                                     {lodash.map(TemporaryData.Rental.InOut, (e, index) => {
                                         return (
                                             <HeaderDivIcon2 key={`publish-rent-page-size-check-box-modal-item-${index}`}>
@@ -806,7 +814,7 @@ const RentalMain = () => {
                                             </HeaderDivIcon2>
                                         );
                                     })}
-                                </div>
+                                </CheckContainer>
                             </ModalFlexTitle>
                         </ModalSection>
                     }
@@ -848,15 +856,15 @@ const RentalMain = () => {
                         <ModalSection>
                             <ModalTitle>바닥 종류</ModalTitle>
                             <ModalFlexTitle>
-                                <div className="flex flex-col w-full gap-1">
+                                <CheckContainer>
                                     {lodash.map(TemporaryData.Rental.floor, (e, index) => {
                                         return (
-                                            <div className="flex" key={`publish-rent-page-size-check-box-modal-item-${index}`}>
+                                            <HeaderDivIcon2 key={`publish-rent-page-size-check-box-modal-item-${index}`}>
                                                 <OraCheckBox Checked={false} HandleOnChange={() => console.debug('check')} LavelName={e} />
-                                            </div>
+                                            </HeaderDivIcon2>
                                         );
                                     })}
-                                </div>
+                                </CheckContainer>
                             </ModalFlexTitle>
                         </ModalSection>
                     }
@@ -897,55 +905,38 @@ const RentalMain = () => {
                     Children={
                         <ModalSection>
                             <ModalTitle>전체 보기</ModalTitle>
-                            <div className="flex flex-col w-full pt-3 overflow-auto h-80">
-                                <div className="flex flex-col w-full gap-1 divide-y scroll-m-0">
-                                    <figure className="relative transition-all duration-300 cursor-pointer">
-                                        <div className="">
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner.jpg`}
-                                                alt="..."
-                                            />
-                                        </div>
-                                    </figure>
-                                    <figure className="relative transition-all duration-300 cursor-pointer">
-                                        <div className="">
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_half.jpg`}
-                                                alt="..."
-                                            />
-                                        </div>
-                                    </figure>
-                                    <figure className="relative transition-all duration-300 cursor-pointer">
-                                        <div className="">
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_goal.jpg`}
-                                                alt="..."
-                                            />
-                                        </div>
-                                    </figure>
-                                    <figure className="relative transition-all duration-300 cursor-pointer">
-                                        <div className="">
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/DSC07845_l4piKiA.jpg`}
-                                                alt="..."
-                                            />
-                                        </div>
-                                    </figure>
-                                    <figure className="relative transition-all duration-300 cursor-pointer">
-                                        <div className="">
-                                            <img
-                                                className="rounded-2xl"
+                            <RentalImgSection>
+                                <RentalImgContainer>
+                                    <RentalImgWrapper>
+                                        <MainEmptyDiv>
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner.jpg`} alt="..." />
+                                        </MainEmptyDiv>
+                                    </RentalImgWrapper>
+                                    <RentalImgWrapper>
+                                        <MainEmptyDiv>
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_half.jpg`} alt="..." />
+                                        </MainEmptyDiv>
+                                    </RentalImgWrapper>
+                                    <RentalImgWrapper>
+                                        <MainEmptyDiv>
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_goal.jpg`} alt="..." />
+                                        </MainEmptyDiv>
+                                    </RentalImgWrapper>
+                                    <RentalImgWrapper>
+                                        <MainEmptyDiv>
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/DSC07845_l4piKiA.jpg`} alt="..." />
+                                        </MainEmptyDiv>
+                                    </RentalImgWrapper>
+                                    <RentalImgWrapper>
+                                        <MainEmptyDiv>
+                                            <MainImg
                                                 src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner2.jpg`}
                                                 alt="..."
                                             />
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
+                                        </MainEmptyDiv>
+                                    </RentalImgWrapper>
+                                </RentalImgContainer>
+                            </RentalImgSection>
                         </ModalSection>
                     }
                     Buttons={

@@ -50,8 +50,7 @@ const {
     MatchButtonWrapper,
 } = MatchStyles.MatchLayoutStyle.MatchListSection;
 
-const { ModalSection, ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } =
-    LayoutStyles.ModalLayout.ModalChildren;
+const { ModalSection, ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } = LayoutStyles.ModalLayout;
 
 const StyledSlider = styled(Slider)`
     width: 100%;
