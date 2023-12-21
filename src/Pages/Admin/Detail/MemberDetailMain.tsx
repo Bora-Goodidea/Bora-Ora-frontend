@@ -19,6 +19,9 @@ const {
     DetailBodyProfileEditFile,
     DetailBodyInfoContainer,
     DetailBodyInfoContainer1Col,
+    DetailButtonsContainer,
+    DetailButtonsWrapper,
+    DetailButton,
 } = AdminStyles.ContentSectionMemberDetailStyle;
 
 const MemberDetailMain = () => {
@@ -131,6 +134,14 @@ const MemberDetailMain = () => {
                                 <MemberDetailInfoItem title="포인트" type="number" isReadOnly={true} placeholder="12,973" />
                                 <MemberDetailInfoItem title="마지막 로그인" type="text" isReadOnly={true} placeholder="2023.12.17 08:00" />
                             </DetailBodyInfoContainer>
+                            <DetailButtonsContainer>
+                                <DetailButtonsWrapper>
+                                    <DetailButton>취소</DetailButton>
+                                </DetailButtonsWrapper>
+                                <DetailButtonsWrapper>
+                                    <DetailButton>저장</DetailButton>
+                                </DetailButtonsWrapper>
+                            </DetailButtonsContainer>
                         </DetailBodyContentContainer>
                     </DetailBodyContentWrapper>
                 </DetailBodyWrapper>
