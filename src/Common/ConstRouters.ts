@@ -126,6 +126,12 @@ export default {
             pathName: `/list`,
             Component: React.lazy(() => import('@Page/Rental/RentalPage')),
         },
+        {
+            page: `rental-detail`,
+            name: `구장상세`,
+            pathName: `/detail`,
+            Component: React.lazy(() => import('@Page/Rental/Detail/RentalDetailPage')),
+        },
     ],
     Match: [
         {
