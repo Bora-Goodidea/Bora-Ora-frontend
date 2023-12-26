@@ -11,7 +11,7 @@ import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import Footer from '@Page/Publish/Footer';
 
 const { DefalutMainContainer, SectionContainer, SectionWrapper } = LayoutStyles.DefalutLayoutStyle;
-const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderDivIcon2, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
+const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton, Span, FilteringSvg4 } = LayoutStyles.FilteringLayoutStyle;
 const { MainSectionContainer, MainSlideFigure, MainEmptyDiv, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
 const { MainContainer } = MatchStyles.MatchLayoutStyle;
@@ -26,7 +26,7 @@ const {
     DateIndexZeroDiv,
     TextLargeWhite,
     TextSmallWhite,
-    DateWeeZeroDiv,
+    DateWeekZeroDiv,
     TextLargeRed,
     TextSmallRed,
     TextLargeBlue,
@@ -184,9 +184,9 @@ const MatchMain = () => {
                                 return (
                                     <HeaderDivIcon key={`publish-main-page-explore-category-social-match-item-${index}`}>
                                         <HeaderDivIcon1>
-                                            <HeaderDivIcon2>
+                                            <HeaderIcon>
                                                 <img src={`${e.icon}`} alt={`${e.name}`} />
-                                            </HeaderDivIcon2>
+                                            </HeaderIcon>
                                             <HeaderPIcon>{`${e.name}`}</HeaderPIcon>
                                         </HeaderDivIcon1>
                                     </HeaderDivIcon>
@@ -194,9 +194,9 @@ const MatchMain = () => {
                             })}
                             <HeaderDivIcon>
                                 <HeaderDivIcon1>
-                                    <HeaderDivIcon2>
+                                    <HeaderIcon>
                                         <HeaderPIcon></HeaderPIcon>
-                                    </HeaderDivIcon2>
+                                    </HeaderIcon>
                                 </HeaderDivIcon1>
                             </HeaderDivIcon>
                         </HeaderIconContainer>
@@ -244,24 +244,24 @@ const MatchMain = () => {
                                                         );
                                                     } else if (dayOfWeek === 0) {
                                                         return (
-                                                            <DateWeeZeroDiv>
+                                                            <DateWeekZeroDiv>
                                                                 <TextLargeRed>{e + 1}</TextLargeRed>
                                                                 <TextSmallRed>{weekString[dayOfWeek]}</TextSmallRed>
-                                                            </DateWeeZeroDiv>
+                                                            </DateWeekZeroDiv>
                                                         );
                                                     } else if (dayOfWeek === 6) {
                                                         return (
-                                                            <DateWeeZeroDiv>
+                                                            <DateWeekZeroDiv>
                                                                 <TextLargeBlue>{e + 1}</TextLargeBlue>
                                                                 <TextSmallBlue>{weekString[dayOfWeek]}</TextSmallBlue>
-                                                            </DateWeeZeroDiv>
+                                                            </DateWeekZeroDiv>
                                                         );
                                                     } else {
                                                         return (
-                                                            <DateWeeZeroDiv>
+                                                            <DateWeekZeroDiv>
                                                                 <TextLarge>{e + 1}</TextLarge>
                                                                 <TextSmall>{weekString[dayOfWeek]}</TextSmall>
-                                                            </DateWeeZeroDiv>
+                                                            </DateWeekZeroDiv>
                                                         );
                                                     }
                                                 })()}

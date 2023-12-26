@@ -17,7 +17,7 @@ export default {
             DateIndexZeroDiv: tw.div`flex flex-col-reverse w-full items-center justify-center rounded-full bg-blue-400 py-2`,
             TextLargeWhite: tw.div`text-lg text-white`,
             TextSmallWhite: tw.div`text-sm text-white`,
-            DateWeeZeroDiv: tw.div`flex flex-col-reverse w-full items-center justify-center rounded-full py-2`,
+            DateWeekZeroDiv: tw.div`flex flex-col-reverse w-full items-center justify-center rounded-full py-2`,
             TextLargeRed: tw.div`text-lg text-red-700`,
             TextSmallRed: tw.div`text-sm text-red-700`,
             TextLargeBlue: tw.div`text-lg text-blue-700`,

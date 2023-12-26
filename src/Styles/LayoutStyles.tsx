@@ -9,6 +9,9 @@ export default {
         PrepareButton: tw.button`bg-white text-sm text-blue-600 py-1 p-3 rounded-full border border-blue-600 inline-flex items-center`,
         ItemCenter: tw.div`flex flex-col w-full items-center justify-center`,
         TextXs: tw.span`text-xs`,
+        ContentsSection: tw.div`flex flex-col w-full space-y-2`,
+        ContentsTitle: tw.span`text-sm font-semibold`,
+        ContentsWrapper: tw.div`flex w-full`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
@@ -16,7 +19,7 @@ export default {
         HeaderTitle: tw.div`flex text-lg font-bold`,
         HeaderClickTitle: tw.div`flex text-lg text-gray-500`,
         HeaderIconContainer: tw.div`flex w-full justify-between pt-2`,
-        HeaderDivIcon2: tw.div`flex`,
+        HeaderIcon: tw.div`flex`,
     },
     MainLayoutStyle: {
         MainSectionContainer: tw.section`flex w-full justify-center bg-gray-100 p-5 border-b-2`,
