@@ -12,20 +12,67 @@ import LayoutStyles from '@Style/LayoutStyles';
 import RentalStyles from '@Style/RentalStyles';
 import MatchStyles from '@Style/MatchStyles';
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper, ContentsSection, ContentsTitle, ContentsWrapper, TextXs } =
-    LayoutStyles.DefalutLayoutStyle;
+const {
+    DefalutMainContainer,
+    SectionContainer,
+    SectionWrapper,
+    ContentsSection,
+    ContentsTitle,
+    ContentsWrapper,
+    TextXs,
+    Li,
+    BoldLargeText,
+    Grid,
+    SmallText,
+    SmallBorderText,
+    SmallBorderRText,
+    SubInfoSection,
+} = LayoutStyles.DefalutLayoutStyle;
 
-const { MainEmptyDiv, MainP } = LayoutStyles.MainLayoutStyle;
+const {
+    MainEmptyDiv,
+    MainP,
+    InfoSection,
+    ItemSection,
+    InfoWrapper,
+    SubInfo,
+    TextSmBlack,
+    SubContent,
+    TextSmGray,
+    ItemContainer,
+    ReserWrapper,
+    ReserSection,
+    BtnBlue,
+    BtnGray,
+    Img,
+    SubTitle,
+    MainImg,
+} = LayoutStyles.MainLayoutStyle;
 const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
-const { ModalFlexTitle } = LayoutStyles.ModalLayout;
+const { ModalFlexTitle, ModalSection, ModalTitle } = LayoutStyles.ModalLayout;
+const { FilteringSvg5, FilteringSvg6 } = LayoutStyles.FilteringLayoutStyle;
 
-const { RentalImgWrapper } = RentalStyles.RentalLayoutStyle;
+const {
+    RentalImgWrapper,
+    RentalSection,
+    RentalFigure,
+    RentalImg,
+    RentalFigcaption,
+    RentalContainer,
+    CheckTimeBlue,
+    CheckTimeGray,
+    RentalTimeSection,
+    RentalPt3,
+    RentalImgSection,
+    RentalImgContainer,
+} = RentalStyles.RentalLayoutStyle;
 const {
     MainSection,
     DetailImg,
     Figcaption,
     TitleDescSection,
     TitleSection,
+    DetailSubTitle,
     TextGray,
     BgBlueText,
     BgBlueSection,
@@ -35,6 +82,22 @@ const {
     DetailSectionSticky,
     DetailWrapper4,
     DetailWrapper6,
+    DetailTextSmGray,
+    RuleSection,
+    RuleItemSection,
+    RuleIconGray,
+    RuleIconBlack,
+    TextGrayLine,
+    RuleSubInfoSection,
+    RuleSubIconSection,
+    RuleSubIconWrapper,
+    RuleExtraInfoSection,
+    RuleExtraInfoWrapper,
+    RuleExtraTitle,
+    RuleExtraInfoList,
+    UnderlineText,
+    RuleTextSmall,
+    DashText,
 } = RentalStyles.Detail;
 
 const {
@@ -119,24 +182,24 @@ const RentalDetailMain = () => {
         slidesToScroll: 1,
         prevArrow: (
             <PrevButton>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray" className="w-6 h-6">
+                <FilteringSvg6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
-                </svg>
+                </FilteringSvg6>
             </PrevButton>
         ),
         nextArrow: (
             <NextButton>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray" className="w-6 h-6">
+                <FilteringSvg6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
-                </svg>
+                </FilteringSvg6>
             </NextButton>
         ),
     };
@@ -292,29 +355,24 @@ const RentalDetailMain = () => {
                                     }),
                                 };
                                 return (
-                                    <div className="flex w-full flex-col space-y-2 cursor-pointer">
-                                        <div className="flex flex-nowrap w-full items-center justify-between">
-                                            <div className="flex flex-col">
-                                                <div className="flex w-full items-center gap-1">
+                                    <RentalSection>
+                                        <InfoSection>
+                                            <InfoWrapper>
+                                                <SubInfo>
                                                     {lodash.map(info.product_option, (po, indexPo) => {
                                                         return (
-                                                            <span
-                                                                key={`publish-rental-page-rental-product-option-item-${indexPo}`}
-                                                                className="text-sm text-black">
+                                                            <TextSmBlack key={`publish-rental-page-rental-product-option-item-${indexPo}`}>
                                                                 {po}
-                                                            </span>
+                                                            </TextSmBlack>
                                                         );
                                                     })}
-                                                </div>
-                                                <div className="flex w-full items-center">
-                                                    <span className="text-sm text-gray-400">{`${addComma(info.price)}원~${addComma(
-                                                        info.price
-                                                    )}원/시간`}</span>
-                                                </div>
-                                            </div>
+                                                </SubInfo>
+                                                <SubContent>
+                                                    <TextSmGray>{`${addComma(info.price)}원~${addComma(info.price)}원/시간`}</TextSmGray>
+                                                </SubContent>
+                                            </InfoWrapper>
                                             <HeaderIcon>
-                                                <figure
-                                                    className="relative transition-all duration-300 cursor-pointer z-10"
+                                                <RentalFigure
                                                     onClick={() =>
                                                         setPageState(prevState => ({
                                                             ...prevState,
@@ -325,29 +383,28 @@ const RentalDetailMain = () => {
                                                         }))
                                                     }>
                                                     <HeaderIcon>
-                                                        <img src={info.images[0]} alt="..." className="w-24 rounded-lg" />
+                                                        <RentalImg src={info.images[0]} alt="..." />
                                                     </HeaderIcon>
-                                                    <figcaption className="flex absolute bottom-1 right-1">
-                                                        <svg
+                                                    <RentalFigcaption>
+                                                        <FilteringSvg5
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             fill="none"
                                                             viewBox="0 0 24 24"
                                                             strokeWidth={1.5}
-                                                            stroke="currentColor"
-                                                            className="w-5 h-5">
+                                                            stroke="currentColor">
                                                             <path
                                                                 strokeLinecap="round"
                                                                 strokeLinejoin="round"
                                                                 d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
                                                             />
-                                                        </svg>
-                                                    </figcaption>
-                                                </figure>
+                                                        </FilteringSvg5>
+                                                    </RentalFigcaption>
+                                                </RentalFigure>
                                             </HeaderIcon>
-                                        </div>
-                                        <div className="flex flex-nowrap w-full items-center">
-                                            <div className="flex flex-col w-full">
-                                                <div className="flex flex-nowrap w-full justify-center gap-1">
+                                        </InfoSection>
+                                        <ItemSection>
+                                            <ItemContainer>
+                                                <RentalContainer>
                                                     {lodash.map(rentalTimeArray, (e, index) => {
                                                         // TODO: 현재 예약 시간 처리를 해야 하는데 좀 복잡하네?? 추후 의논으로 해결 필요.
                                                         let checkTime = false;
@@ -358,44 +415,42 @@ const RentalDetailMain = () => {
                                                         });
                                                         if (checkTime) {
                                                             return (
-                                                                <div
-                                                                    key={`publish-rental-page-rental-time-item-${index}`}
-                                                                    className="border border-blue-400 w-1/2"></div>
+                                                                <CheckTimeBlue
+                                                                    key={`publish-rental-page-rental-time-item-${index}`}></CheckTimeBlue>
                                                             );
                                                         } else {
                                                             return (
-                                                                <div
-                                                                    key={`publish-rental-page-rental-time-item-${index}`}
-                                                                    className="border border-gray-200 w-1/2"></div>
+                                                                <CheckTimeGray
+                                                                    key={`publish-rental-page-rental-time-item-${index}`}></CheckTimeGray>
                                                             );
                                                         }
                                                     })}
-                                                </div>
-                                                <div className="flex flex-nowrap w-full pt-1">
-                                                    <div className="flex w-1/4 text-xs text-gray-400">6시</div>
-                                                    <div className="flex w-1/4 text-xs text-gray-400">12시</div>
-                                                    <div className="flex w-1/4 text-xs text-gray-400">18시</div>
-                                                    <div className="flex w-1/4 text-xs text-gray-400">24시</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="flex w-full pt-3">
-                                            <div className="flex flex-nowrap w-full justify-end gap-2 border-b py-3 bg-white">
-                                                <div className="flex flex-nowrap items-center justify-center gap-2">
-                                                    <div className="flex h-2/3 w-5 bg-blue-500 rounded-sm"></div>
+                                                </RentalContainer>
+                                                <RentalTimeSection>
+                                                    <DetailTextSmGray>6시</DetailTextSmGray>
+                                                    <DetailTextSmGray>12시</DetailTextSmGray>
+                                                    <DetailTextSmGray>18시</DetailTextSmGray>
+                                                    <DetailTextSmGray>24시</DetailTextSmGray>
+                                                </RentalTimeSection>
+                                            </ItemContainer>
+                                        </ItemSection>
+                                        <RentalPt3>
+                                            <ReserWrapper>
+                                                <ReserSection>
+                                                    <BtnBlue></BtnBlue>
                                                     <HeaderIcon>
-                                                        <span className="text-xs text-gray-400">예약 가능</span>
+                                                        <TextGray>예약 가능</TextGray>
                                                     </HeaderIcon>
-                                                </div>
-                                                <div className="flex flex-nowrap items-center justify-center gap-2">
-                                                    <div className="flex h-2/3 w-5 bg-gray-500 rounded-sm"></div>
+                                                </ReserSection>
+                                                <ReserSection>
+                                                    <BtnGray></BtnGray>
                                                     <HeaderIcon>
-                                                        <span className="text-xs text-gray-400">예약 불가</span>
+                                                        <TextGray>예약 불가</TextGray>
                                                     </HeaderIcon>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                </ReserSection>
+                                            </ReserWrapper>
+                                        </RentalPt3>
+                                    </RentalSection>
                                 );
                             })()}
                         </ContentsWrapper>
@@ -410,98 +465,98 @@ const RentalDetailMain = () => {
                             <TextSmall>시설 및 이용 규칙</TextSmall>
                         </ContentsWrapper>
                         <ContentsWrapper>
-                            <div className="grid grid-cols-2 w-full gap-4">
-                                <div className="flex flex-nowrap items-center gap-2">
-                                    <div className="flex items-center object-center justify-center w-8 opacity-40">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shower.svg"></img>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <span className="text-xs text-gray-400 line-through">샤워실</span>
-                                    </div>
-                                </div>
-                                <div className="flex flex-nowrap items-center gap-2">
-                                    <div className="flex items-center object-center justify-center w-8">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_park.svg" alt="..." />
-                                    </div>
-                                    <div className="flex items-center">
+                            <RuleSection>
+                                <RuleItemSection>
+                                    <RuleIconGray>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shower.svg" />
+                                    </RuleIconGray>
+                                    <SubTitle>
+                                        <TextGrayLine>샤워실</TextGrayLine>
+                                    </SubTitle>
+                                </RuleItemSection>
+                                <RuleItemSection>
+                                    <RuleIconBlack>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_park.svg" alt="..." />
+                                    </RuleIconBlack>
+                                    <SubTitle>
                                         <TextXs>무료주차</TextXs>
-                                    </div>
-                                </div>
-                                <div className="flex flex-nowrap items-center gap-2">
-                                    <div className="flex items-center object-center justify-center w-8">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
-                                    </div>
-                                    <div className="flex items-center">
+                                    </SubTitle>
+                                </RuleItemSection>
+                                <RuleItemSection>
+                                    <RuleIconBlack>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
+                                    </RuleIconBlack>
+                                    <SubTitle>
                                         <TextXs>풋살화 대여</TextXs>
-                                    </div>
-                                </div>
-                                <div className="flex flex-nowrap items-center gap-2">
-                                    <div className="flex items-center object-center justify-center w-8">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_beverage.svg" alt="..." />
-                                    </div>
-                                    <div className="flex items-center">
+                                    </SubTitle>
+                                </RuleItemSection>
+                                <RuleItemSection>
+                                    <RuleIconBlack>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_beverage.svg" alt="..." />
+                                    </RuleIconBlack>
+                                    <SubTitle>
                                         <TextXs>음료 판매</TextXs>
-                                    </div>
-                                </div>
-                                <div className="flex flex-nowrap items-center gap-2">
-                                    <div className="flex items-center object-center justify-center w-8">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_toilet.svg" alt="..." />
-                                    </div>
-                                    <div className="flex items-center">
+                                    </SubTitle>
+                                </RuleItemSection>
+                                <RuleItemSection>
+                                    <RuleIconBlack>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_toilet.svg" alt="..." />
+                                    </RuleIconBlack>
+                                    <SubTitle>
                                         <TextXs>남녀 구분</TextXs>
-                                    </div>
-                                </div>
-                            </div>
+                                    </SubTitle>
+                                </RuleItemSection>
+                            </RuleSection>
                         </ContentsWrapper>
                         <ContentsWrapper>
-                            <div className="flex flex-col w-full rounded-lg space-y-4 bg-gray-50 py-2 px-2">
+                            <RuleSubInfoSection>
                                 <ContentsWrapper>
                                     <TextXs>최근 3개월 이 구장을 방문한 플래버들이 일해요</TextXs>
                                 </ContentsWrapper>
-                                <div className="flex flex-col w-full gap-2">
-                                    <div className="flex flex-nowrap w-full gap-2">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_grass.svg" />
+                                <RuleSubIconSection>
+                                    <RuleSubIconWrapper>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_grass.svg" />
                                         <TextXs>잔디 상태가 좋아요</TextXs>
-                                    </div>
-                                    <div className="flex flex-nowrap w-full gap-2">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_correct.svg" />
+                                    </RuleSubIconWrapper>
+                                    <RuleSubIconWrapper>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_correct.svg" />
                                         <TextXs>시설 정보가 정확해요</TextXs>
-                                    </div>
-                                    <div className="flex flex-nowrap w-full gap-2">
-                                        <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_clean.svg" />
+                                    </RuleSubIconWrapper>
+                                    <RuleSubIconWrapper>
+                                        <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_stadium_clean.svg" />
                                         <TextXs>화장실이 깨끗해요</TextXs>
-                                    </div>
-                                </div>
-                            </div>
+                                    </RuleSubIconWrapper>
+                                </RuleSubIconSection>
+                            </RuleSubInfoSection>
                         </ContentsWrapper>
                         <ContentsWrapper>
-                            <div className="flex flex-col w-full space-y-4">
-                                <div className="w-full space-y-2 py-1">
-                                    <div className="mb-2 text-sm font-semibold">주차</div>
-                                    <ul className="max-w-md space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                        <li>At least 10 characters (and up to 100 characters)</li>
-                                        <li>At least one lowercase character</li>
-                                        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
-                                    </ul>
-                                </div>
-                                <div className="w-full space-y-2 py-1">
-                                    <div className="mb-2 text-sm font-semibold">특이사항</div>
-                                    <ul className="space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                        <li>샤워실 이용 금지 / 공, 조끼 대여 불가 (코로나 확산 방지 차원 / 별도의 안내 시 까지)</li>
-                                        <li>풋살화 2시간 6,000원 유료 대여(우천시 대여 불가)</li>
-                                        <li>22:30 이전 현금,카드,계좌이체 // 22:30 이후 현금,계좌이체만 가능</li>
-                                    </ul>
-                                </div>
-                                <div className="w-full space-y-2 py-1">
-                                    <div className="mb-2 text-sm font-semibold">꼭 지켜주세요</div>
-                                    <ul className="space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                        <li>고성방가 및 휘슬 사용 금지 (소음 민원)</li>
-                                        <li>민원 반복 발생 시 퇴장 조치할 수 있음</li>
-                                        <li>흡연은 지정된 장소에서만 허용</li>
-                                        <li>적발 시 추후 대관 이용 불이익</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <RuleExtraInfoSection>
+                                <RuleExtraInfoWrapper>
+                                    <RuleExtraTitle>주차</RuleExtraTitle>
+                                    <RuleExtraInfoList>
+                                        <Li>At least 10 characters (and up to 100 characters)</Li>
+                                        <Li>At least one lowercase character</Li>
+                                        <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
+                                    </RuleExtraInfoList>
+                                </RuleExtraInfoWrapper>
+                                <RuleExtraInfoWrapper>
+                                    <RuleExtraTitle>특이사항</RuleExtraTitle>
+                                    <RuleExtraInfoList>
+                                        <Li>샤워실 이용 금지 / 공, 조끼 대여 불가 (코로나 확산 방지 차원 / 별도의 안내 시 까지)</Li>
+                                        <Li>풋살화 2시간 6,000원 유료 대여(우천시 대여 불가)</Li>
+                                        <Li>22:30 이전 현금,카드,계좌이체 // 22:30 이후 현금,계좌이체만 가능</Li>
+                                    </RuleExtraInfoList>
+                                </RuleExtraInfoWrapper>
+                                <RuleExtraInfoWrapper>
+                                    <RuleExtraTitle>꼭 지켜주세요</RuleExtraTitle>
+                                    <RuleExtraInfoList>
+                                        <Li>고성방가 및 휘슬 사용 금지 (소음 민원)</Li>
+                                        <Li>민원 반복 발생 시 퇴장 조치할 수 있음</Li>
+                                        <Li>흡연은 지정된 장소에서만 허용</Li>
+                                        <Li>적발 시 추후 대관 이용 불이익</Li>
+                                    </RuleExtraInfoList>
+                                </RuleExtraInfoWrapper>
+                            </RuleExtraInfoSection>
                         </ContentsWrapper>
                         <ModalFlexTitle>
                             <BlueLine></BlueLine>
@@ -514,12 +569,12 @@ const RentalDetailMain = () => {
                             <TextSmall>위치</TextSmall>
                         </ContentsWrapper>
                         <ContentsWrapper>
-                            <img src="http://psmever.iptime.org:8062/sample-image/map-1.png" alt="..." />
+                            <Img src="http://psmever.iptime.org:8062/sample-image/map-1.png" alt="..." />
                         </ContentsWrapper>
-                        <div className="flex flex-nowrap w-full gap-3">
+                        <DetailSubTitle>
                             <TextXs>서울 은평구 통일로 1050</TextXs>
-                            <span className="text-xs cursor-pointer underline">주소 복사</span>
-                        </div>
+                            <UnderlineText>주소 복사</UnderlineText>
+                        </DetailSubTitle>
                         <ModalFlexTitle>
                             <BlueLine></BlueLine>
                         </ModalFlexTitle>
@@ -528,56 +583,56 @@ const RentalDetailMain = () => {
                 <DetailSectionSticky>
                     <DetailWrapper6>
                         <ContentsWrapper>
-                            <span className="text-lg font-semibold">예약 취소 및 환불 규정</span>
+                            <BoldLargeText>예약 취소 및 환불 규정</BoldLargeText>
                         </ContentsWrapper>
                         <ContentsSection>
                             <TextSmall>일반</TextSmall>
                             <ContentsWrapper>
-                                <div className="grid grid-cols-2 w-full border rounded-lg border-gray-400">
-                                    <div className="flex text-xs border-b border-r border-gray-400 px-2 py-2">7일 전</div>
-                                    <div className="flex text-xs border-b border-gray-400 px-2 py-2">100% 환불</div>
-                                    <div className="flex text-xs border-b border-r border-gray-400 px-2 py-2">5일 전</div>
-                                    <div className="flex text-xs border-b border-gray-400 px-2 py-2">80% 환불</div>
-                                    <div className="flex text-xs border-b border-r border-gray-400 px-2 py-2">3일 전</div>
-                                    <div className="flex text-xs border-b border-gray-400 px-2 py-2">50% 환불</div>
-                                    <div className="flex text-xs border-r border-gray-400 px-2 py-2">2일 전 ~ 예약 당일</div>
-                                    <div className="flex text-xs px-2 py-2">환불 불가</div>
-                                </div>
+                                <Grid>
+                                    <SmallText>7일 전</SmallText>
+                                    <SmallBorderText>100% 환불</SmallBorderText>
+                                    <SmallText>5일 전</SmallText>
+                                    <SmallBorderText>80% 환불</SmallBorderText>
+                                    <SmallText>3일 전</SmallText>
+                                    <SmallBorderText>50% 환불</SmallBorderText>
+                                    <SmallBorderRText>2일 전 ~ 예약 당일</SmallBorderRText>
+                                    <RuleTextSmall>환불 불가</RuleTextSmall>
+                                </Grid>
                             </ContentsWrapper>
                         </ContentsSection>
-                        <div className="flex flex-col w-full space-y-1">
-                            <div className="mb-2 text-sm font-semibold">강수 시 변경 및 환불 규정</div>
-                            <ul className="space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                <li>
+                        <SubInfoSection>
+                            <RuleExtraTitle>강수 시 변경 및 환불 규정</RuleExtraTitle>
+                            <RuleExtraInfoList>
+                                <Li>
                                     아래 조건에 해당하는 경우, 플래비(홈페이지 우측 하단의 노란색 아이콘)를 통해 문의주시면 확인 후 변경 및
                                     환불을 도와드립니다.
-                                </li>
-                                <li>실내 구장은 강수로 인한 변경 및 환불 가능 조건에 해당하지 않습니다.</li>
-                            </ul>
-                        </div>
-                        <div className="flex flex-col w-full space-y-1">
-                            <div className="mb-2 text-sm font-semibold">변경 규정</div>
-                            <ul className="space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                <li>예약 시작 시간 2시간 전 기상청 날씨누리 해당 주소지를 기준으로 합니다 (확인하러 가기)</li>
-                                <p className="px-5">- 오전 예약의 경우 전일 21시부터 변경 요청 가능</p>
-                                <li>실내 구장은 강수로 인한 변경 및 환불 가능 조건에 해당하지 않습니다.</li>
-                            </ul>
-                        </div>
-                        <div className="flex flex-col w-full space-y-1">
-                            <div className="mb-2 text-sm font-semibold">환불 규정</div>
-                            <ul className="space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                <li>당일 천재지변으로 인해 구장 이용이 불가한 경우, 100% 환불됩니다.</li>
-                                <p className="px-5">- 적용 기준: 호우경보, 대설경보, 태풍주의보, 태풍경보</p>
-                            </ul>
-                        </div>
-                        <div className="flex flex-col w-full space-y-1">
-                            <div className="mb-2 text-sm font-semibold">그 외 취소 기준</div>
-                            <ul className="space-y-1 text-sm text-gray-500 list-disc list-inside">
-                                <li>결제 후 30분 이내 하루 1회에 한해 무료 취소가 가능합니다.</li>
-                                <li>단순 변심에 의한 날짜 변경은 불가합니다.</li>
-                                <li>예약 시간이 지나고 문의하는 경우 변경 및 환불이 불가합니다.</li>
-                            </ul>
-                        </div>
+                                </Li>
+                                <Li>실내 구장은 강수로 인한 변경 및 환불 가능 조건에 해당하지 않습니다.</Li>
+                            </RuleExtraInfoList>
+                        </SubInfoSection>
+                        <SubInfoSection>
+                            <RuleExtraTitle>변경 규정</RuleExtraTitle>
+                            <RuleExtraInfoList>
+                                <Li>예약 시작 시간 2시간 전 기상청 날씨누리 해당 주소지를 기준으로 합니다 (확인하러 가기)</Li>
+                                <DashText>- 오전 예약의 경우 전일 21시부터 변경 요청 가능</DashText>
+                                <Li>실내 구장은 강수로 인한 변경 및 환불 가능 조건에 해당하지 않습니다.</Li>
+                            </RuleExtraInfoList>
+                        </SubInfoSection>
+                        <SubInfoSection>
+                            <RuleExtraTitle>환불 규정</RuleExtraTitle>
+                            <RuleExtraInfoList>
+                                <Li>당일 천재지변으로 인해 구장 이용이 불가한 경우, 100% 환불됩니다.</Li>
+                                <DashText>- 적용 기준: 호우경보, 대설경보, 태풍주의보, 태풍경보</DashText>
+                            </RuleExtraInfoList>
+                        </SubInfoSection>
+                        <SubInfoSection>
+                            <RuleExtraTitle>그 외 취소 기준</RuleExtraTitle>
+                            <RuleExtraInfoList>
+                                <Li>결제 후 30분 이내 하루 1회에 한해 무료 취소가 가능합니다.</Li>
+                                <Li>단순 변심에 의한 날짜 변경은 불가합니다.</Li>
+                                <Li>예약 시간이 지나고 문의하는 경우 변경 및 환불이 불가합니다.</Li>
+                            </RuleExtraInfoList>
+                        </SubInfoSection>
                     </DetailWrapper6>
                 </DetailSectionSticky>
             </MainSection>
@@ -585,58 +640,41 @@ const RentalDetailMain = () => {
             {pageState.modal.image && (
                 <OraModal
                     Children={
-                        <div className="w-full">
-                            <div className="w-full text-sm pl-5">전체 보기</div>
-                            <div className="flex flex-col w-full pt-3 overflow-auto h-80">
-                                <div className="flex flex-col w-full gap-1 divide-y scroll-m-0">
+                        <ModalSection>
+                            <ModalTitle>전체 보기</ModalTitle>
+                            <RentalImgSection>
+                                <RentalImgContainer>
                                     <RentalImgWrapper>
                                         <MainEmptyDiv>
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner.jpg`}
-                                                alt="..."
-                                            />
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner.jpg`} alt="..." />
                                         </MainEmptyDiv>
                                     </RentalImgWrapper>
                                     <RentalImgWrapper>
                                         <MainEmptyDiv>
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_half.jpg`}
-                                                alt="..."
-                                            />
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_half.jpg`} alt="..." />
                                         </MainEmptyDiv>
                                     </RentalImgWrapper>
                                     <RentalImgWrapper>
                                         <MainEmptyDiv>
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_goal.jpg`}
-                                                alt="..."
-                                            />
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_goal.jpg`} alt="..." />
                                         </MainEmptyDiv>
                                     </RentalImgWrapper>
                                     <RentalImgWrapper>
                                         <MainEmptyDiv>
-                                            <img
-                                                className="rounded-2xl"
-                                                src={`https://d31wz4d3hgve8q.cloudfront.net/media/DSC07845_l4piKiA.jpg`}
-                                                alt="..."
-                                            />
+                                            <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/media/DSC07845_l4piKiA.jpg`} alt="..." />
                                         </MainEmptyDiv>
                                     </RentalImgWrapper>
                                     <RentalImgWrapper>
                                         <MainEmptyDiv>
-                                            <img
-                                                className="rounded-2xl"
+                                            <MainImg
                                                 src={`https://d31wz4d3hgve8q.cloudfront.net/media/Eunpyeong_A_corner2.jpg`}
                                                 alt="..."
                                             />
                                         </MainEmptyDiv>
                                     </RentalImgWrapper>
-                                </div>
-                            </div>
-                        </div>
+                                </RentalImgContainer>
+                            </RentalImgSection>
+                        </ModalSection>
                     }
                     Buttons={
                         <OraButton
