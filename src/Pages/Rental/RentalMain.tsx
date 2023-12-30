@@ -12,15 +12,23 @@ import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import MatchStyles from '@Style/MatchStyles';
 import RentalStyles from '@Style/RentalStyles';
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper, SectionDiv, PrepareButton, ItemCenter, TextXs } =
-    LayoutStyles.DefalutLayoutStyle;
+const {
+    DefalutMainContainer,
+    SectionContainer,
+    SectionWrapper,
+    SectionDiv,
+    PrepareButton,
+    ItemCenter,
+    TextXs,
+    MainContainer,
+    MainEmptyDiv,
+    Span,
+} = LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
-const { FilteringButton, FilteringSvg4, FilteringSvg5, FilteringSvg6, Span } = LayoutStyles.FilteringLayoutStyle;
+const { FilteringButton, FilteringSvg4, FilteringSvg5, FilteringSvg6 } = LayoutStyles.FilteringLayoutStyle;
 const {
     MainSectionContainer,
-    MainContainer,
     MainSlideFigure,
-    MainEmptyDiv,
     MainImg,
     MainFigcaption,
     MainP,

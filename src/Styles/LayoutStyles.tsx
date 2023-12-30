@@ -19,6 +19,9 @@ export default {
         SmallBorderText: tw.div`flex text-xs border-b border-gray-400 px-2 py-2`,
         SmallBorderRText: tw.div`flex text-xs border-r border-gray-400 px-2 py-2`,
         SubInfoSection: tw.div`flex flex-col w-full space-y-1`,
+        MainContainer: tw.main`flex-1 w-full`,
+        MainEmptyDiv: tw.div``,
+        Span: tw.span``,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
@@ -32,7 +35,6 @@ export default {
         MainSectionContainer: tw.section`flex w-full justify-center bg-gray-100 p-5 border-b-2`,
         MainContainer: tw.main`flex-1 w-full space-y-4`,
         MainSlideFigure: tw.figure`relative transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0`,
-        MainEmptyDiv: tw.div``,
         MainImg: tw.img`rounded-2xl`,
         Img: tw.img``,
         MainFigcaption: tw.figcaption`flex absolute bottom-8 right-10 rounded-full w-24 items-center justify-center backdrop-blur-sm bg-white/30 cursor-pointer`,
@@ -59,7 +61,6 @@ export default {
         FilteringSvg4: tw.svg`w-4 h-4`,
         FilteringSvg5: tw.svg`w-5 h-5`,
         FilteringSvg6: tw.svg`w-6 h-6`,
-        Span: tw.span``,
     },
     ModalLayout: {
         ModalSection: tw.div`w-full`,
@@ -71,5 +72,6 @@ export default {
         ModalItem: tw.p`text-xs py-3`,
         ModalListSection: tw.div`flex flex-nowrap w-full`,
         ModalListTitle: tw.div`w-full text-xs pl-5`,
+        ModalWrapper: tw.div`flex w-full items-center justify-center`,
     },
 };

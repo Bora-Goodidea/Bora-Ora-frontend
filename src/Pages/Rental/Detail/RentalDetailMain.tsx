@@ -27,10 +27,10 @@ const {
     SmallBorderText,
     SmallBorderRText,
     SubInfoSection,
+    MainEmptyDiv,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
-    MainEmptyDiv,
     MainP,
     InfoSection,
     ItemSection,

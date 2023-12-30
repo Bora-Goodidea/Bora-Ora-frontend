@@ -10,11 +10,10 @@ import styled from '@emotion/styled';
 import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import Footer from '@Page/Publish/Footer';
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper } = LayoutStyles.DefalutLayoutStyle;
+const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, Span } = LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
-const { FilteringButton, Span, FilteringSvg4 } = LayoutStyles.FilteringLayoutStyle;
-const { MainSectionContainer, MainSlideFigure, MainEmptyDiv, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
-const { MainContainer } = MatchStyles.MatchLayoutStyle;
+const { FilteringButton, FilteringSvg4 } = LayoutStyles.FilteringLayoutStyle;
+const { MainSectionContainer, MainSlideFigure, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
 const { HeaderDivIcon, HeaderDivIcon1, HeaderPIcon } = MatchStyles.MatchLayoutStyle.HeaderSection;
 
 const {
