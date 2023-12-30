@@ -73,6 +73,22 @@ const RootRoutes = () => {
                         );
                     })}
                 </Route>
+                <Route>
+                    {lodash.map(ConstRouters.Auth, (element, index) => {
+                        const PageComponent = element.Component;
+                        return (
+                            <Route
+                                key={`root-routers-page-${index}`}
+                                path={`/auth${element.pathName}`}
+                                element={
+                                    <React.Suspense>
+                                        <PageComponent />
+                                    </React.Suspense>
+                                }
+                            />
+                        );
+                    })}
+                </Route>
                 {/*임시 메인 start*/}
                 <Route path={`/`} element={<TemporaryMainPage />} />
                 {/*임시 메인 end*/}

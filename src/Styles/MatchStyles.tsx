@@ -2,7 +2,6 @@ import tw from 'twin.macro';
 
 export default {
     MatchLayoutStyle: {
-        MainContainer: tw.main`flex-1 w-full`,
         HeaderSection: {
             HeaderDivIcon: tw.div`flex cursor-pointer`,
             HeaderDivIcon1: tw.div`flex flex-col items-center py-2`,

@@ -141,4 +141,12 @@ export default {
             Component: React.lazy(() => import('@Page/Match/MatchPage')),
         },
     ],
+    Auth: [
+        {
+            page: `auth-login`,
+            name: `로그인`,
+            pathName: `/login`,
+            Component: React.lazy(() => import('@Page/Auth/LoginPage')),
+        },
+    ],
 };
