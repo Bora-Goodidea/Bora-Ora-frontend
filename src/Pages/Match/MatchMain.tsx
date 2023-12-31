@@ -10,7 +10,8 @@ import styled from '@emotion/styled';
 import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import Footer from '@Page/Publish/Footer';
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, Span } = LayoutStyles.DefalutLayoutStyle;
+const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, MainWrapper } =
+    LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton, FilteringSvg4 } = LayoutStyles.FilteringLayoutStyle;
 const { MainSectionContainer, MainSlideFigure, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
@@ -49,7 +50,7 @@ const {
     MatchButtonWrapper,
 } = MatchStyles.MatchLayoutStyle.MatchListSection;
 
-const { ModalSection, ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } = LayoutStyles.ModalLayout;
+const { ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } = LayoutStyles.ModalLayout;
 
 const StyledSlider = styled(Slider)`
     width: 100%;
@@ -283,7 +284,7 @@ const MatchMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <Span>모든지역</Span>
+                                        <span>모든지역</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -308,12 +309,12 @@ const MatchMain = () => {
                                                 d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
                                             />
                                         </FilteringSvg4>
-                                        <Span>혜택</Span>
+                                        <span>혜택</span>
                                     </FilteringButton>
                                 </FilteringSectionContainer>
                                 <FilteringSectionContainer>
                                     <FilteringButton>
-                                        <Span>마감 가리기</Span>
+                                        <span>마감 가리기</span>
                                     </FilteringButton>
                                 </FilteringSectionContainer>
                                 <FilteringSectionContainer>
@@ -327,7 +328,7 @@ const MatchMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <Span>남자</Span>
+                                        <span>남자</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -349,7 +350,7 @@ const MatchMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <Span>레벨</Span>
+                                        <span>레벨</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -450,7 +451,7 @@ const MatchMain = () => {
             {pageState.modal.area && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>지역</ModalTitle>
                             <ModalContentSection>
                                 {lodash.map(TemporaryData.Main.AreaList, (e, index) => {
@@ -461,7 +462,7 @@ const MatchMain = () => {
                                     );
                                 })}
                             </ModalContentSection>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton
@@ -483,7 +484,7 @@ const MatchMain = () => {
             {pageState.modal.gender && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>성별</ModalTitle>
                             <ModalFlexTitle>
                                 {lodash.map(TemporaryData.Main.GenderList, (e, index) => {
@@ -494,7 +495,7 @@ const MatchMain = () => {
                                     );
                                 })}
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton
@@ -516,7 +517,7 @@ const MatchMain = () => {
             {pageState.modal.level && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>레벨</ModalTitle>
                             <ModalFlexTitle>
                                 {lodash.map(TemporaryData.Main.LevelList, (e, index) => {
@@ -533,7 +534,7 @@ const MatchMain = () => {
                                     );
                                 })}
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton

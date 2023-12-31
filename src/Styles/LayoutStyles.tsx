@@ -21,7 +21,11 @@ export default {
         SubInfoSection: tw.div`flex flex-col w-full space-y-1`,
         MainContainer: tw.main`flex-1 w-full`,
         MainEmptyDiv: tw.div``,
-        Span: tw.span``,
+        MainWrapper: tw.div`w-full`,
+        HalfDivide: tw.div`flex w-1/2`,
+        ThirdDivide: tw.div`flex w-1/3`,
+        Height6Div: tw.div`h-6`,
+        ExtraInfoWrapper: tw.div`flex w-full items-center justify-center`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
@@ -63,7 +67,6 @@ export default {
         FilteringSvg6: tw.svg`w-6 h-6`,
     },
     ModalLayout: {
-        ModalSection: tw.div`w-full`,
         ModalTitle: tw.div`w-full text-sm pl-5`,
         ModalFlexTitle: tw.div`flex flex-col w-full pt-3`,
         ModalContentSection: tw.div`w-full pt-3`,
@@ -72,6 +75,5 @@ export default {
         ModalItem: tw.p`text-xs py-3`,
         ModalListSection: tw.div`flex flex-nowrap w-full`,
         ModalListTitle: tw.div`w-full text-xs pl-5`,
-        ModalWrapper: tw.div`flex w-full items-center justify-center`,
     },
 };

@@ -22,7 +22,7 @@ const {
     TextXs,
     MainContainer,
     MainEmptyDiv,
-    Span,
+    MainWrapper,
 } = LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton, FilteringSvg4, FilteringSvg5, FilteringSvg6 } = LayoutStyles.FilteringLayoutStyle;
@@ -52,7 +52,7 @@ const {
 
 const { MatchListContainer } = MatchStyles.MatchLayoutStyle.MatchListSection;
 
-const { ModalTitle, ModalSection, ModalFlexTitle, ModalListSection, ModalListTitle } = LayoutStyles.ModalLayout;
+const { ModalTitle, ModalFlexTitle, ModalListSection, ModalListTitle } = LayoutStyles.ModalLayout;
 
 const {
     RentalSection,
@@ -181,7 +181,7 @@ const RentalMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <Span>내지역</Span>
+                                        <span>내지역</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -194,7 +194,7 @@ const RentalMain = () => {
                                 </HeaderIcon>
                                 <HeaderIcon>
                                     <PrepareButton onClick={() => alert('준비 중입니다.')}>
-                                        <Span>12월 11일</Span>
+                                        <span>12월 11일</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -216,7 +216,7 @@ const RentalMain = () => {
                                                 },
                                             }));
                                         }}>
-                                        <Span>시간</Span>
+                                        <span>시간</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -238,7 +238,7 @@ const RentalMain = () => {
                                                 },
                                             }))
                                         }>
-                                        <Span>구장 크기</Span>
+                                        <span>구장 크기</span>
                                         <FilteringSvg6
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -260,7 +260,7 @@ const RentalMain = () => {
                                                 },
                                             }))
                                         }>
-                                        <Span>실내외</Span>
+                                        <span>실내외</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -282,7 +282,7 @@ const RentalMain = () => {
                                                 },
                                             }))
                                         }>
-                                        <Span>바닥 종류</Span>
+                                        <span>바닥 종류</span>
                                         <FilteringSvg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -436,7 +436,7 @@ const RentalMain = () => {
                                                                 return (
                                                                     <React.Fragment
                                                                         key={`publish-rental-page-rental-product-option-item-${index}-${indexPo}`}>
-                                                                        <Span>•</Span>
+                                                                        <span>•</span>
                                                                         <TextSmGray>{po}</TextSmGray>
                                                                     </React.Fragment>
                                                                 );
@@ -548,7 +548,7 @@ const RentalMain = () => {
             {pageState.modal.area && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>지역</ModalTitle>
                             <ModalFlexTitle>
                                 <RentalModalSection>
@@ -580,7 +580,7 @@ const RentalMain = () => {
                                     );
                                 })}
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton
@@ -602,7 +602,7 @@ const RentalMain = () => {
             {pageState.modal.areaChange && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>내 지역</ModalTitle>
                             <ModalFlexTitle>
                                 <ModalListSection>
@@ -675,7 +675,7 @@ const RentalMain = () => {
                                     </EditSection>
                                 </ModalListSection>
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton
@@ -698,7 +698,7 @@ const RentalMain = () => {
             {pageState.modal.time && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>시간</ModalTitle>
                             <ModalListTitle>시작시간 기준</ModalListTitle>
                             <ModalFlexTitle>
@@ -724,7 +724,7 @@ const RentalMain = () => {
                                     })}
                                 </BoxItem>
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <>
@@ -761,7 +761,7 @@ const RentalMain = () => {
             {pageState.modal.size && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>구장크기</ModalTitle>
                             <ModalFlexTitle>
                                 <CheckContainer>
@@ -774,7 +774,7 @@ const RentalMain = () => {
                                     })}
                                 </CheckContainer>
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <>
@@ -811,7 +811,7 @@ const RentalMain = () => {
             {pageState.modal.inout && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>실내외</ModalTitle>
                             <ModalFlexTitle>
                                 <CheckContainer>
@@ -824,7 +824,7 @@ const RentalMain = () => {
                                     })}
                                 </CheckContainer>
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <>
@@ -861,7 +861,7 @@ const RentalMain = () => {
             {pageState.modal.floor && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>바닥 종류</ModalTitle>
                             <ModalFlexTitle>
                                 <CheckContainer>
@@ -874,7 +874,7 @@ const RentalMain = () => {
                                     })}
                                 </CheckContainer>
                             </ModalFlexTitle>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <>
@@ -911,7 +911,7 @@ const RentalMain = () => {
             {pageState.modal.image && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>전체 보기</ModalTitle>
                             <RentalImgSection>
                                 <RentalImgContainer>
@@ -945,7 +945,7 @@ const RentalMain = () => {
                                     </RentalImgWrapper>
                                 </RentalImgContainer>
                             </RentalImgSection>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton

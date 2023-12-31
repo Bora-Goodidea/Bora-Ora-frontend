@@ -4,7 +4,7 @@ import TemporaryData from '@Common/TemporaryData';
 import React, { useState } from 'react';
 import { OraButton, OraModal } from '@Elements';
 import LayoutStyles from '@Style/LayoutStyles';
-import LoginStyles from '@Style/LoginStyles';
+import AuthStyles from '@Style/AuthStyles';
 
 const initializeState = {
     modal: {
@@ -12,7 +12,8 @@ const initializeState = {
     },
 };
 
-const { DefalutMainContainer, SectionContainer, MainContainer, MainEmptyDiv, ContentsWrapper, Span } = LayoutStyles.DefalutLayoutStyle;
+const { DefalutMainContainer, SectionContainer, MainContainer, MainEmptyDiv, ContentsWrapper, MainWrapper, ExtraInfoWrapper } =
+    LayoutStyles.DefalutLayoutStyle;
 const {
     LoginImgSection,
     LoginImgWrapper,
@@ -23,10 +24,10 @@ const {
     FigTitle,
     FigName,
     LoginSection,
-    LoginWrapper,
-    LoginContainer,
-    LoginText,
-    LoginSubText,
+    AuthWrapper,
+    AuthContainer,
+    AuthText,
+    AuthBlueText,
     LoginInputSection,
     LoginInput,
     LoginCheckSection,
@@ -45,9 +46,8 @@ const {
     EmailJoinButton,
     JoinModalSection,
     JoinText,
-} = LoginStyles.LoginLayoutStyle;
+} = AuthStyles.LoginLayoutStyle;
 
-const { ModalSection, ModalWrapper } = LayoutStyles.ModalLayout;
 const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
 
 const LoginMain = () => {
@@ -92,12 +92,12 @@ const LoginMain = () => {
                                 </Slider>
                             </LoginImgContainer>
                         </LoginImgWrapper>
-                        <ModalSection>
+                        <MainWrapper>
                             <LoginSection>
-                                <LoginWrapper>
-                                    <LoginContainer>
-                                        <LoginText>풋살 하고 싶을땐</LoginText>
-                                        <LoginSubText>오라 풋볼</LoginSubText>
+                                <AuthWrapper>
+                                    <AuthContainer>
+                                        <AuthText>풋살 하고 싶을땐</AuthText>
+                                        <AuthBlueText>오라 풋볼</AuthBlueText>
                                         <LoginInputSection>
                                             <MainEmptyDiv>
                                                 <LoginInput type="email" placeholder="아이디 또는 이메일" />
@@ -132,8 +132,8 @@ const LoginMain = () => {
                                                 </FindText>
                                             </FindSection>
                                         </LoginInputSection>
-                                    </LoginContainer>
-                                </LoginWrapper>
+                                    </AuthContainer>
+                                </AuthWrapper>
                                 <KaKaoLoginSection>
                                     <KaKaoLoginButton type="submit">
                                         <KaKaoIcon
@@ -148,45 +148,45 @@ const LoginMain = () => {
                                                 d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
                                             />
                                         </KaKaoIcon>
-                                        <Span>카카오 로그인</Span>
+                                        <span>카카오 로그인</span>
                                     </KaKaoLoginButton>
                                 </KaKaoLoginSection>
                             </LoginSection>
-                        </ModalSection>
+                        </MainWrapper>
                     </LoginImgSection>
                 </SectionContainer>
             </MainContainer>
             {pageState.modal.register && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <JoinModalSection>
-                                <ModalWrapper>
+                                <ExtraInfoWrapper>
                                     <HeaderIcon>
                                         <JoinText>오라</JoinText>
                                     </HeaderIcon>
-                                </ModalWrapper>
-                                <ModalWrapper>
+                                </ExtraInfoWrapper>
+                                <ExtraInfoWrapper>
                                     <HeaderIcon>
                                         <FigTitle>회원 가입하고 매치에 참여하세요</FigTitle>
                                     </HeaderIcon>
-                                </ModalWrapper>
-                                <ModalWrapper>
+                                </ExtraInfoWrapper>
+                                <ExtraInfoWrapper>
                                     <ContentsWrapper>
                                         <KaKaoJoinButton type="submit">
                                             <span>카카오 계정으로 가입</span>
                                         </KaKaoJoinButton>
                                     </ContentsWrapper>
-                                </ModalWrapper>
-                                <ModalWrapper>
+                                </ExtraInfoWrapper>
+                                <ExtraInfoWrapper>
                                     <ContentsWrapper>
                                         <EmailJoinButton type="submit">
-                                            <Span>이메일로 가입할래요</Span>
+                                            <span>이메일로 가입할래요</span>
                                         </EmailJoinButton>
                                     </ContentsWrapper>
-                                </ModalWrapper>
+                                </ExtraInfoWrapper>
                             </JoinModalSection>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton
