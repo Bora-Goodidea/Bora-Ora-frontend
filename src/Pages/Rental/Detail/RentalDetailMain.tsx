@@ -28,6 +28,7 @@ const {
     SmallBorderRText,
     SubInfoSection,
     MainEmptyDiv,
+    MainWrapper,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
@@ -49,7 +50,7 @@ const {
     MainImg,
 } = LayoutStyles.MainLayoutStyle;
 const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
-const { ModalFlexTitle, ModalSection, ModalTitle } = LayoutStyles.ModalLayout;
+const { ModalFlexTitle, ModalTitle } = LayoutStyles.ModalLayout;
 const { FilteringSvg5, FilteringSvg6 } = LayoutStyles.FilteringLayoutStyle;
 
 const {
@@ -640,7 +641,7 @@ const RentalDetailMain = () => {
             {pageState.modal.image && (
                 <OraModal
                     Children={
-                        <ModalSection>
+                        <MainWrapper>
                             <ModalTitle>전체 보기</ModalTitle>
                             <RentalImgSection>
                                 <RentalImgContainer>
@@ -674,7 +675,7 @@ const RentalDetailMain = () => {
                                     </RentalImgWrapper>
                                 </RentalImgContainer>
                             </RentalImgSection>
-                        </ModalSection>
+                        </MainWrapper>
                     }
                     Buttons={
                         <OraButton

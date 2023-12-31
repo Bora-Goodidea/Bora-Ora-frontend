@@ -148,5 +148,11 @@ export default {
             pathName: `/login`,
             Component: React.lazy(() => import('@Page/Auth/LoginPage')),
         },
+        {
+            page: `email-register`,
+            name: `이메일 회원가입`,
+            pathName: `/email-register`,
+            Component: React.lazy(() => import('@Page/Auth/EmailRegisterMain')),
+        },
     ],
 };
