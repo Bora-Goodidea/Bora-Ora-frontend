@@ -11,6 +11,7 @@ import { addComma } from '@Helper';
 import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import MatchStyles from '@Style/MatchStyles';
 import RentalStyles from '@Style/RentalStyles';
+import ElementStyles from '@Style/ElementStyles';
 
 const {
     DefalutMainContainer,
@@ -25,7 +26,8 @@ const {
     MainWrapper,
 } = LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
-const { FilteringButton, FilteringSvg4, FilteringSvg5, FilteringSvg6 } = LayoutStyles.FilteringLayoutStyle;
+const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
+const { Svg4, Svg5, Svg6 } = ElementStyles.SvgStyle;
 const {
     MainSectionContainer,
     MainSlideFigure,
@@ -155,7 +157,7 @@ const RentalMain = () => {
                                         onClick={() => {
                                             console.debug('click');
                                         }}>
-                                        <FilteringSvg6
+                                        <Svg6
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
@@ -167,7 +169,7 @@ const RentalMain = () => {
                                                 strokeLinejoin="round"
                                                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                                             />
-                                        </FilteringSvg6>
+                                        </Svg6>
                                     </FilteringButton>
                                 </HeaderIcon>
                                 <HeaderIcon>
@@ -182,27 +184,27 @@ const RentalMain = () => {
                                             }));
                                         }}>
                                         <span>내지역</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringButton>
                                 </HeaderIcon>
                                 <HeaderIcon>
                                     <PrepareButton onClick={() => alert('준비 중입니다.')}>
                                         <span>12월 11일</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </PrepareButton>
                                 </HeaderIcon>
                                 <HeaderIcon>
@@ -217,14 +219,14 @@ const RentalMain = () => {
                                             }));
                                         }}>
                                         <span>시간</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringButton>
                                 </HeaderIcon>
                                 <HeaderIcon>
@@ -239,14 +241,14 @@ const RentalMain = () => {
                                             }))
                                         }>
                                         <span>구장 크기</span>
-                                        <FilteringSvg6
+                                        <Svg6
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg6>
+                                        </Svg6>
                                     </FilteringButton>
                                 </HeaderIcon>
                                 <HeaderIcon>
@@ -261,14 +263,14 @@ const RentalMain = () => {
                                             }))
                                         }>
                                         <span>실내외</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringButton>
                                 </HeaderIcon>
                                 <HeaderIcon>
@@ -283,14 +285,14 @@ const RentalMain = () => {
                                             }))
                                         }>
                                         <span>바닥 종류</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringButton>
                                 </HeaderIcon>
                             </div>
@@ -462,7 +464,7 @@ const RentalMain = () => {
                                                             <RentalImg src={l.images[0]} alt="..." />
                                                         </HeaderIcon>
                                                         <RentalFigcaption>
-                                                            <FilteringSvg5
+                                                            <Svg5
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 fill="none"
                                                                 viewBox="0 0 24 24"
@@ -473,7 +475,7 @@ const RentalMain = () => {
                                                                     strokeLinejoin="round"
                                                                     d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
                                                                 />
-                                                            </FilteringSvg5>
+                                                            </Svg5>
                                                         </RentalFigcaption>
                                                     </RentalFigure>
                                                 </HeaderIcon>
