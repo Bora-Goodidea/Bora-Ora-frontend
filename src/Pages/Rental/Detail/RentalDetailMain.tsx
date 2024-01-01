@@ -11,6 +11,7 @@ import { OraModal, OraButton } from '@Elements';
 import LayoutStyles from '@Style/LayoutStyles';
 import RentalStyles from '@Style/RentalStyles';
 import MatchStyles from '@Style/MatchStyles';
+import ElementStyles from '@Style/ElementStyles';
 
 const {
     DefalutMainContainer,
@@ -51,7 +52,7 @@ const {
 } = LayoutStyles.MainLayoutStyle;
 const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
 const { ModalFlexTitle, ModalTitle } = LayoutStyles.ModalLayout;
-const { FilteringSvg5, FilteringSvg6 } = LayoutStyles.FilteringLayoutStyle;
+const { Svg5, Svg6 } = ElementStyles.SvgStyle;
 
 const {
     RentalImgWrapper,
@@ -183,24 +184,24 @@ const RentalDetailMain = () => {
         slidesToScroll: 1,
         prevArrow: (
             <PrevButton>
-                <FilteringSvg6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray">
+                <Svg6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
-                </FilteringSvg6>
+                </Svg6>
             </PrevButton>
         ),
         nextArrow: (
             <NextButton>
-                <FilteringSvg6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray">
+                <Svg6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
-                </FilteringSvg6>
+                </Svg6>
             </NextButton>
         ),
     };
@@ -387,7 +388,7 @@ const RentalDetailMain = () => {
                                                         <RentalImg src={info.images[0]} alt="..." />
                                                     </HeaderIcon>
                                                     <RentalFigcaption>
-                                                        <FilteringSvg5
+                                                        <Svg5
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             fill="none"
                                                             viewBox="0 0 24 24"
@@ -398,7 +399,7 @@ const RentalDetailMain = () => {
                                                                 strokeLinejoin="round"
                                                                 d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
                                                             />
-                                                        </FilteringSvg5>
+                                                        </Svg5>
                                                     </RentalFigcaption>
                                                 </RentalFigure>
                                             </HeaderIcon>

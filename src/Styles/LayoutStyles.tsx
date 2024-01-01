@@ -11,6 +11,7 @@ export default {
         TextXs: tw.span`text-xs`,
         ContentsSection: tw.div`flex flex-col w-full space-y-2`,
         ContentsTitle: tw.span`text-sm font-semibold`,
+        ContentsXsTitle: tw.span`text-xs font-semibold`,
         ContentsWrapper: tw.div`flex w-full`,
         Li: tw.li``,
         BoldLargeText: tw.span`text-lg font-semibold`,
@@ -26,6 +27,7 @@ export default {
         ThirdDivide: tw.div`flex w-1/3`,
         Height6Div: tw.div`h-6`,
         ExtraInfoWrapper: tw.div`flex w-full items-center justify-center`,
+        BackgroundWhite: tw.nav`bg-white`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
@@ -62,9 +64,6 @@ export default {
     },
     FilteringLayoutStyle: {
         FilteringButton: tw.button`bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center`,
-        FilteringSvg4: tw.svg`w-4 h-4`,
-        FilteringSvg5: tw.svg`w-5 h-5`,
-        FilteringSvg6: tw.svg`w-6 h-6`,
     },
     ModalLayout: {
         ModalTitle: tw.div`w-full text-sm pl-5`,

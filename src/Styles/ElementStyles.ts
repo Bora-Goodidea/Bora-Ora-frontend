@@ -38,5 +38,22 @@ export default {
         Wapper: tw.div`w-full`,
         SelectLabel: tw.label`block mb-2 text-xs font-medium text-gray-900`,
         Select: tw.select`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5`,
+        SelectButtonSection: tw.div`flex flex-nowrap w-full gap-1`,
+        FourthDivide: tw.div`flex w-1/4`,
+    },
+    SvgStyle: {
+        Svg4: tw.svg`w-4 h-4`,
+        Svg5: tw.svg`w-5 h-5`,
+        Svg6: tw.svg`w-6 h-6`,
+        GraySvg4: tw.svg`w-4 h-4 text-gray-500`,
+        HoverGraySvg6: tw.svg`w-6 h-6 text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer`,
+    },
+    OraHeaderStyle: {
+        HeaderSection: tw.div`flex items-center space-x-3 rtl:space-x-reverse cursor-pointer`,
+        HeaderContainer: tw.div`flex flex-nowrap md:order-2`,
+        HeaderWrapper: tw.div`relative items-center flex flex-nowrap`,
+        HiddenHeader: tw.div`hidden md:flex md:absolute inset-y-0 start-0 items-center ps-3 pointer-events-none`,
+        SearchIcon: tw.span`sr-only`,
+        HeaderSubSection: tw.div`flex flex-nowrap pl-1`,
     },
 };

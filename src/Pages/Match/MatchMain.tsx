@@ -9,13 +9,15 @@ import Slider from 'react-slick';
 import styled from '@emotion/styled';
 import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import Footer from '@Page/Publish/Footer';
+import ElementStyles from '@Style/ElementStyles';
 
 const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, MainWrapper } =
     LayoutStyles.DefalutLayoutStyle;
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
-const { FilteringButton, FilteringSvg4 } = LayoutStyles.FilteringLayoutStyle;
+const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
 const { MainSectionContainer, MainSlideFigure, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
 const { HeaderDivIcon, HeaderDivIcon1, HeaderPIcon } = MatchStyles.MatchLayoutStyle.HeaderSection;
+const { Svg4 } = ElementStyles.SvgStyle;
 
 const {
     DateSectionContainer,
@@ -285,19 +287,19 @@ const MatchMain = () => {
                                             }));
                                         }}>
                                         <span>모든지역</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringButton>
                                 </FilteringSectionContainer>
                                 <FilteringSectionContainer>
                                     <FilteringButton>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
@@ -308,7 +310,7 @@ const MatchMain = () => {
                                                 strokeLinejoin="round"
                                                 d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
                                             />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                         <span>혜택</span>
                                     </FilteringButton>
                                 </FilteringSectionContainer>
@@ -329,14 +331,14 @@ const MatchMain = () => {
                                             }));
                                         }}>
                                         <span>남자</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringSelectedButton>
                                 </FilteringSectionContainer>
                                 <FilteringSectionContainer>
@@ -351,14 +353,14 @@ const MatchMain = () => {
                                             }));
                                         }}>
                                         <span>레벨</span>
-                                        <FilteringSvg4
+                                        <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1}
                                             stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </FilteringSvg4>
+                                        </Svg4>
                                     </FilteringButton>
                                 </FilteringSectionContainer>
                             </div>
