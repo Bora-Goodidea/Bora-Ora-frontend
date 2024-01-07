@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Const from '@Const';
-import EmailRegisterPage from '@Page/Auth/Detail/EmailRegisterPage';
+import EmailRegister from '@Page/Auth/Detail/EmailRegisterMain';
 
 const pageName = `이메일 인증`;
 
@@ -12,7 +12,7 @@ const EmailAuthPage = () => {
                 <meta name="description" content={`${pageName} 페이지`} />
             </Helmet>
 
-            <EmailRegisterPage />
+            <EmailRegister />
         </>
     );
 };
