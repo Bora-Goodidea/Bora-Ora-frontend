@@ -146,5 +146,11 @@ export default {
             pathName: `/stadium-list`,
             Component: React.lazy(() => import('@Page/Admin/StadiumListPage')),
         },
+        {
+            page: `match`,
+            name: `관리자-구장 상세`,
+            pathName: `/stadium-detail`,
+            Component: React.lazy(() => import('@Page/Admin/StadiumDetailPage')),
+        },
     ],
 };
