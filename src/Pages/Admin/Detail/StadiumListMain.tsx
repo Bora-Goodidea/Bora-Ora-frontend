@@ -37,15 +37,15 @@ const StadiumListMain = () => {
                         <ContentHeadCheckbox type="checkbox" />
                         <ContentHeadCheckboxLabel htmlFor="checkbox-all-search">checkbox</ContentHeadCheckboxLabel>
                     </ContentHeadInputContainer>
-                    <ContentHeadTitleW1>구장명</ContentHeadTitleW1>
-                    <ContentHeadTitleW1>위치</ContentHeadTitleW1>
-                    <ContentHeadTitleW3>구장 조건1</ContentHeadTitleW3>
-                    <ContentHeadTitleW2>구장 조건2</ContentHeadTitleW2>
-                    <ContentHeadTitleW1>금액/시간</ContentHeadTitleW1>
-                    <ContentHeadTitleW10>상태</ContentHeadTitleW10>
-                    <ContentHeadTitleW1>등록일</ContentHeadTitleW1>
-                    <ContentHeadTitleW2>관리</ContentHeadTitleW2>
                 </ContentHeadInputWrapper>
+                <ContentHeadTitleW1>구장명</ContentHeadTitleW1>
+                <ContentHeadTitleW1>위치</ContentHeadTitleW1>
+                <ContentHeadTitleW3>구장 조건1</ContentHeadTitleW3>
+                <ContentHeadTitleW2>구장 조건2</ContentHeadTitleW2>
+                <ContentHeadTitleW1>금액/시간</ContentHeadTitleW1>
+                <ContentHeadTitleW10>상태</ContentHeadTitleW10>
+                <ContentHeadTitleW1>등록일</ContentHeadTitleW1>
+                <ContentHeadTitleW2>관리</ContentHeadTitleW2>
             </ContentHeadContainer>
             <ContentBodyWrapper>
                 {lodash.map(
