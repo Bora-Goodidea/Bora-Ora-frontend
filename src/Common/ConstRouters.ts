@@ -140,5 +140,11 @@ export default {
             pathName: `/member-detail`,
             Component: React.lazy(() => import('@Page/Admin/MemberDetailPage')),
         },
+        {
+            page: `match`,
+            name: `관리자-구장 리스트`,
+            pathName: `/stadium-list`,
+            Component: React.lazy(() => import('@Page/Admin/StadiumListPage')),
+        },
     ],
 };
