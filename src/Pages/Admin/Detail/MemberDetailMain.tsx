@@ -1,6 +1,8 @@
-import { MemberDetailInfoItem, MemberDetailInfoSelectItem, MemberDetailInfoSelectItemBirth } from '@Component/Element';
-import AdminStyles from '@Style/AdminStyles';
 import React from 'react';
+import AdminStyles from '@Style/AdminStyles';
+import MemberDetailInfoItem from './MemberDetailInfoItem';
+import MemberDetailInfoSelectItem from './MemberDetailInfoSelectItem';
+import MemberDetailInfoSelectItemBirth from './MemberDetailInfoSelectItemBirth';
 
 const {
     ContentWrapper,
@@ -25,6 +27,8 @@ const {
 } = AdminStyles.ContentSectionMemberDetailStyle;
 
 const MemberDetailMain = () => {
+    // TODO: 회원 정보 관리 로직이 들어갈곳
+
     return (
         <ContentWrapper>
             <ContentContainer>
