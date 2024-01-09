@@ -28,6 +28,8 @@ export default {
         Height6Div: tw.div`h-6`,
         ExtraInfoWrapper: tw.div`flex w-full items-center justify-center`,
         BackgroundWhite: tw.nav`bg-white`,
+        Flex: tw.div`flex`,
+        FlexItemCenter: tw.div`flex items-center justify-center`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
@@ -35,7 +37,6 @@ export default {
         HeaderTitle: tw.div`flex text-lg font-bold`,
         HeaderClickTitle: tw.div`flex text-lg text-gray-500`,
         HeaderIconContainer: tw.div`flex w-full justify-between pt-2`,
-        HeaderIcon: tw.div`flex`,
     },
     MainLayoutStyle: {
         MainSectionContainer: tw.section`flex w-full justify-center bg-gray-100 p-5 border-b-2`,

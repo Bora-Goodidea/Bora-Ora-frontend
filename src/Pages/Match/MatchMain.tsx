@@ -11,9 +11,9 @@ import { OraModal, OraButton, OraCheckBox } from '@Elements';
 import Footer from '@Page/Publish/Footer';
 import ElementStyles from '@Style/ElementStyles';
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, MainWrapper } =
+const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, MainWrapper, Flex } =
     LayoutStyles.DefalutLayoutStyle;
-const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
+const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
 const { MainSectionContainer, MainSlideFigure, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
 const { HeaderDivIcon, HeaderDivIcon1, HeaderPIcon } = MatchStyles.MatchLayoutStyle.HeaderSection;
@@ -186,9 +186,9 @@ const MatchMain = () => {
                                 return (
                                     <HeaderDivIcon key={`publish-main-page-explore-category-social-match-item-${index}`}>
                                         <HeaderDivIcon1>
-                                            <HeaderIcon>
+                                            <Flex>
                                                 <img src={`${e.icon}`} alt={`${e.name}`} />
-                                            </HeaderIcon>
+                                            </Flex>
                                             <HeaderPIcon>{`${e.name}`}</HeaderPIcon>
                                         </HeaderDivIcon1>
                                     </HeaderDivIcon>
@@ -196,9 +196,9 @@ const MatchMain = () => {
                             })}
                             <HeaderDivIcon>
                                 <HeaderDivIcon1>
-                                    <HeaderIcon>
+                                    <Flex>
                                         <HeaderPIcon></HeaderPIcon>
-                                    </HeaderIcon>
+                                    </Flex>
                                 </HeaderDivIcon1>
                             </HeaderDivIcon>
                         </HeaderIconContainer>

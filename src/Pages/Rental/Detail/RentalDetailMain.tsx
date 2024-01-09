@@ -30,6 +30,7 @@ const {
     SubInfoSection,
     MainEmptyDiv,
     MainWrapper,
+    Flex,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
@@ -50,7 +51,6 @@ const {
     SubTitle,
     MainImg,
 } = LayoutStyles.MainLayoutStyle;
-const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
 const { ModalFlexTitle, ModalTitle } = LayoutStyles.ModalLayout;
 const { Svg5, Svg6 } = ElementStyles.SvgStyle;
 
@@ -251,12 +251,12 @@ const RentalDetailMain = () => {
                     <SectionWrapper>
                         {/* Contents Start */}
                         <ContentsSection>
-                            <HeaderIcon>
+                            <Flex>
                                 <ContentsTitle>서울 / 은평구</ContentsTitle>
-                            </HeaderIcon>
-                            <HeaderIcon>
+                            </Flex>
+                            <Flex>
                                 <TextLarge>서울 은평 롯데몰</TextLarge>
-                            </HeaderIcon>
+                            </Flex>
                             <TitleSection>
                                 <TextSmall>서울 은평구 통일로 1050</TextSmall>
                                 <TextGray>주소 복사</TextGray>
@@ -373,7 +373,7 @@ const RentalDetailMain = () => {
                                                     <TextSmGray>{`${addComma(info.price)}원~${addComma(info.price)}원/시간`}</TextSmGray>
                                                 </SubContent>
                                             </InfoWrapper>
-                                            <HeaderIcon>
+                                            <Flex>
                                                 <RentalFigure
                                                     onClick={() =>
                                                         setPageState(prevState => ({
@@ -384,9 +384,9 @@ const RentalDetailMain = () => {
                                                             },
                                                         }))
                                                     }>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <RentalImg src={info.images[0]} alt="..." />
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                     <RentalFigcaption>
                                                         <Svg5
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -402,7 +402,7 @@ const RentalDetailMain = () => {
                                                         </Svg5>
                                                     </RentalFigcaption>
                                                 </RentalFigure>
-                                            </HeaderIcon>
+                                            </Flex>
                                         </InfoSection>
                                         <ItemSection>
                                             <ItemContainer>
@@ -440,15 +440,15 @@ const RentalDetailMain = () => {
                                             <ReserWrapper>
                                                 <ReserSection>
                                                     <BtnBlue></BtnBlue>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <TextGray>예약 가능</TextGray>
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                 </ReserSection>
                                                 <ReserSection>
                                                     <BtnGray></BtnGray>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <TextGray>예약 불가</TextGray>
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                 </ReserSection>
                                             </ReserWrapper>
                                         </RentalPt3>

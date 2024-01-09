@@ -24,8 +24,9 @@ const {
     MainContainer,
     MainEmptyDiv,
     MainWrapper,
+    Flex,
 } = LayoutStyles.DefalutLayoutStyle;
-const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderIcon, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
+const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
 const { Svg4, Svg5, Svg6 } = ElementStyles.SvgStyle;
 const {
@@ -152,7 +153,7 @@ const RentalMain = () => {
                     <SectionWrapper>
                         <HeaderIconContainer>
                             <div className="grid grid-row-1 grid-flow-col gap-2">
-                                <HeaderIcon>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() => {
                                             console.debug('click');
@@ -171,8 +172,8 @@ const RentalMain = () => {
                                             />
                                         </Svg6>
                                     </FilteringButton>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() => {
                                             setPageState(prevState => ({
@@ -193,8 +194,8 @@ const RentalMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringButton>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <PrepareButton onClick={() => alert('준비 중입니다.')}>
                                         <span>12월 11일</span>
                                         <Svg4
@@ -206,8 +207,8 @@ const RentalMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </PrepareButton>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() => {
                                             setPageState(prevState => ({
@@ -228,8 +229,8 @@ const RentalMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringButton>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() =>
                                             setPageState(prevState => ({
@@ -250,8 +251,8 @@ const RentalMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg6>
                                     </FilteringButton>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() =>
                                             setPageState(prevState => ({
@@ -272,8 +273,8 @@ const RentalMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringButton>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() =>
                                             setPageState(prevState => ({
@@ -294,7 +295,7 @@ const RentalMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringButton>
-                                </HeaderIcon>
+                                </Flex>
                             </div>
                         </HeaderIconContainer>
                     </SectionWrapper>
@@ -324,15 +325,15 @@ const RentalMain = () => {
                         <ReserWrapper>
                             <ReserSection>
                                 <BtnBlue></BtnBlue>
-                                <HeaderIcon>
+                                <Flex>
                                     <TextGray>예약 가능</TextGray>
-                                </HeaderIcon>
+                                </Flex>
                             </ReserSection>
                             <ReserSection>
                                 <BtnGray></BtnGray>
-                                <HeaderIcon>
+                                <Flex>
                                     <TextGray>예약 불가</TextGray>
-                                </HeaderIcon>
+                                </Flex>
                             </ReserSection>
                         </ReserWrapper>
                     </SectionWrapper>
@@ -449,7 +450,7 @@ const RentalMain = () => {
                                                         <TextSmGray>{`${addComma(l.price)}원~${addComma(l.price)}원/시간`}</TextSmGray>
                                                     </SubContent>
                                                 </InfoWrapper>
-                                                <HeaderIcon>
+                                                <Flex>
                                                     <RentalFigure
                                                         onClick={() =>
                                                             setPageState(prevState => ({
@@ -460,9 +461,9 @@ const RentalMain = () => {
                                                                 },
                                                             }))
                                                         }>
-                                                        <HeaderIcon>
+                                                        <Flex>
                                                             <RentalImg src={l.images[0]} alt="..." />
-                                                        </HeaderIcon>
+                                                        </Flex>
                                                         <RentalFigcaption>
                                                             <Svg5
                                                                 xmlns="http://www.w3.org/2000/svg"
@@ -478,7 +479,7 @@ const RentalMain = () => {
                                                             </Svg5>
                                                         </RentalFigcaption>
                                                     </RentalFigure>
-                                                </HeaderIcon>
+                                                </Flex>
                                             </InfoSection>
                                             <ItemSection>
                                                 <ItemContainer>
@@ -533,12 +534,12 @@ const RentalMain = () => {
                     <SectionWrapper>
                         <RentalMoreSection>
                             <ItemCenter>
-                                <HeaderIcon>
+                                <Flex>
                                     <TextSmGray>비제휴 구장 더보기</TextSmGray>
-                                </HeaderIcon>
-                                <HeaderIcon>
+                                </Flex>
+                                <Flex>
                                     <TextGray>예약 가능 여부는 구장에 직접 확인해 주세요.</TextGray>
-                                </HeaderIcon>
+                                </Flex>
                             </ItemCenter>
                         </RentalMoreSection>
                     </SectionWrapper>
@@ -557,7 +558,7 @@ const RentalMain = () => {
                                     <SubTitle>
                                         <TextXs>내 지역</TextXs>
                                     </SubTitle>
-                                    <HeaderIcon>
+                                    <Flex>
                                         <OraButton
                                             ButtonName={`편집하기`}
                                             ButtonColor={`blue`}
@@ -572,7 +573,7 @@ const RentalMain = () => {
                                                 }))
                                             }
                                         />
-                                    </HeaderIcon>
+                                    </Flex>
                                 </RentalModalSection>
                                 {lodash.map(TemporaryData.Main.AreaList.slice(1, -1), (e, index) => {
                                     return (
@@ -707,7 +708,7 @@ const RentalMain = () => {
                                 <BoxItem>
                                     {lodash.map(TemporaryData.Rental.TimeModal, (e, index) => {
                                         return (
-                                            <HeaderIcon key={`publish-rent-page-time-select-modal-item-${index}`}>
+                                            <Flex key={`publish-rent-page-time-select-modal-item-${index}`}>
                                                 <OraButton
                                                     ButtonName={`${e.start}~${e.end}시`}
                                                     ButtonColor={`default`}
@@ -721,7 +722,7 @@ const RentalMain = () => {
                                                         }))
                                                     }
                                                 />
-                                            </HeaderIcon>
+                                            </Flex>
                                         );
                                     })}
                                 </BoxItem>
@@ -769,9 +770,9 @@ const RentalMain = () => {
                                 <CheckContainer>
                                     {lodash.map(TemporaryData.Rental.StadiumSize, (e, index) => {
                                         return (
-                                            <HeaderIcon key={`publish-rent-page-size-check-box-modal-item-${index}`}>
+                                            <Flex key={`publish-rent-page-size-check-box-modal-item-${index}`}>
                                                 <OraCheckBox Checked={false} HandleOnChange={() => console.debug('check')} LavelName={e} />
-                                            </HeaderIcon>
+                                            </Flex>
                                         );
                                     })}
                                 </CheckContainer>
@@ -819,9 +820,9 @@ const RentalMain = () => {
                                 <CheckContainer>
                                     {lodash.map(TemporaryData.Rental.InOut, (e, index) => {
                                         return (
-                                            <HeaderIcon key={`publish-rent-page-size-check-box-modal-item-${index}`}>
+                                            <Flex key={`publish-rent-page-size-check-box-modal-item-${index}`}>
                                                 <OraCheckBox Checked={false} HandleOnChange={() => console.debug('check')} LavelName={e} />
-                                            </HeaderIcon>
+                                            </Flex>
                                         );
                                     })}
                                 </CheckContainer>
@@ -869,9 +870,9 @@ const RentalMain = () => {
                                 <CheckContainer>
                                     {lodash.map(TemporaryData.Rental.floor, (e, index) => {
                                         return (
-                                            <HeaderIcon key={`publish-rent-page-size-check-box-modal-item-${index}`}>
+                                            <Flex key={`publish-rent-page-size-check-box-modal-item-${index}`}>
                                                 <OraCheckBox Checked={false} HandleOnChange={() => console.debug('check')} LavelName={e} />
-                                            </HeaderIcon>
+                                            </Flex>
                                         );
                                     })}
                                 </CheckContainer>
