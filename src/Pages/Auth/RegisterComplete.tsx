@@ -18,9 +18,9 @@ const {
     ContentsTitle,
     ContentsXsTitle,
     HalfDivide,
+    Flex,
 } = LayoutStyles.DefalutLayoutStyle;
 const { InfoWrapper, ItemContainer } = LayoutStyles.MainLayoutStyle;
-const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
 const {
     BackgroundSection,
     BackgroundWrapper,
@@ -108,7 +108,7 @@ const RegisterComplete = () => {
                                     <InfoWrapper>
                                         {/* 상단 검색 깨지는데 그냥 두세요 페이지에서 수정 예정 */}
                                         <OraInput InputType={`text`} InputValue={``} Placeholder={`지역, 구장, 팀 이름으로 찾기`} />
-                                        <HeaderIcon></HeaderIcon>
+                                        <Flex></Flex>
                                     </InfoWrapper>
 
                                     <HeaderSubSection>
@@ -206,7 +206,7 @@ const RegisterComplete = () => {
                                                     <SubTextSmall>친구에게 받은 스카웃 코드가 있다면 입력해주세요</SubTextSmall>
                                                 </SubItemTextSmall>
                                                 <SubItemWrapper>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <InputWrapper>
                                                             <OraInput
                                                                 InputType={`text`}
@@ -219,7 +219,7 @@ const RegisterComplete = () => {
                                                                 }
                                                             />
                                                         </InputWrapper>
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                 </SubItemWrapper>
                                             </SubItemContainer>
                                         </SubItemSection>

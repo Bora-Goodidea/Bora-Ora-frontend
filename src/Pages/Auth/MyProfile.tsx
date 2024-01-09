@@ -8,7 +8,7 @@ const LoginPage = () => {
         <>
             <Helmet>
                 <title>{`${Const.Site.title} | ${pageName}`}</title>
-                <meta name="description" content={`${pageName} 페이지`} />
+                <meta name="description" content={`${pageName}`} />
             </Helmet>
 
             <MyPage />

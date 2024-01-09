@@ -12,7 +12,7 @@ const initializeState = {
     },
 };
 
-const { DefalutMainContainer, SectionContainer, MainContainer, MainEmptyDiv, ContentsWrapper, MainWrapper, ExtraInfoWrapper } =
+const { DefalutMainContainer, SectionContainer, MainContainer, MainEmptyDiv, ContentsWrapper, MainWrapper, ExtraInfoWrapper, Flex } =
     LayoutStyles.DefalutLayoutStyle;
 const {
     LoginImgSection,
@@ -47,8 +47,6 @@ const {
     JoinModalSection,
     JoinText,
 } = AuthStyles.LoginLayoutStyle;
-
-const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
 
 const LoginMain = () => {
     const [pageState, setPageState] = useState<{
@@ -162,14 +160,14 @@ const LoginMain = () => {
                         <MainWrapper>
                             <JoinModalSection>
                                 <ExtraInfoWrapper>
-                                    <HeaderIcon>
+                                    <Flex>
                                         <JoinText>오라</JoinText>
-                                    </HeaderIcon>
+                                    </Flex>
                                 </ExtraInfoWrapper>
                                 <ExtraInfoWrapper>
-                                    <HeaderIcon>
+                                    <Flex>
                                         <FigTitle>회원 가입하고 매치에 참여하세요</FigTitle>
-                                    </HeaderIcon>
+                                    </Flex>
                                 </ExtraInfoWrapper>
                                 <ExtraInfoWrapper>
                                     <ContentsWrapper>
