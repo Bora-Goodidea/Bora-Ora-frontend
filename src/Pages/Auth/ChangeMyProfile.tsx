@@ -1,9 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import Const from '@Const';
-import MyPage from '@Page/Auth/Detail/MyProfileMain';
-const pageName = `마이 페이지`;
+import ChangeMyProfileMain from '@Page/Auth/Detail/ChangeMyProfileMain';
 
-const MyProfile = () => {
+const pageName = `마이페이지 수정`;
+
+const ChangeMyProfile = () => {
     return (
         <>
             <Helmet>
@@ -11,9 +12,9 @@ const MyProfile = () => {
                 <meta name="description" content={`${pageName} 페이지`} />
             </Helmet>
 
-            <MyPage />
+            <ChangeMyProfileMain />
         </>
     );
 };
 
-export default MyProfile;
+export default ChangeMyProfile;

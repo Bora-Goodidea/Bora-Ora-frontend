@@ -166,5 +166,11 @@ export default {
             pathName: `/my-page`,
             Component: React.lazy(() => import('@Page/Auth/MyProfile')),
         },
+        {
+            page: `change-my-profile`,
+            name: `마이 페이지 수정`,
+            pathName: `/change-my-profile`,
+            Component: React.lazy(() => import('@Page/Auth/ChangeMyProfile')),
+        },
     ],
 };

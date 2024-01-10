@@ -28,6 +28,7 @@ export default {
         Height6Div: tw.div`h-6`,
         ExtraInfoWrapper: tw.div`flex w-full items-center justify-center`,
         BackgroundWhite: tw.nav`bg-white`,
+        TextGrayXs: tw.span`text-xs text-gray-500`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
