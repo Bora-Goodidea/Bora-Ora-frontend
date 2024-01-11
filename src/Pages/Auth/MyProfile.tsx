@@ -3,7 +3,7 @@ import Const from '@Const';
 import MyPage from '@Page/Auth/Detail/MyProfileMain';
 const pageName = `마이 페이지`;
 
-const LoginPage = () => {
+const MyProfile = () => {
     return (
         <>
             <Helmet>
@@ -16,4 +16,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default MyProfile;

@@ -30,6 +30,7 @@ export default {
         BackgroundWhite: tw.nav`bg-white`,
         Flex: tw.div`flex`,
         FlexItemCenter: tw.div`flex items-center justify-center`,
+        TextGrayXs: tw.span`text-xs text-gray-500`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
@@ -37,6 +38,7 @@ export default {
         HeaderTitle: tw.div`flex text-lg font-bold`,
         HeaderClickTitle: tw.div`flex text-lg text-gray-500`,
         HeaderIconContainer: tw.div`flex w-full justify-between pt-2`,
+        HeaderIcon: tw.div`flex`,
     },
     MainLayoutStyle: {
         MainSectionContainer: tw.section`flex w-full justify-center bg-gray-100 p-5 border-b-2`,

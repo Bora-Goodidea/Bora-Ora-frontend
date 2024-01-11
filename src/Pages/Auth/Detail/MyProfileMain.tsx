@@ -47,7 +47,7 @@ const initializeState = {
     },
 };
 
-const MyPage = () => {
+const MyProfileMain = () => {
     const [pageState, setPageState] = useState<{
         modal: {
             qrCode: boolean;
@@ -250,4 +250,4 @@ const MyPage = () => {
     );
 };
 
-export default MyPage;
+export default MyProfileMain;
