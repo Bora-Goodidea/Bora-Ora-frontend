@@ -7,6 +7,7 @@ import lodash from 'lodash';
 import { OraButton } from '@Elements';
 import LayoutStyles from '@Style/LayoutStyles';
 import MatchStyles from '@Style/MatchStyles';
+import ElementStyles from '@Style/ElementStyles';
 
 /**
 https://d31wz4d3hgve8q.cloudfront.net/media/ydp_thef_half.jpeg
@@ -15,8 +16,20 @@ https://d31wz4d3hgve8q.cloudfront.net/media/ydp_thef_half.jpeg
 http://psmever.iptime.org:8062/assets/temp/detail-chart.png
  */
 
-const { DefalutMainContainer, SectionContainer, SectionWrapper, Flex, FlexItem } = LayoutStyles.DefalutLayoutStyle;
-const { MainSlideFigure, MainP } = LayoutStyles.MainLayoutStyle;
+const {
+    DefalutMainContainer,
+    SectionContainer,
+    SectionWrapper,
+    Flex,
+    FlexItem,
+    ContentsTitle,
+    FlexItemCenter,
+    TextXs,
+    ItemWrapper,
+    FlexItemCenterBorder,
+} = LayoutStyles.DefalutLayoutStyle;
+const { Svg5 } = ElementStyles.SvgStyle;
+const { MainSlideFigure, MainP, InfoWrapper, TextGray } = LayoutStyles.MainLayoutStyle;
 const {
     DetailMainSection,
     MainImg,
@@ -27,6 +40,24 @@ const {
     DetailItem1,
     DetailItemContainer,
     DetailTitle,
+    FirstDetailSection,
+    FirstDetailContainer,
+    FirstDetailIcon,
+    FirstItemSection,
+    BlueIcon,
+    YellowIcon,
+    RedIcon,
+    WhiteText,
+    FirstExplain,
+    SecondItemSection,
+    GrayItemSection,
+    GrayItem,
+    MatchItemSection,
+    MatchItemContainer,
+    BlueSmIcon,
+    YelloSmIcon,
+    RedSmIcon,
+    WhiteSmText,
 } = MatchStyles.DetailLayoutStyle;
 const MatchDetailPage = () => {
     const [slideCurrent, setSlideCurrent] = useState<number>(1);
@@ -81,123 +112,117 @@ const MatchDetailPage = () => {
                                         </DetailItemContainer>
                                         <DetailItemContainer>
                                             <FlexItem>
-                                                <div className="flex w-full item-center justify-center">
-                                                    <div className="flex flex-col w-full object-center items-center justify-center">
-                                                        <img
-                                                            className="h-8 w-8"
+                                                <FirstDetailSection>
+                                                    <FirstDetailContainer>
+                                                        <FirstDetailIcon
                                                             src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_plaber_of_the_match_emoji.svg"
                                                             alt="..."
                                                         />
-                                                        <span className="text-sm font-semibold">Plaber Of The Match</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex w-full item-center justify-around">
-                                                    <div className="flex flex-col">
-                                                        <div className="flex h-12 w-10 bg-cover items-center justify-center bg-[url(https://d31wz4d3hgve8q.cloudfront.net/static/img/bibs_blue_back.svg)]">
-                                                            <span className="text-lg font-semibold text-white">2</span>
-                                                        </div>
-                                                        <div className="flex items-center justify-center">
-                                                            <span className="text-xs">우의명</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex flex-col">
-                                                        <div className="flex h-12 w-10 bg-cover items-center justify-center bg-[url(https://d31wz4d3hgve8q.cloudfront.net/static/img/bibs_yellow_back.svg)]">
-                                                            <span className="text-lg font-semibold text-white">2</span>
-                                                        </div>
-                                                        <div className="flex items-center justify-center">
-                                                            <span className="text-xs">진하영</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex flex-col">
-                                                        <div className="flex h-12 w-10 bg-cover items-center justify-center bg-[url(https://d31wz4d3hgve8q.cloudfront.net/static/img/bibs_red_back.svg)]">
-                                                            <span className="text-lg font-semibold text-white">2</span>
-                                                        </div>
-                                                        <div className="flex items-center justify-center">
-                                                            <span className="text-xs">서보문</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="flex w-full item-center justify-around">
-                                                    <div className="flex flex-col">
-                                                        <div className="flex items-center justify-center">
-                                                            <span className="text-xs text-gray-400">
-                                                                플래버 오브 더 매치는 가장 매너가 좋고
-                                                            </span>
-                                                        </div>
-                                                        <div className="flex items-center justify-center">
-                                                            <span className="text-xs text-gray-400">
-                                                                긍정적인 분위기를 만들어 준 플래버예요
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        <ContentsTitle>Plaber Of The Match</ContentsTitle>
+                                                    </FirstDetailContainer>
+                                                </FirstDetailSection>
+                                                <FirstItemSection>
+                                                    <InfoWrapper>
+                                                        <BlueIcon>
+                                                            <WhiteText>2</WhiteText>
+                                                        </BlueIcon>
+                                                        <FlexItemCenter>
+                                                            <TextXs>우의명</TextXs>
+                                                        </FlexItemCenter>
+                                                    </InfoWrapper>
+                                                    <InfoWrapper>
+                                                        <YellowIcon>
+                                                            <WhiteText>2</WhiteText>
+                                                        </YellowIcon>
+                                                        <FlexItemCenter>
+                                                            <TextXs>진하영</TextXs>
+                                                        </FlexItemCenter>
+                                                    </InfoWrapper>
+                                                    <InfoWrapper>
+                                                        <RedIcon>
+                                                            <WhiteText>2</WhiteText>
+                                                        </RedIcon>
+                                                        <FlexItemCenter>
+                                                            <TextXs>서보문</TextXs>
+                                                        </FlexItemCenter>
+                                                    </InfoWrapper>
+                                                </FirstItemSection>
+                                                <FirstItemSection>
+                                                    <InfoWrapper>
+                                                        <FlexItemCenter>
+                                                            <TextGray>플래버 오브 더 매치는 가장 매너가 좋고</TextGray>
+                                                        </FlexItemCenter>
+                                                        <FlexItemCenter>
+                                                            <TextGray>긍정적인 분위기를 만들어 준 플래버예요</TextGray>
+                                                        </FlexItemCenter>
+                                                    </InfoWrapper>
+                                                </FirstItemSection>
                                             </FlexItem>
                                         </DetailItemContainer>
                                     </DetailItem1>
-                                    <div className="flex flex-col w-full p-2">
-                                        <div className="flex flex-col">
-                                            <div className="flex flex-nowrap items-center gap-2">
-                                                <svg
+                                    <FirstExplain>
+                                        <InfoWrapper>
+                                            <ItemWrapper>
+                                                <Svg5
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
                                                     viewBox="0 0 24 24"
                                                     strokeWidth={1}
-                                                    stroke="orange"
-                                                    className="w-5 h-5">
+                                                    stroke="orange">
                                                     <path
                                                         strokeLinecap="round"
                                                         strokeLinejoin="round"
                                                         d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                                                     />
-                                                </svg>
-                                                <span className="text-xs">플래버 오브 더 매치에 대해 알아보세요</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                </Svg5>
+                                                <TextXs>플래버 오브 더 매치에 대해 알아보세요</TextXs>
+                                            </ItemWrapper>
+                                        </InfoWrapper>
+                                    </FirstExplain>
                                 </DetailItemSection>
                                 <DetailItemSection>
                                     <DetailItemContainer>
                                         <Flex>
                                             <DetailTitle>매치 데이터</DetailTitle>
                                         </Flex>
-                                        <div className="flex items-center object-center gap-8">
-                                            <div className="flex w-full h-20 bg-gray-200 rounded-lg">
-                                                <div className="flex w-full flex-col items-center justify-center">
-                                                    <span className="text-xs text-gray-400">전체</span>
-                                                    <span className="text-xs text-gray-400">아마추어3</span>
-                                                </div>
-                                            </div>
-                                            <div className="flex w-full h-20 rounded-lg">
-                                                <div className="flex w-full flex-col items-center object-center justify-center gap-2">
-                                                    <div className="flex h-10 w-8 bg-cover items-center justify-center bg-[url(https://d31wz4d3hgve8q.cloudfront.net/static/img/bibs_blue_back.svg)]">
-                                                        <span className="text-xs font-semibold text-white">오라</span>
-                                                    </div>
-                                                    <div className="flex items-center justify-center border">
-                                                        <span className="text-xs">아마추어2</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="flex w-full h-20 rounded-lg">
-                                                <div className="flex w-full flex-col items-center object-center justify-center gap-2">
-                                                    <div className="flex h-10 w-8 bg-cover items-center justify-center bg-[url(https://d31wz4d3hgve8q.cloudfront.net/static/img/bibs_red_back.svg)]">
-                                                        <span className="text-xs font-semibold text-white">오라</span>
-                                                    </div>
-                                                    <div className="flex items-center justify-center border">
-                                                        <span className="text-xs">아마추어2</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="flex w-full h-20 rounded-lg">
-                                                <div className="flex w-full flex-col items-center object-center justify-center gap-2">
-                                                    <div className="flex h-10 w-8 bg-cover items-center justify-center bg-[url(https://d31wz4d3hgve8q.cloudfront.net/static/img/bibs_yellow_back.svg)]">
-                                                        <span className="text-xs font-semibold text-white">오라</span>
-                                                    </div>
-                                                    <div className="flex items-center justify-center border">
-                                                        <span className="text-xs">아마추어2</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <SecondItemSection>
+                                            <GrayItemSection>
+                                                <GrayItem>
+                                                    <TextGray>전체</TextGray>
+                                                    <TextGray>아마추어3</TextGray>
+                                                </GrayItem>
+                                            </GrayItemSection>
+                                            <MatchItemSection>
+                                                <MatchItemContainer>
+                                                    <BlueSmIcon>
+                                                        <WhiteSmText>오라</WhiteSmText>
+                                                    </BlueSmIcon>
+                                                    <FlexItemCenterBorder>
+                                                        <TextXs>아마추어2</TextXs>
+                                                    </FlexItemCenterBorder>
+                                                </MatchItemContainer>
+                                            </MatchItemSection>
+                                            <MatchItemSection>
+                                                <MatchItemContainer>
+                                                    <YelloSmIcon>
+                                                        <WhiteSmText>오라</WhiteSmText>
+                                                    </YelloSmIcon>
+                                                    <FlexItemCenterBorder>
+                                                        <TextXs>아마추어2</TextXs>
+                                                    </FlexItemCenterBorder>
+                                                </MatchItemContainer>
+                                            </MatchItemSection>
+                                            <MatchItemSection>
+                                                <MatchItemContainer>
+                                                    <RedSmIcon>
+                                                        <WhiteSmText>오라</WhiteSmText>
+                                                    </RedSmIcon>
+                                                    <FlexItemCenterBorder>
+                                                        <TextXs>아마추어2</TextXs>
+                                                    </FlexItemCenterBorder>
+                                                </MatchItemContainer>
+                                            </MatchItemSection>
+                                        </SecondItemSection>
                                         <div className="flex items-center object-center">
                                             <span className="text-xs font-semibold">레벨 분포도</span>
                                             <svg
@@ -214,70 +239,69 @@ const MatchDetailPage = () => {
                                                 />
                                             </svg>
                                         </div>
-                                        <div className="flex flex-col">
+                                        <InfoWrapper>
                                             <div className="flex flex-nowrap w-full h-28 justify-between gap-3">
                                                 <div className="flex flex-col w-full h-full justify-end items-center">
                                                     <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
                                                         <div className="w-full bg-orange-500 h-0"></div>
                                                     </div>
-                                                    <span className="text-xs">0%</span>
-                                                    <span className="text-xs text-gray-400">루키</span>
+                                                    <TextXs>0%</TextXs>
+                                                    <TextGray>루키</TextGray>
                                                 </div>
                                                 <div className="flex flex-col w-full h-full justify-end items-center">
                                                     <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
                                                         <div className="w-full bg-orange-500 h-1/5"></div>
                                                     </div>
-                                                    <span className="text-xs">20%</span>
-                                                    <span className="text-xs text-gray-400">스타터</span>
+                                                    <TextXs>20%</TextXs>
+                                                    <TextGray>스타터</TextGray>
                                                 </div>
                                                 <div className="flex flex-col w-full h-full justify-end items-center">
                                                     <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
                                                         <div className="w-full bg-orange-500 h-2/5"></div>
                                                     </div>
-                                                    <span className="text-xs">40%</span>
-                                                    <span className="text-xs text-gray-400">비기너</span>
+                                                    <TextXs>40%</TextXs>
+                                                    <TextGray>비기너</TextGray>
                                                 </div>
                                                 <div className="flex flex-col w-full h-full justify-end items-center">
                                                     <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
                                                         <div className="w-full bg-orange-500 h-full"></div>
                                                     </div>
-                                                    <span className="text-xs">100%</span>
-                                                    <span className="text-xs text-gray-400">아마추어</span>
+                                                    <TextXs>100%</TextXs>
+                                                    <TextGray>아마추어</TextGray>
                                                 </div>
                                                 <div className="flex flex-col w-full h-full justify-end items-center">
                                                     <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
                                                         <div className="w-full bg-orange-500 h-1/5"></div>
                                                     </div>
-                                                    <span className="text-xs">20%</span>
-                                                    <span className="text-xs text-gray-400">세미프로</span>
+                                                    <TextXs>20%</TextXs>
+                                                    <TextGray>세미프로</TextGray>
                                                 </div>
                                                 <div className="flex flex-col w-full h-full justify-end items-center">
                                                     <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
                                                         <div className="w-full bg-orange-500 h-1/5"></div>
                                                     </div>
-                                                    <span className="text-xs">20%</span>
-                                                    <span className="text-xs text-gray-400">프로</span>
+                                                    <TextXs>20%</TextXs>
+                                                    <TextGray>프로</TextGray>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <div className="flex flex-nowrap items-center gap-2">
-                                                <svg
+                                        </InfoWrapper>
+                                        <InfoWrapper>
+                                            <ItemWrapper>
+                                                <Svg5
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
                                                     viewBox="0 0 24 24"
                                                     strokeWidth={1}
-                                                    stroke="orange"
-                                                    className="w-5 h-5">
+                                                    stroke="orange">
                                                     <path
                                                         strokeLinecap="round"
                                                         strokeLinejoin="round"
                                                         d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                                                     />
-                                                </svg>
-                                                <span className="text-xs">팀 레벨이 맞지 않으면 친구끼리 와도 다른 팀이 될 수 있어요</span>
-                                            </div>
-                                        </div>
+                                                </Svg5>
+                                                <TextXs>팀 레벨이 맞지 않으면 친구끼리 와도 다른 팀이 될 수 있어요</TextXs>
+                                            </ItemWrapper>
+                                        </InfoWrapper>
                                     </DetailItemContainer>
                                     <DetailItemContainer>
                                         <div className="flex items-center justify-between">
@@ -303,23 +327,23 @@ const MatchDetailPage = () => {
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_graph_bar_blue.svg"
                                                         alt="..."
                                                     />
-                                                    <span className="text-xs">매치 평균</span>
+                                                    <TextXs>매치 평균</TextXs>
                                                     <img
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_graph_bar_yellow.svg"
                                                         alt="..."
                                                     />
-                                                    <span className="text-xs">전체 평균</span>
+                                                    <TextXs>전체 평균</TextXs>
                                                 </div>
                                                 <Flex></Flex>
                                             </div>
                                         </div>
-                                        <div className="flex items-center justify-center">
+                                        <FlexItemCenter>
                                             <img
                                                 className="w-2/3"
                                                 src="http://psmever.iptime.org:8062/assets/temp/detail-chart.png"
                                                 alt="..."
                                             />
-                                        </div>
+                                        </FlexItemCenter>
                                         <div className="flex flex-col items-center justify-center">
                                             <div className="flex w-full justify-start">
                                                 <div className="flex items-center gap-2">
@@ -328,14 +352,14 @@ const MatchDetailPage = () => {
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_pom.svg"
                                                         alt="..."
                                                     />
-                                                    <span className="text-xs">POM이 15명 있어요</span>
+                                                    <TextXs>POM이 15명 있어요</TextXs>
                                                 </div>
                                             </div>
                                             <div className="flex w-full justify-start pl-6">
-                                                <span className="text-xs text-gray-400">
+                                                <TextGray>
                                                     POM은 서로 존중하고 격려하며 함게 즐길 수 있도록 매치에 긍정적인 에너지를 불어넣어 주는
                                                     플래버예요
-                                                </span>
+                                                </TextGray>
                                             </div>
                                         </div>
                                     </DetailItemContainer>
@@ -346,34 +370,34 @@ const MatchDetailPage = () => {
                                             <DetailTitle>매치 포인트</DetailTitle>
                                         </Flex>
                                         <div className="grid grid-cols-2 gap-4">
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_level.svg" alt="..." />
                                                 <span className="text-sm text-gray-600">모든 레벨</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_gender.svg" alt="..." />
                                                 <span>남녀 모두</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_stadium.svg" alt="..." />
                                                 <span className="text-sm text-gray-600">6vs6 3파전</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img
                                                     src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_max_player_cnt.svg"
                                                     alt="..."
                                                 />
                                                 <span className="text-sm text-gray-600">10~18명</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
                                                 <span className="text-sm text-gray-600">풋살화/운동화</span>
-                                            </div>
+                                            </ItemWrapper>
                                         </div>
                                     </DetailItemContainer>
                                     <div className="flex flex-col w-full border"></div>
                                     <div className="flex flex-col w-full p-2 space-y-4">
-                                        <div className="flex flex-col">
+                                        <InfoWrapper>
                                             <div className="flex gap-2">
                                                 <img
                                                     className="h-6 w-6"
@@ -388,15 +412,15 @@ const MatchDetailPage = () => {
                                                     강한 슛을 조심해 주세요.
                                                 </span>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-nowrap items-center gap-2">
+                                        </InfoWrapper>
+                                        <ItemWrapper>
                                             <img
                                                 className="h-6 w-6"
                                                 src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_manager.svg"
                                                 alt="..."
                                             />
                                             <span className="text-sm">강만호 매니저가 진행해요</span>
-                                        </div>
+                                        </ItemWrapper>
                                     </div>
                                 </DetailItemSection>
                                 <DetailItemSection>
@@ -405,27 +429,27 @@ const MatchDetailPage = () => {
                                             <DetailTitle>경기장 정보</DetailTitle>
                                         </Flex>
                                         <div className="grid grid-cols-2 gap-4">
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_stadium.svg" alt="..." />
                                                 <span className="text-sm text-gray-600">40x20m</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shower.svg" alt="..." />
                                                 <span className="text-sm text-gray-300 line-through">샤워실</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_park.svg" alt="..." />
                                                 <span className="text-sm text-gray-600">유료주차</span>
-                                            </div>
-                                            <div className="flex flex-nowrap items-center gap-2">
+                                            </ItemWrapper>
+                                            <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
                                                 <span className="text-sm text-gray-600">풋살화대여</span>
-                                            </div>
+                                            </ItemWrapper>
                                         </div>
                                     </div>
                                     <div className="flex flex-col w-full border"></div>
                                     <div className="flex flex-col w-full p-2 space-y-4">
-                                        <div className="flex flex-col">
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">구장 특이사항</span>
                                             </Flex>
@@ -456,7 +480,7 @@ const MatchDetailPage = () => {
                                                     `}
                                                 </span>
                                             </div>
-                                        </div>
+                                        </InfoWrapper>
                                     </div>
                                 </DetailItemSection>
                                 <DetailItemSection>
@@ -466,7 +490,7 @@ const MatchDetailPage = () => {
                                         </Flex>
                                     </DetailItemContainer>
                                     <div className="flex flex-col w-full p-2 space-y-4">
-                                        <div className="flex flex-col">
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">매치 규칙</span>
                                             </Flex>
@@ -485,8 +509,8 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">진행 방식</span>
                                             </Flex>
@@ -513,8 +537,8 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">알아두면 좋아요</span>
                                             </Flex>
@@ -535,7 +559,7 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </InfoWrapper>
                                     </div>
                                 </DetailItemSection>
                                 <DetailItemSection>
@@ -545,7 +569,7 @@ const MatchDetailPage = () => {
                                         </Flex>
                                     </DetailItemContainer>
                                     <div className="flex flex-col w-full p-2 space-y-4">
-                                        <div className="flex flex-col">
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">신청 취소 시 환불 기준</span>
                                             </Flex>
@@ -579,8 +603,8 @@ const MatchDetailPage = () => {
                                                     </tbody>
                                                 </table>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">그 외 취소 기준</span>
                                             </Flex>
@@ -617,8 +641,8 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">
                                                     다음의 경우는 환불이 불가합니다.
@@ -653,8 +677,8 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">유의사항</span>
                                             </Flex>
@@ -669,8 +693,8 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">변경 정책</span>
                                             </Flex>
@@ -689,8 +713,8 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">우천 및 폭설 정책</span>
                                             </Flex>
@@ -714,8 +738,8 @@ const MatchDetailPage = () => {
                                                     `}
                                                 </span>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col">
+                                        </InfoWrapper>
+                                        <InfoWrapper>
                                             <Flex>
                                                 <span className="text-sm text-gray-500 font-semibold">소셜매치 취소 방법</span>
                                             </Flex>
@@ -732,7 +756,7 @@ const MatchDetailPage = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </InfoWrapper>
                                     </div>
                                 </DetailItemSection>
                             </DetailMainWrapper>
@@ -741,7 +765,7 @@ const MatchDetailPage = () => {
                                     <DetailItemSection>
                                         <DetailItemContainer>
                                             <Flex>
-                                                <span className="text-sm font-semibold">12월 5일 화요일 15:00</span>
+                                                <ContentsTitle>12월 5일 화요일 15:00</ContentsTitle>
                                             </Flex>
                                             <Flex>
                                                 <span className="text-lg">서울 영등포 더에프 필드 B구장</span>
@@ -782,7 +806,7 @@ const MatchDetailPage = () => {
                                                     <div className="flex flex-col w-1/2">
                                                         <div className="flex flex-nowrap">
                                                             <span className="text-xs text-blue-500 underline">다음 일정을 미리 예약</span>
-                                                            <span className="text-xs">하세요</span>
+                                                            <TextXs>하세요</TextXs>
                                                         </div>
                                                         <Flex>
                                                             <span className="text-xs text-gray-500">2일 전까지 무료 취소</span>

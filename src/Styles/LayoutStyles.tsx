@@ -30,8 +30,10 @@ export default {
         BackgroundWhite: tw.nav`bg-white`,
         Flex: tw.div`flex`,
         FlexItemCenter: tw.div`flex items-center justify-center`,
+        FlexItemCenterBorder: tw.div`flex items-center justify-center border`,
         TextGrayXs: tw.span`text-xs text-gray-500`,
         FlexItem: tw.div`flex flex-col w-full space-y-4`,
+        ItemWrapper: tw.div`flex flex-nowrap items-center gap-2`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,

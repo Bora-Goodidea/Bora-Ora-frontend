@@ -50,7 +50,6 @@ export default {
         DetailWrapper6: tw.div`flex flex-col w-full md:max-w-screen-lg space-y-6`,
         DetailTextSmGray: tw.div`flex w-1/4 text-xs text-gray-400`,
         RuleSection: tw.div`grid grid-cols-2 w-full gap-4`,
-        RuleItemSection: tw.div`flex flex-nowrap items-center gap-2`,
         RuleIconGray: tw.div`flex items-center object-center justify-center w-8 opacity-40`,
         RuleIconBlack: tw.div`flex items-center object-center justify-center w-8`,
         TextGrayLine: tw.span`text-xs text-gray-400 line-through`,

@@ -32,6 +32,7 @@ const {
     MainWrapper,
     Flex,
     FlexItem,
+    ItemWrapper,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
@@ -87,7 +88,6 @@ const {
     DetailWrapper6,
     DetailTextSmGray,
     RuleSection,
-    RuleItemSection,
     RuleIconGray,
     RuleIconBlack,
     TextGrayLine,
@@ -468,46 +468,46 @@ const RentalDetailMain = () => {
                         </ContentsWrapper>
                         <ContentsWrapper>
                             <RuleSection>
-                                <RuleItemSection>
+                                <ItemWrapper>
                                     <RuleIconGray>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shower.svg" />
                                     </RuleIconGray>
                                     <SubTitle>
                                         <TextGrayLine>샤워실</TextGrayLine>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_park.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>무료주차</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>풋살화 대여</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_beverage.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>음료 판매</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_toilet.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>남녀 구분</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
+                                </ItemWrapper>
                             </RuleSection>
                         </ContentsWrapper>
                         <ContentsWrapper>
