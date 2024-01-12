@@ -57,7 +57,6 @@ export default {
         RuleSubInfoSection: tw.div`flex flex-col w-full rounded-lg space-y-4 bg-gray-50 py-2 px-2`,
         RuleSubIconSection: tw.div`flex flex-col w-full gap-2`,
         RuleSubIconWrapper: tw.div`flex flex-nowrap w-full gap-2`,
-        RuleExtraInfoSection: tw.div`flex flex-col w-full space-y-4`,
         RuleExtraInfoWrapper: tw.div`w-full space-y-2 py-1`,
         RuleExtraTitle: tw.div`mb-2 text-sm font-semibold`,
         RuleExtraInfoList: tw.ul`space-y-1 text-sm text-gray-500 list-disc list-inside`,

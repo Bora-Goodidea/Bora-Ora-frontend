@@ -19,6 +19,7 @@ const {
     ContentsXsTitle,
     HalfDivide,
     Flex,
+    FlexItem,
 } = LayoutStyles.DefalutLayoutStyle;
 const { InfoWrapper, ItemContainer } = LayoutStyles.MainLayoutStyle;
 const {
@@ -44,7 +45,6 @@ const {
     InputWrapper,
     CodeSubmitButton,
     CompleteModalSection,
-    CompleteModalContainer,
     CompleteModalItem,
     Tex3Xl,
     TextPt3,
@@ -236,7 +236,7 @@ const RegisterComplete = () => {
                 <OraModal
                     Children={
                         <CompleteModalSection>
-                            <CompleteModalContainer>
+                            <FlexItem>
                                 <ContentsWrapper>
                                     <img
                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/img_cover_favorite_summer.jpg"
@@ -352,7 +352,7 @@ const RegisterComplete = () => {
                                         </SelectButtonSection>
                                     </SelectSection>
                                 </Divide2>
-                            </CompleteModalContainer>
+                            </FlexItem>
                         </CompleteModalSection>
                     }
                     Buttons={

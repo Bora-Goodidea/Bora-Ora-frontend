@@ -140,6 +140,12 @@ export default {
             pathName: `/list`,
             Component: React.lazy(() => import('@Page/Match/MatchPage')),
         },
+        {
+            page: `match-detail`,
+            name: `상세페이지`,
+            pathName: `/detail`,
+            Component: React.lazy(() => import('@Page/Match/Detail/MatchDetailPage')),
+        },
     ],
     Auth: [
         {

@@ -31,6 +31,7 @@ const {
     MainEmptyDiv,
     MainWrapper,
     Flex,
+    FlexItem,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
@@ -93,7 +94,6 @@ const {
     RuleSubInfoSection,
     RuleSubIconSection,
     RuleSubIconWrapper,
-    RuleExtraInfoSection,
     RuleExtraInfoWrapper,
     RuleExtraTitle,
     RuleExtraInfoList,
@@ -532,7 +532,7 @@ const RentalDetailMain = () => {
                             </RuleSubInfoSection>
                         </ContentsWrapper>
                         <ContentsWrapper>
-                            <RuleExtraInfoSection>
+                            <FlexItem>
                                 <RuleExtraInfoWrapper>
                                     <RuleExtraTitle>주차</RuleExtraTitle>
                                     <RuleExtraInfoList>
@@ -558,7 +558,7 @@ const RentalDetailMain = () => {
                                         <Li>적발 시 추후 대관 이용 불이익</Li>
                                     </RuleExtraInfoList>
                                 </RuleExtraInfoWrapper>
-                            </RuleExtraInfoSection>
+                            </FlexItem>
                         </ContentsWrapper>
                         <ModalFlexTitle>
                             <BlueLine></BlueLine>

@@ -44,4 +44,15 @@ export default {
             MatchButtonWrapper: tw.div`flex w-full items-center`,
         },
     },
+    DetailLayoutStyle: {
+        DetailMainSection: tw.main`flex-1 w-full bg-gray-100`,
+        MainImg: tw.img`object-fill h-96 w-full`,
+        PageSection: tw.figcaption`flex absolute bottom-8 left-1/2 rounded-full w-24 items-center justify-center backdrop-blur-sm bg-white/30 cursor-pointer`,
+        DetailMainContainer: tw.div`flex w-full bg-gray-100 gap-2`,
+        DetailMainWrapper: tw.div`flex flex-col w-2/3 overflow-y-scroll gap-2`,
+        DetailItemSection: tw.div`flex flex-col w-full p-2 bg-white`,
+        DetailItem1: tw.div`flex flex-col w-full p-2 bg-gray-200 rounded-3xl`,
+        DetailItemContainer: tw.div`flex flex-col w-full space-y-5 p-2`,
+        DetailTitle: tw.span`text-base font-semibold`,
+    },
 };

@@ -31,6 +31,7 @@ export default {
         Flex: tw.div`flex`,
         FlexItemCenter: tw.div`flex items-center justify-center`,
         TextGrayXs: tw.span`text-xs text-gray-500`,
+        FlexItem: tw.div`flex flex-col w-full space-y-4`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
