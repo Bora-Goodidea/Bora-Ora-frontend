@@ -12,8 +12,17 @@ const initializeState = {
     },
 };
 
-const { DefalutMainContainer, SectionContainer, MainContainer, MainEmptyDiv, ContentsWrapper, MainWrapper, ExtraInfoWrapper, Flex } =
-    LayoutStyles.DefalutLayoutStyle;
+const {
+    DefalutMainContainer,
+    SectionContainer,
+    MainContainer,
+    MainEmptyDiv,
+    ContentsWrapper,
+    MainWrapper,
+    ExtraInfoWrapper,
+    Flex,
+    ItemCenterSection,
+} = LayoutStyles.DefalutLayoutStyle;
 const {
     LoginImgSection,
     LoginImgWrapper,
@@ -30,7 +39,6 @@ const {
     AuthBlueText,
     LoginInputSection,
     LoginInput,
-    LoginCheckSection,
     LoginCheckWrapper,
     LoginCheckContainer,
     IdCheckBox,
@@ -103,7 +111,7 @@ const LoginMain = () => {
                                             <MainEmptyDiv>
                                                 <LoginInput type="password" placeholder="비밀번호" autoComplete="on" />
                                             </MainEmptyDiv>
-                                            <LoginCheckSection>
+                                            <ItemCenterSection>
                                                 <LoginCheckWrapper>
                                                     <LoginCheckContainer>
                                                         <IdCheckBox type="checkbox" />
@@ -112,7 +120,7 @@ const LoginMain = () => {
                                                         <IdLabel htmlFor="remember">아이디 저장</IdLabel>
                                                     </IdCheckSection>
                                                 </LoginCheckWrapper>
-                                            </LoginCheckSection>
+                                            </ItemCenterSection>
                                             <SubmitBlueButton type="submit">로그인</SubmitBlueButton>
                                             <FindSection>
                                                 <FindText>아이디/비밀번호 찾기</FindText>
