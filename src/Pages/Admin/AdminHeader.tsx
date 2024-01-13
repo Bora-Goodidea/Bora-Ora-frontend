@@ -14,7 +14,7 @@ const AdminHeader = () => {
                 <ButtonWrapper>
                     <ButtonListWrapper>
                         <ButtonItemWrapper>
-                            <ButtonContent>로그아웃</ButtonContent>
+                            <ButtonContent>로그아웃 버튼</ButtonContent>
                         </ButtonItemWrapper>
                     </ButtonListWrapper>
                 </ButtonWrapper>
