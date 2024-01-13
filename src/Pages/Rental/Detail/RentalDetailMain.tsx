@@ -30,6 +30,9 @@ const {
     SubInfoSection,
     MainEmptyDiv,
     MainWrapper,
+    Flex,
+    FlexItem,
+    ItemWrapper,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
@@ -50,7 +53,6 @@ const {
     SubTitle,
     MainImg,
 } = LayoutStyles.MainLayoutStyle;
-const { HeaderIcon } = LayoutStyles.HeaderLayoutStyle;
 const { ModalFlexTitle, ModalTitle } = LayoutStyles.ModalLayout;
 const { Svg5, Svg6 } = ElementStyles.SvgStyle;
 
@@ -86,14 +88,12 @@ const {
     DetailWrapper6,
     DetailTextSmGray,
     RuleSection,
-    RuleItemSection,
     RuleIconGray,
     RuleIconBlack,
     TextGrayLine,
     RuleSubInfoSection,
     RuleSubIconSection,
     RuleSubIconWrapper,
-    RuleExtraInfoSection,
     RuleExtraInfoWrapper,
     RuleExtraTitle,
     RuleExtraInfoList,
@@ -251,12 +251,12 @@ const RentalDetailMain = () => {
                     <SectionWrapper>
                         {/* Contents Start */}
                         <ContentsSection>
-                            <HeaderIcon>
+                            <Flex>
                                 <ContentsTitle>서울 / 은평구</ContentsTitle>
-                            </HeaderIcon>
-                            <HeaderIcon>
+                            </Flex>
+                            <Flex>
                                 <TextLarge>서울 은평 롯데몰</TextLarge>
-                            </HeaderIcon>
+                            </Flex>
                             <TitleSection>
                                 <TextSmall>서울 은평구 통일로 1050</TextSmall>
                                 <TextGray>주소 복사</TextGray>
@@ -373,7 +373,7 @@ const RentalDetailMain = () => {
                                                     <TextSmGray>{`${addComma(info.price)}원~${addComma(info.price)}원/시간`}</TextSmGray>
                                                 </SubContent>
                                             </InfoWrapper>
-                                            <HeaderIcon>
+                                            <Flex>
                                                 <RentalFigure
                                                     onClick={() =>
                                                         setPageState(prevState => ({
@@ -384,9 +384,9 @@ const RentalDetailMain = () => {
                                                             },
                                                         }))
                                                     }>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <RentalImg src={info.images[0]} alt="..." />
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                     <RentalFigcaption>
                                                         <Svg5
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -402,7 +402,7 @@ const RentalDetailMain = () => {
                                                         </Svg5>
                                                     </RentalFigcaption>
                                                 </RentalFigure>
-                                            </HeaderIcon>
+                                            </Flex>
                                         </InfoSection>
                                         <ItemSection>
                                             <ItemContainer>
@@ -440,15 +440,15 @@ const RentalDetailMain = () => {
                                             <ReserWrapper>
                                                 <ReserSection>
                                                     <BtnBlue></BtnBlue>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <TextGray>예약 가능</TextGray>
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                 </ReserSection>
                                                 <ReserSection>
                                                     <BtnGray></BtnGray>
-                                                    <HeaderIcon>
+                                                    <Flex>
                                                         <TextGray>예약 불가</TextGray>
-                                                    </HeaderIcon>
+                                                    </Flex>
                                                 </ReserSection>
                                             </ReserWrapper>
                                         </RentalPt3>
@@ -468,46 +468,46 @@ const RentalDetailMain = () => {
                         </ContentsWrapper>
                         <ContentsWrapper>
                             <RuleSection>
-                                <RuleItemSection>
+                                <ItemWrapper>
                                     <RuleIconGray>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shower.svg" />
                                     </RuleIconGray>
                                     <SubTitle>
                                         <TextGrayLine>샤워실</TextGrayLine>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_park.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>무료주차</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>풋살화 대여</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_beverage.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>음료 판매</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
-                                <RuleItemSection>
+                                </ItemWrapper>
+                                <ItemWrapper>
                                     <RuleIconBlack>
                                         <Img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_toilet.svg" alt="..." />
                                     </RuleIconBlack>
                                     <SubTitle>
                                         <TextXs>남녀 구분</TextXs>
                                     </SubTitle>
-                                </RuleItemSection>
+                                </ItemWrapper>
                             </RuleSection>
                         </ContentsWrapper>
                         <ContentsWrapper>
@@ -532,7 +532,7 @@ const RentalDetailMain = () => {
                             </RuleSubInfoSection>
                         </ContentsWrapper>
                         <ContentsWrapper>
-                            <RuleExtraInfoSection>
+                            <FlexItem>
                                 <RuleExtraInfoWrapper>
                                     <RuleExtraTitle>주차</RuleExtraTitle>
                                     <RuleExtraInfoList>
@@ -558,7 +558,7 @@ const RentalDetailMain = () => {
                                         <Li>적발 시 추후 대관 이용 불이익</Li>
                                     </RuleExtraInfoList>
                                 </RuleExtraInfoWrapper>
-                            </RuleExtraInfoSection>
+                            </FlexItem>
                         </ContentsWrapper>
                         <ModalFlexTitle>
                             <BlueLine></BlueLine>
