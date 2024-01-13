@@ -17,7 +17,6 @@ export default {
         AuthBlueText: tw.h1`text-xl font-bold leading-tight tracking-tight text-blue-700 md:text-2xl`,
         LoginInputSection: tw.div`space-y-4 md:space-y-6`,
         LoginInput: tw.input`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5`,
-        LoginCheckSection: tw.div`flex items-center justify-between`,
         LoginCheckWrapper: tw.div`flex items-start`,
         LoginCheckContainer: tw.div`flex items-center h-5`,
         IdCheckBox: tw.input`w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-2 focus:ring-pink-300`,

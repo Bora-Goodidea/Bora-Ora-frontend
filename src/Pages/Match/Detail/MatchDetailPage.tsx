@@ -8,6 +8,8 @@ import { OraButton } from '@Elements';
 import LayoutStyles from '@Style/LayoutStyles';
 import MatchStyles from '@Style/MatchStyles';
 import ElementStyles from '@Style/ElementStyles';
+import RentalStyles from '@Style/RentalStyles';
+import AuthStyles from '@Style/AuthStyles';
 
 /**
 https://d31wz4d3hgve8q.cloudfront.net/media/ydp_thef_half.jpeg
@@ -27,9 +29,18 @@ const {
     TextXs,
     ItemWrapper,
     FlexItemCenterBorder,
+    ContentsXsTitle,
+    ItemCenterSection,
+    TextGrayXs,
+    ThirdDivide,
+    BoldLargeText,
+    HalfSection,
+    HalfDivide,
 } = LayoutStyles.DefalutLayoutStyle;
-const { Svg5 } = ElementStyles.SvgStyle;
-const { MainSlideFigure, MainP, InfoWrapper, TextGray } = LayoutStyles.MainLayoutStyle;
+const { Svg4, Svg5 } = ElementStyles.SvgStyle;
+const { RightItemIcon, LeftItem } = AuthStyles.MyProfile;
+const { TextSmall, DateSectionDiv, TextLarge } = MatchStyles.MatchLayoutStyle.DateSection;
+const { MainSlideFigure, MainP, InfoWrapper, TextGray, ReserSection } = LayoutStyles.MainLayoutStyle;
 const {
     DetailMainSection,
     MainImg,
@@ -58,7 +69,45 @@ const {
     YelloSmIcon,
     RedSmIcon,
     WhiteSmText,
+    LevelSection,
+    ChartSection,
+    ChartItemSection,
+    ChartItem,
+    Chart1,
+    Chart2,
+    Chart3,
+    Chart4,
+    Chart5,
+    ItemCenterGap,
+    ItemCenterGap2,
+    ChartImg,
+    ChartExplainSection,
+    ChartExplainContainer,
+    ChartExplainContainerPl6,
+    DetailIcon,
+    DetailItemWrapper,
+    TextGraySm,
+    BorderBar,
+    DetailItemExplain,
+    MatchDetailTitle,
+    SubExplainSection,
+    ExplainSection,
+    ExplainWrapper,
+    ExplaiContainer,
+    ExplainList,
+    MatchDetailTitleGray,
+    TableSection,
+    TableTitle,
+    MatchDetailRightSection,
+    MatchDetailTitleGrayUnderline,
+    DivideBar,
+    DetailSubSection,
+    BlueTextUnderline,
+    TextGrayLine,
+    EmptySection,
 } = MatchStyles.DetailLayoutStyle;
+const { TitleSection } = RentalStyles.Detail;
+const { NoneWrap } = AuthStyles.MyProfile;
 const MatchDetailPage = () => {
     const [slideCurrent, setSlideCurrent] = useState<number>(1);
     const slidersettings = {
@@ -223,67 +272,66 @@ const MatchDetailPage = () => {
                                                 </MatchItemContainer>
                                             </MatchItemSection>
                                         </SecondItemSection>
-                                        <div className="flex items-center object-center">
-                                            <span className="text-xs font-semibold">레벨 분포도</span>
-                                            <svg
+                                        <LevelSection>
+                                            <ContentsXsTitle>레벨 분포도</ContentsXsTitle>
+                                            <Svg4
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"
                                                 viewBox="0 0 24 24"
                                                 strokeWidth={1}
-                                                stroke="currentColor"
-                                                className="w-4 h-4">
+                                                stroke="currentColor">
                                                 <path
                                                     strokeLinecap="round"
                                                     strokeLinejoin="round"
                                                     d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                                                 />
-                                            </svg>
-                                        </div>
+                                            </Svg4>
+                                        </LevelSection>
                                         <InfoWrapper>
-                                            <div className="flex flex-nowrap w-full h-28 justify-between gap-3">
-                                                <div className="flex flex-col w-full h-full justify-end items-center">
-                                                    <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
-                                                        <div className="w-full bg-orange-500 h-0"></div>
-                                                    </div>
+                                            <ChartSection>
+                                                <ChartItemSection>
+                                                    <ChartItem>
+                                                        <Chart1></Chart1>
+                                                    </ChartItem>
                                                     <TextXs>0%</TextXs>
                                                     <TextGray>루키</TextGray>
-                                                </div>
-                                                <div className="flex flex-col w-full h-full justify-end items-center">
-                                                    <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
-                                                        <div className="w-full bg-orange-500 h-1/5"></div>
-                                                    </div>
+                                                </ChartItemSection>
+                                                <ChartItemSection>
+                                                    <ChartItem>
+                                                        <Chart2></Chart2>
+                                                    </ChartItem>
                                                     <TextXs>20%</TextXs>
                                                     <TextGray>스타터</TextGray>
-                                                </div>
-                                                <div className="flex flex-col w-full h-full justify-end items-center">
-                                                    <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
-                                                        <div className="w-full bg-orange-500 h-2/5"></div>
-                                                    </div>
+                                                </ChartItemSection>
+                                                <ChartItemSection>
+                                                    <ChartItem>
+                                                        <Chart3></Chart3>
+                                                    </ChartItem>
                                                     <TextXs>40%</TextXs>
                                                     <TextGray>비기너</TextGray>
-                                                </div>
-                                                <div className="flex flex-col w-full h-full justify-end items-center">
-                                                    <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
-                                                        <div className="w-full bg-orange-500 h-full"></div>
-                                                    </div>
+                                                </ChartItemSection>
+                                                <ChartItemSection>
+                                                    <ChartItem>
+                                                        <Chart4></Chart4>
+                                                    </ChartItem>
                                                     <TextXs>100%</TextXs>
                                                     <TextGray>아마추어</TextGray>
-                                                </div>
-                                                <div className="flex flex-col w-full h-full justify-end items-center">
-                                                    <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
-                                                        <div className="w-full bg-orange-500 h-1/5"></div>
-                                                    </div>
+                                                </ChartItemSection>
+                                                <ChartItemSection>
+                                                    <ChartItem>
+                                                        <Chart5></Chart5>
+                                                    </ChartItem>
                                                     <TextXs>20%</TextXs>
                                                     <TextGray>세미프로</TextGray>
-                                                </div>
-                                                <div className="flex flex-col w-full h-full justify-end items-center">
-                                                    <div className="flex flex-col w-full border bg-gray-100 h-16 object-bottom justify-end">
-                                                        <div className="w-full bg-orange-500 h-1/5"></div>
-                                                    </div>
+                                                </ChartItemSection>
+                                                <ChartItemSection>
+                                                    <ChartItem>
+                                                        <Chart5></Chart5>
+                                                    </ChartItem>
                                                     <TextXs>20%</TextXs>
                                                     <TextGray>프로</TextGray>
-                                                </div>
-                                            </div>
+                                                </ChartItemSection>
+                                            </ChartSection>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <ItemWrapper>
@@ -304,25 +352,24 @@ const MatchDetailPage = () => {
                                         </InfoWrapper>
                                     </DetailItemContainer>
                                     <DetailItemContainer>
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center gap-1">
+                                        <ItemCenterSection>
+                                            <ItemCenterGap>
                                                 <DetailTitle>플레이 스타일</DetailTitle>
-                                                <svg
+                                                <Svg4
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
                                                     viewBox="0 0 24 24"
                                                     strokeWidth={1}
-                                                    stroke="currentColor"
-                                                    className="w-4 h-4">
+                                                    stroke="currentColor">
                                                     <path
                                                         strokeLinecap="round"
                                                         strokeLinejoin="round"
                                                         d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                                                     />
-                                                </svg>
-                                            </div>
-                                            <div className="flex items-center gap-1">
-                                                <div className="flex gap-2">
+                                                </Svg4>
+                                            </ItemCenterGap>
+                                            <ItemCenterGap>
+                                                <TitleSection>
                                                     <img
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_graph_bar_blue.svg"
                                                         alt="..."
@@ -333,35 +380,30 @@ const MatchDetailPage = () => {
                                                         alt="..."
                                                     />
                                                     <TextXs>전체 평균</TextXs>
-                                                </div>
+                                                </TitleSection>
                                                 <Flex></Flex>
-                                            </div>
-                                        </div>
+                                            </ItemCenterGap>
+                                        </ItemCenterSection>
                                         <FlexItemCenter>
-                                            <img
-                                                className="w-2/3"
-                                                src="http://psmever.iptime.org:8062/assets/temp/detail-chart.png"
-                                                alt="..."
-                                            />
+                                            <ChartImg src="http://psmever.iptime.org:8062/assets/temp/detail-chart.png" alt="..." />
                                         </FlexItemCenter>
-                                        <div className="flex flex-col items-center justify-center">
-                                            <div className="flex w-full justify-start">
-                                                <div className="flex items-center gap-2">
-                                                    <img
-                                                        className="h-4 w-4"
+                                        <ChartExplainSection>
+                                            <ChartExplainContainer>
+                                                <ItemCenterGap2>
+                                                    <DetailIcon
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_pom.svg"
                                                         alt="..."
                                                     />
                                                     <TextXs>POM이 15명 있어요</TextXs>
-                                                </div>
-                                            </div>
-                                            <div className="flex w-full justify-start pl-6">
+                                                </ItemCenterGap2>
+                                            </ChartExplainContainer>
+                                            <ChartExplainContainerPl6>
                                                 <TextGray>
                                                     POM은 서로 존중하고 격려하며 함게 즐길 수 있도록 매치에 긍정적인 에너지를 불어넣어 주는
                                                     플래버예요
                                                 </TextGray>
-                                            </div>
-                                        </div>
+                                            </ChartExplainContainerPl6>
+                                        </ChartExplainSection>
                                     </DetailItemContainer>
                                 </DetailItemSection>
                                 <DetailItemSection>
@@ -369,10 +411,10 @@ const MatchDetailPage = () => {
                                         <Flex>
                                             <DetailTitle>매치 포인트</DetailTitle>
                                         </Flex>
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <DetailItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_level.svg" alt="..." />
-                                                <span className="text-sm text-gray-600">모든 레벨</span>
+                                                <TextGraySm>모든 레벨</TextGraySm>
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_gender.svg" alt="..." />
@@ -380,81 +422,79 @@ const MatchDetailPage = () => {
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_stadium.svg" alt="..." />
-                                                <span className="text-sm text-gray-600">6vs6 3파전</span>
+                                                <TextGraySm>6vs6 3파전</TextGraySm>
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img
                                                     src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_max_player_cnt.svg"
                                                     alt="..."
                                                 />
-                                                <span className="text-sm text-gray-600">10~18명</span>
+                                                <TextGraySm>10~18명</TextGraySm>
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
-                                                <span className="text-sm text-gray-600">풋살화/운동화</span>
+                                                <TextGraySm>풋살화/운동화</TextGraySm>
                                             </ItemWrapper>
-                                        </div>
+                                        </DetailItemWrapper>
                                     </DetailItemContainer>
-                                    <div className="flex flex-col w-full border"></div>
-                                    <div className="flex flex-col w-full p-2 space-y-4">
+                                    <BorderBar></BorderBar>
+                                    <DetailItemExplain>
                                         <InfoWrapper>
-                                            <div className="flex gap-2">
-                                                <img
-                                                    className="h-6 w-6"
+                                            <TitleSection>
+                                                <RightItemIcon
                                                     src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_woman.svg"
                                                     alt="..."
                                                 />
-                                                <span className="text-sm">아직 여자 플래버는 0명이에요</span>
-                                            </div>
-                                            <div className="flex pl-8">
-                                                <span className="text-xs text-gray-500">
+                                                <TextSmall>아직 여자 플래버는 0명이에요</TextSmall>
+                                            </TitleSection>
+                                            <SubExplainSection>
+                                                <TextGrayXs>
                                                     서로 배려하며, 함께 즐겨요. 내 힘이 누군가에게 큰 아픔이 될 수 있습니다. 지나친 몸싸움과
                                                     강한 슛을 조심해 주세요.
-                                                </span>
-                                            </div>
+                                                </TextGrayXs>
+                                            </SubExplainSection>
                                         </InfoWrapper>
                                         <ItemWrapper>
-                                            <img
-                                                className="h-6 w-6"
+                                            <RightItemIcon
                                                 src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_manager.svg"
                                                 alt="..."
                                             />
-                                            <span className="text-sm">강만호 매니저가 진행해요</span>
+                                            <TextSmall>강만호 매니저가 진행해요</TextSmall>
                                         </ItemWrapper>
-                                    </div>
+                                    </DetailItemExplain>
                                 </DetailItemSection>
                                 <DetailItemSection>
-                                    <div className="flex flex-col w-full space-y-5 p-2">
+                                    <DetailItemContainer>
                                         <Flex>
                                             <DetailTitle>경기장 정보</DetailTitle>
                                         </Flex>
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <DetailItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_stadium.svg" alt="..." />
-                                                <span className="text-sm text-gray-600">40x20m</span>
+                                                <TextGraySm>40x20m</TextGraySm>
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shower.svg" alt="..." />
-                                                <span className="text-sm text-gray-300 line-through">샤워실</span>
+                                                <TextGrayLine>샤워실</TextGrayLine>
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_park.svg" alt="..." />
-                                                <span className="text-sm text-gray-600">유료주차</span>
+                                                <TextGraySm>유료주차</TextGraySm>
                                             </ItemWrapper>
                                             <ItemWrapper>
                                                 <img src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_info_shoes.svg" alt="..." />
-                                                <span className="text-sm text-gray-600">풋살화대여</span>
+                                                <TextGraySm>풋살화대여</TextGraySm>
                                             </ItemWrapper>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col w-full border"></div>
-                                    <div className="flex flex-col w-full p-2 space-y-4">
+                                        </DetailItemWrapper>
+                                    </DetailItemContainer>
+                                    <BorderBar></BorderBar>
+                                    <DetailItemExplain>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">구장 특이사항</span>
+                                                <MatchDetailTitle>구장 특이사항</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex max-w-full">
-                                                <span className="w-full text-sm text-gray-500 font-sans text-left whitespace-pre-line">
+                                            <ExplainSection>
+                                                <ExplainWrapper>
                                                     {`
                                                         ■풋살장 가는 길: 엘리베이터를 이용하여 8층 풋살장으로 이동 (주말 오전 9시 매치 입장 시 후문[정문에서 코스트코 방향으로 이동]을 통해 8시 40분 부터 출입 가능)
 
@@ -478,10 +518,10 @@ const MatchDetailPage = () => {
                                                         ■기타: 긴급 시 사용 가능한 자동 제세동기가 8F 더에프 필드 사무실 옆 벽면에 설치돼 있습니다.
 
                                                     `}
-                                                </span>
-                                            </div>
+                                                </ExplainWrapper>
+                                            </ExplainSection>
                                         </InfoWrapper>
-                                    </div>
+                                    </DetailItemExplain>
                                 </DetailItemSection>
                                 <DetailItemSection>
                                     <DetailItemContainer>
@@ -489,78 +529,78 @@ const MatchDetailPage = () => {
                                             <DetailTitle>매치 진행 방식</DetailTitle>
                                         </Flex>
                                     </DetailItemContainer>
-                                    <div className="flex flex-col w-full p-2 space-y-4">
+                                    <DetailItemExplain>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">매치 규칙</span>
+                                                <MatchDetailTitle>매치 규칙</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">모든 파울은 사이드라인에서 킥인</span>
+                                                        <MatchDetailTitleGray>모든 파울은 사이드라인에서 킥인</MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             골키퍼에게 백패스 가능. 손으로는 잡으면 안 돼요
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">사람을 향한 태클 금지</span>
+                                                        <MatchDetailTitleGray>사람을 향한 태클 금지</MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">진행 방식</span>
+                                                <MatchDetailTitle>진행 방식</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">풋살화와 개인 음료만 준비하세요</span>
+                                                        <MatchDetailTitleGray>풋살화와 개인 음료만 준비하세요</MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">매니저가 경기 진행을 도와드려요</span>
+                                                        <MatchDetailTitleGray>매니저가 경기 진행을 도와드려요</MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             골키퍼와 휴식을 공평하게 돌아가면서 해요
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">레벨 데이터를 기준으로 팀을 나눠요</span>
+                                                        <MatchDetailTitleGray>레벨 데이터를 기준으로 팀을 나눠요</MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             친구끼리 와도 팀 실력이 맞지 않으면 다른 팀이 될 수 있어요
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">알아두면 좋아요</span>
+                                                <MatchDetailTitle>알아두면 좋아요</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">서로 존중하고 격려하며 함께 즐겨요</span>
+                                                        <MatchDetailTitleGray>서로 존중하고 격려하며 함께 즐겨요</MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             오라에서는 하루 평균 250매치가 진행되고 있어요
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             매일 4,500여 명이 팀 없이도 풋살을 즐기고 있어요
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
-                                    </div>
+                                    </DetailItemExplain>
                                 </DetailItemSection>
                                 <DetailItemSection>
                                     <DetailItemContainer>
@@ -568,158 +608,148 @@ const MatchDetailPage = () => {
                                             <DetailTitle>환불 정책</DetailTitle>
                                         </Flex>
                                     </DetailItemContainer>
-                                    <div className="flex flex-col w-full p-2 space-y-4">
+                                    <DetailItemExplain>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">신청 취소 시 환불 기준</span>
+                                                <MatchDetailTitle>신청 취소 시 환불 기준</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full">
-                                                <table className="w-full border-collapse border border-slate-500">
+                                            <DateSectionDiv>
+                                                <TableSection>
                                                     <tbody>
                                                         <tr>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">
-                                                                매치 2일 전
-                                                            </td>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">무료 취소</td>
+                                                            <TableTitle>매치 2일 전</TableTitle>
+                                                            <TableTitle>무료 취소</TableTitle>
                                                         </tr>
                                                         <tr>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">
-                                                                매치 1일 전
-                                                            </td>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">80% 환급</td>
+                                                            <TableTitle>매치 1일 전</TableTitle>
+                                                            <TableTitle>80% 환급</TableTitle>
                                                         </tr>
                                                         <tr>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">
-                                                                당일 ~ 매치 시작 90분 전까지
-                                                            </td>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">20% 환급</td>
+                                                            <TableTitle>당일 ~ 매치 시작 90분 전까지</TableTitle>
+                                                            <TableTitle>20% 환급</TableTitle>
                                                         </tr>
                                                         <tr>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">
-                                                                매치 시작 90분 이내
-                                                            </td>
-                                                            <td className="text-sm text-gray-500 border border-gray-400 p-1">환불 불가</td>
+                                                            <TableTitle>매치 시작 90분 이내</TableTitle>
+                                                            <TableTitle>환불 불가</TableTitle>
                                                         </tr>
                                                     </tbody>
-                                                </table>
-                                            </div>
+                                                </TableSection>
+                                            </DateSectionDiv>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">그 외 취소 기준</span>
+                                                <MatchDetailTitle>그 외 취소 기준</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             결제 후 30분 이내에는 하루 1회에 한해 무료 취소가 가능합니다. (단, 매치 시작
                                                             90분 이내일 경우 불가)
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             쿠폰 신청자는 매치 시작 90분 전까지 취소 시 쿠폰이 반환됩니다.
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             결제 시 실 결제금액(쿠폰 제외)을 기준으로 위 규정에 따라 환급됩니다.
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             현장에서 매치가 취소되는 경우 참가비는 진행되지 않은 시간만큼 다음날 오전
                                                             환급됩니다.
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             매치 시작 90분 전까지 최소 인원이 모이지 않을 시 카카오톡 혹은 LMS으로 안내되며,
                                                             자동 전액 환불됩니다. (단, 공지 전 직접 취소하시는 경우 상단 일반 환불 규정대로
                                                             처리되니 유의하시길 바랍니다)
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">
-                                                    다음의 경우는 환불이 불가합니다.
-                                                </span>
+                                                <MatchDetailTitle>다음의 경우는 환불이 불가합니다.</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             구장, 날짜, 시간 등을 실수로 잘못 선택한 경우
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             부상, 취업 등 개인 사정으로 신청된 매치에 참여하지 못하는 경우
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             단체 혹은 지인과의 참가로 매치 취소 혹은 변경을 원하는 경우
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             황사/미세먼지로 인해 취소 혹은 변경을 요청하는 경우
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             단순 변심으로 취소 혹은 변경을 요청하는 경우
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">유의사항</span>
+                                                <MatchDetailTitle>유의사항</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             무단 불참하거나 매치 시작 90분 이내에 취소하면 패널티를 받을 수 있습니다.
                                                             (참여가 어려울 경우, 환불이 불가능하더라도 원활한 매치 진행을 위해 나의 플랩에서
                                                             미리 취소해주세요.)
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">변경 정책</span>
+                                                <MatchDetailTitle>변경 정책</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             변경은 취소와 동일한 환불 규정으로 적용됩니다.
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             변경은 상단 환불 정책 기준 100% 환불일 경우에만 가능하며, 규정 외 요청은 적용이
                                                             불가합니다.
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">우천 및 폭설 정책</span>
+                                                <MatchDetailTitle>우천 및 폭설 정책</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <span className="w-full text-sm text-gray-500 font-sans text-left whitespace-pre-line">
+                                            <ExplaiContainer>
+                                                <ExplainWrapper>
                                                     {`
                                                             기상청 날씨누리 예보에 따라 진행 여부 및 환불 가능 여부를 공지해드립니다.
                                                             - 공지 시점
@@ -736,100 +766,98 @@ const MatchDetailPage = () => {
                                                             현장에서 매치가 취소되거나 중단되면 진행하지 못한 시간만큼 캐시로 환불됩니다.
 
                                                     `}
-                                                </span>
-                                            </div>
+                                                </ExplainWrapper>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
                                         <InfoWrapper>
                                             <Flex>
-                                                <span className="text-sm text-gray-500 font-semibold">소셜매치 취소 방법</span>
+                                                <MatchDetailTitle>소셜매치 취소 방법</MatchDetailTitle>
                                             </Flex>
-                                            <div className="flex w-full px-6">
-                                                <ul className="list-disc">
+                                            <ExplaiContainer>
+                                                <ExplainList>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">
+                                                        <MatchDetailTitleGray>
                                                             마이페이지 → 신청 내역 → 소셜 매치 탭 클릭 → 취소를 원하는 매치의 신청내역 클릭
                                                             후 취소
-                                                        </span>
+                                                        </MatchDetailTitleGray>
                                                     </li>
                                                     <li>
-                                                        <span className="text-sm text-gray-500">신청 내역 바로 가기</span>
+                                                        <MatchDetailTitleGray>신청 내역 바로 가기</MatchDetailTitleGray>
                                                     </li>
-                                                </ul>
-                                            </div>
+                                                </ExplainList>
+                                            </ExplaiContainer>
                                         </InfoWrapper>
-                                    </div>
+                                    </DetailItemExplain>
                                 </DetailItemSection>
                             </DetailMainWrapper>
-                            <div className="flex w-1/3">
-                                <div className="flex flex-col h-10 sticky top-0 w-full bg-white">
+                            <ThirdDivide>
+                                <MatchDetailRightSection>
                                     <DetailItemSection>
                                         <DetailItemContainer>
                                             <Flex>
                                                 <ContentsTitle>12월 5일 화요일 15:00</ContentsTitle>
                                             </Flex>
                                             <Flex>
-                                                <span className="text-lg">서울 영등포 더에프 필드 B구장</span>
+                                                <TextLarge>서울 영등포 더에프 필드 B구장</TextLarge>
                                             </Flex>
-                                            <div className="flex flex-nowrap gap-2">
-                                                <span className="text-sm text-gray-500">서울특별시 영등포구 선유로 138</span>
-                                                <span className="text-sm text-gray-500 underline">주소복사</span>
-                                                <span className="text-sm text-gray-500 underline">지도보기</span>
-                                            </div>
-                                            <div className="flex flex-nowrap gap-2">
-                                                <div className="flex flex-nowrap items-center justify-center gap-2">
-                                                    <img
-                                                        className="h-4 w-4"
+                                            <NoneWrap>
+                                                <MatchDetailTitleGray>서울특별시 영등포구 선유로 138</MatchDetailTitleGray>
+                                                <MatchDetailTitleGrayUnderline>주소복사</MatchDetailTitleGrayUnderline>
+                                                <MatchDetailTitleGrayUnderline>지도보기</MatchDetailTitleGrayUnderline>
+                                            </NoneWrap>
+                                            <NoneWrap>
+                                                <ReserSection>
+                                                    <DetailIcon
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_viewer.svg"
                                                         alt="..."
                                                     />
-                                                    <span className="text-sm text-gray-500">216</span>
-                                                </div>
-                                                <div className="flex flex-nowrap items-center justify-center gap-2">
-                                                    <img
-                                                        className="h-4 w-4"
+                                                    <MatchDetailTitleGray>216</MatchDetailTitleGray>
+                                                </ReserSection>
+                                                <ReserSection>
+                                                    <DetailIcon
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_bookmark_filled.svg"
                                                         alt="..."
                                                     />
-                                                    <span className="text-sm text-gray-500">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="border"></div>
-                                            <div className="flex flex-nowrap">
-                                                <div className="flex items-center gap-2">
-                                                    <span className="text-lg font-semibold">10,000원</span>
-                                                    <span className="text-xs text-gray-500"> / 2시간</span>
-                                                </div>
-                                            </div>
-                                            <div className="border"></div>
-                                            <div className="flex flex-nowrap">
-                                                <div className="flex flex-nowrap w-full items-center justify-between gap-2">
-                                                    <div className="flex flex-col w-1/2">
-                                                        <div className="flex flex-nowrap">
-                                                            <span className="text-xs text-blue-500 underline">다음 일정을 미리 예약</span>
+                                                    <MatchDetailTitleGray>2</MatchDetailTitleGray>
+                                                </ReserSection>
+                                            </NoneWrap>
+                                            <DivideBar></DivideBar>
+                                            <LeftItem>
+                                                <ItemCenterGap2>
+                                                    <BoldLargeText>10,000원</BoldLargeText>
+                                                    <TextGrayXs> / 2시간</TextGrayXs>
+                                                </ItemCenterGap2>
+                                            </LeftItem>
+                                            <DivideBar></DivideBar>
+                                            <LeftItem>
+                                                <DetailSubSection>
+                                                    <HalfSection>
+                                                        <LeftItem>
+                                                            <BlueTextUnderline>다음 일정을 미리 예약</BlueTextUnderline>
                                                             <TextXs>하세요</TextXs>
-                                                        </div>
+                                                        </LeftItem>
                                                         <Flex>
-                                                            <span className="text-xs text-gray-500">2일 전까지 무료 취소</span>
+                                                            <TextGrayXs>2일 전까지 무료 취소</TextGrayXs>
                                                         </Flex>
-                                                    </div>
-                                                    <div className="flex w-1/2">
+                                                    </HalfSection>
+                                                    <HalfDivide>
                                                         <OraButton
                                                             ButtonName={`매치 신청`}
                                                             ButtonColor={`blue`}
                                                             HandleClick={() => console.debug('click')}
                                                         />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                    </HalfDivide>
+                                                </DetailSubSection>
+                                            </LeftItem>
                                         </DetailItemContainer>
                                     </DetailItemSection>
-                                </div>
-                            </div>
+                                </MatchDetailRightSection>
+                            </ThirdDivide>
                         </DetailMainContainer>
                         {/* Contents End */}
                     </SectionWrapper>
                 </SectionContainer>
-                <section className="flex w-full justify-center h-5"></section>
+                <EmptySection></EmptySection>
             </DetailMainSection>
 
             <Footer />

@@ -34,6 +34,8 @@ export default {
         TextGrayXs: tw.span`text-xs text-gray-500`,
         FlexItem: tw.div`flex flex-col w-full space-y-4`,
         ItemWrapper: tw.div`flex flex-nowrap items-center gap-2`,
+        ItemCenterSection: tw.div`flex items-center justify-between`,
+        HalfSection: tw.div`flex flex-col w-1/2`,
     },
     HeaderLayoutStyle: {
         HeaderTabSection: tw.div`flex flex-nowrap items-center h-20 justify-stretch gap-3`,
