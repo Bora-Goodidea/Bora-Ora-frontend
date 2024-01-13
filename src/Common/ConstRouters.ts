@@ -179,4 +179,30 @@ export default {
             Component: React.lazy(() => import('@Page/Auth/ChangeMyProfile')),
         },
     ],
+    Admin: [
+        {
+            page: `match`,
+            name: `관리자-회원 리스트`,
+            pathName: `/member-list`,
+            Component: React.lazy(() => import('@Page/Admin/MemberListPage')),
+        },
+        {
+            page: `match`,
+            name: `관리자-회원 상세`,
+            pathName: `/member-detail`,
+            Component: React.lazy(() => import('@Page/Admin/MemberDetailPage')),
+        },
+        {
+            page: `match`,
+            name: `관리자-구장 리스트`,
+            pathName: `/stadium-list`,
+            Component: React.lazy(() => import('@Page/Admin/StadiumListPage')),
+        },
+        {
+            page: `match`,
+            name: `관리자-구장 상세`,
+            pathName: `/stadium-detail`,
+            Component: React.lazy(() => import('@Page/Admin/StadiumDetailPage')),
+        },
+    ],
 };

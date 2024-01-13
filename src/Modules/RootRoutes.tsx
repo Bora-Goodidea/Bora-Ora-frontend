@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import lodash from 'lodash';
 import { ConstRouters } from '@Commons';
-import { BlankLayout } from '@Components';
+import { BlankLayout, AdminLayout } from '@Components';
 import { /*PageNotFound,*/ TemporaryMainPage } from '@Pages';
 
 const RootRoutes = () => {
@@ -80,6 +80,22 @@ const RootRoutes = () => {
                             <Route
                                 key={`root-routers-page-${index}`}
                                 path={`/auth${element.pathName}`}
+                                element={
+                                    <React.Suspense>
+                                        <PageComponent />
+                                    </React.Suspense>
+                                }
+                            />
+                        );
+                    })}
+                </Route>
+                <Route element={<AdminLayout />}>
+                    {lodash.map(ConstRouters.Admin, (element, index) => {
+                        const PageComponent = element.Component;
+                        return (
+                            <Route
+                                key={`root-routers-page-${index}`}
+                                path={`/admin${element.pathName}`}
                                 element={
                                     <React.Suspense>
                                         <PageComponent />
