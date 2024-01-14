@@ -83,4 +83,8 @@ export default {
         ModalListSection: tw.div`flex flex-nowrap w-full`,
         ModalListTitle: tw.div`w-full text-xs pl-5`,
     },
+    SplashComponentStyle: {
+        Wapper: tw.div`flex h-full w-full items-center justify-center`,
+        Text: tw.span`sr-only`,
+    },
 };

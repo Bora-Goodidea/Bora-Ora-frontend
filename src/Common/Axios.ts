@@ -3,11 +3,8 @@ import { colorDebug, saveRefreshToken, getRefreshToken, getAccessToken, removeLo
 import lodash from 'lodash';
 
 export interface TokenResultInterface {
-    messages: string;
-    result: {
-        access_token: string;
-        refresh_token: string;
-    };
+    access_token: string;
+    refresh_token: string;
 }
 
 // FIXME: 2023-11-18 16:12  console 에 에러 메시지 안보이게 처리...
@@ -58,8 +55,8 @@ const handleTokenRefresh = (): Promise<{
             .then(({ data }: { data: TokenResultInterface }) => {
                 colorDebug('success', ':: Token Refresh Success :: ');
                 resolve({
-                    access_token: data.result.access_token,
-                    refresh_token: data.result.refresh_token,
+                    access_token: data.access_token,
+                    refresh_token: data.refresh_token,
                 });
             })
             .catch(() => {
@@ -227,7 +224,7 @@ const _axios_ = ({ method = 'post', url, payload }: serviceInterface): any => {
         } else {
             return Promise.resolve({
                 status: true,
-                payload: response.data.result ? response.data.result : response.data,
+                payload: response.data,
             });
         }
     };

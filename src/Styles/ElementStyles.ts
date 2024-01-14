@@ -56,4 +56,8 @@ export default {
         SearchIcon: tw.span`sr-only`,
         HeaderSubSection: tw.div`flex flex-nowrap pl-1`,
     },
+    Sweetalert: {
+        Title: tw.p`text-2xl`,
+        Content: tw.p`text-sm whitespace-pre-line text-left`,
+    },
 };
