@@ -16,10 +16,12 @@ const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, M
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
 const { MainSectionContainer, MainSlideFigure, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
-const { HeaderDivIcon, HeaderDivIcon1, HeaderPIcon } = MatchStyles.MatchLayoutStyle.HeaderSection;
 const { Svg4 } = ElementStyles.SvgStyle;
 
 const {
+    HeaderDivIcon,
+    HeaderDivIcon1,
+    HeaderPIcon,
     DateSectionContainer,
     DateSectionWrapper,
     DateSectionDiv,
@@ -35,11 +37,9 @@ const {
     TextSmallBlue,
     TextLarge,
     TextSmall,
-} = MatchStyles.MatchLayoutStyle.DateSection;
-
-const { FilteringContainer, FilteringSectionContainer, FilteringSelectedButton } = MatchStyles.MatchLayoutStyle.FilteringSection;
-
-const {
+    FilteringContainer,
+    FilteringSectionContainer,
+    FilteringSelectedButton,
     MatchListContainer,
     MatchListWrapper,
     MatchInfoContainer,
@@ -50,7 +50,7 @@ const {
     MatchSubInfo,
     MatchButtonContainer,
     MatchButtonWrapper,
-} = MatchStyles.MatchLayoutStyle.MatchListSection;
+} = MatchStyles.MatchLayoutStyle;
 
 const { ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } = LayoutStyles.ModalLayout;
 

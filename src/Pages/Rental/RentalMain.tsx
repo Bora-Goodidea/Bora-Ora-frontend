@@ -53,7 +53,7 @@ const {
     InfoTitle,
 } = LayoutStyles.MainLayoutStyle;
 
-const { MatchListContainer } = MatchStyles.MatchLayoutStyle.MatchListSection;
+const { MatchListContainer } = MatchStyles.MatchLayoutStyle;
 
 const { ModalTitle, ModalFlexTitle, ModalListSection, ModalListTitle } = LayoutStyles.ModalLayout;
 

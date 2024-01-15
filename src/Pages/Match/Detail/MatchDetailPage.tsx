@@ -39,7 +39,7 @@ const {
 } = LayoutStyles.DefalutLayoutStyle;
 const { Svg4, Svg5 } = ElementStyles.SvgStyle;
 const { RightItemIcon, LeftItem } = AuthStyles.MyProfile;
-const { TextSmall, DateSectionDiv, TextLarge } = MatchStyles.MatchLayoutStyle.DateSection;
+const { TextSmall, DateSectionDiv, TextLarge } = MatchStyles.MatchLayoutStyle;
 const { MainSlideFigure, MainP, InfoWrapper, TextGray, ReserSection } = LayoutStyles.MainLayoutStyle;
 const {
     DetailMainSection,

@@ -43,7 +43,7 @@ const {
 const { RightItemSection } = AuthStyles.MyProfile;
 const { SelectSection } = AuthStyles.RegisterCompleteLayoutStyle;
 const { MainImg, InfoWrapper, SubTitle, SubContent, TextGray } = LayoutStyles.MainLayoutStyle;
-const { TextLargeWhite, TextSmall } = MatchStyles.MatchLayoutStyle.DateSection;
+const { TextLargeWhite, TextSmall } = MatchStyles.MatchLayoutStyle;
 const { DetailTitle } = MatchStyles.DetailLayoutStyle;
 const { Svg4 } = ElementStyles.SvgStyle;
 

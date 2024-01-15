@@ -116,7 +116,7 @@ const {
     TextSmallRed,
     TextLargeBlue,
     TextSmallBlue,
-} = MatchStyles.MatchLayoutStyle.DateSection;
+} = MatchStyles.MatchLayoutStyle;
 
 const StyledSlider = styled(Slider)`
     width: 100%;
