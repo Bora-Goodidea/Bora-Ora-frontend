@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TemporaryData from '@Common/TemporaryData';
 import Header from '@Page/Header';
-import Footer from '@Page/Publish/Footer';
+import Footer from '@Page/Footer';
 import Slider from 'react-slick';
 import lodash from 'lodash';
 import { OraButton } from '@Elements';
