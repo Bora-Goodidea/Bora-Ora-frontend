@@ -89,6 +89,22 @@ const RootRoutes = () => {
                         );
                     })}
                 </Route>
+                <Route>
+                    {lodash.map(ConstRouters.Pay, (element, index) => {
+                        const PageComponent = element.Component;
+                        return (
+                            <Route
+                                key={`root-routers-page-${index}`}
+                                path={`/pay${element.pathName}`}
+                                element={
+                                    <React.Suspense>
+                                        <PageComponent />
+                                    </React.Suspense>
+                                }
+                            />
+                        );
+                    })}
+                </Route>
                 <Route element={<AdminLayout />}>
                     {lodash.map(ConstRouters.Admin, (element, index) => {
                         const PageComponent = element.Component;

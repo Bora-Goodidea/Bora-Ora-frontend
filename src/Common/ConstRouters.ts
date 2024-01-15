@@ -179,6 +179,14 @@ export default {
             Component: React.lazy(() => import('@Page/Auth/ChangeMyProfile')),
         },
     ],
+    Pay: [
+        {
+            page: `payment`,
+            name: `결제`,
+            pathName: `/payment`,
+            Component: React.lazy(() => import('@Page/Pay/PaymentMain')),
+        },
+    ],
     Admin: [
         {
             page: `match`,
