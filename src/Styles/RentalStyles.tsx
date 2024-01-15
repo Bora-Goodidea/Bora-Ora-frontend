@@ -59,7 +59,6 @@ export default {
         RuleExtraInfoWrapper: tw.div`w-full space-y-2 py-1`,
         RuleExtraTitle: tw.div`mb-2 text-sm font-semibold`,
         RuleExtraInfoList: tw.ul`space-y-1 text-sm text-gray-500 list-disc list-inside`,
-        RuleTextSmall: tw.div`flex text-xs px-2 py-2`,
         DashText: tw.p`px-5`,
     },
 };

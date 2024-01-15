@@ -2,6 +2,50 @@ import { useState } from 'react';
 import Header from '@Page/Publish/Header';
 import Footer from '@Page/Publish/Footer';
 import { OraCheckBox, OraButton } from '@Elements';
+import { ElementStyles, LayoutStyles } from '@Styles';
+import PayStyles from '@Style/PayStyles';
+import AuthStyles from '@Style/AuthStyles';
+import MatchStyles from '@Style/MatchStyles';
+
+const {
+    DefalutMainContainer,
+    SectionContainer,
+    SectionWrapper,
+    ContentsWrapper,
+    TextXs,
+    Flex,
+    ContentsSection,
+    SubInfoSection,
+    Grid,
+    SmallText,
+    SmallBorderRText,
+    RuleTextSmall,
+    ContentsXsTitle,
+} = LayoutStyles.DefalutLayoutStyle;
+const {
+    PayMainSection,
+    PayFigure,
+    PayFigcaption,
+    PaySection,
+    PayContainer,
+    PayWrapper,
+    GrayBar,
+    PayRadioBtn,
+    PayLabel,
+    PayH4,
+    PayExplainSection,
+    PayExplainContainer,
+    PayExplainWrapper,
+    PayXsText,
+    PayRuleList,
+    PayBottomSection,
+} = PayStyles.PayLayoutStyle;
+const { RightItemSection } = AuthStyles.MyProfile;
+const { SelectSection } = AuthStyles.RegisterCompleteLayoutStyle;
+const { MainImg, InfoWrapper, SubTitle, SubContent, TextGray } = LayoutStyles.MainLayoutStyle;
+const { TextLargeWhite, TextSmall } = MatchStyles.MatchLayoutStyle.DateSection;
+const { DetailTitle } = MatchStyles.DetailLayoutStyle;
+const { Svg4 } = ElementStyles.SvgStyle;
 
 const initializeState = {
     contentsToggle: {
@@ -20,85 +64,73 @@ const PaymentPage = () => {
         };
     }>(initializeState);
     return (
-        <div className="min-h-screen flex flex-col">
+        <DefalutMainContainer>
             <Header />
 
-            <main className="flex-1 w-full bg-gray-50 pb-10">
-                <section className="flex w-full justify-center">
-                    <div className="w-full md:max-w-screen-lg">
-                        <div className="flex w-full bg-white">
-                            <figure className="relative transition-all duration-300">
-                                <div className="">
-                                    <img
-                                        className="rounded-2xl"
-                                        src={`https://d31wz4d3hgve8q.cloudfront.net/static/img/cover_default.jpg`}
-                                        alt="..."
-                                    />
+            <PayMainSection>
+                <SectionContainer>
+                    <SectionWrapper>
+                        <RightItemSection>
+                            <PayFigure>
+                                <div>
+                                    <MainImg src={`https://d31wz4d3hgve8q.cloudfront.net/static/img/cover_default.jpg`} alt="..." />
                                 </div>
-                                <figcaption className="flex absolute bottom-1 left-5 items-center justify-center">
-                                    <div className="flex flex-col">
-                                        <span className="text-lg text-white">12월 17일 일요일</span>
-                                        <span className="text-lg text-white">21:00 ~ 23:00</span>
-                                        <span className="text-lg text-white">서울 은행 롯데몰 실내</span>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </section>
-                <section className="flex w-full justify-center">
-                    <div className="w-full md:max-w-screen-lg">
-                        <div className="flex flex-col w-full gap-3">
-                            <div className="flex flex-col w-full bg-white p-5">
-                                <div className="flex flex-col w-full space-y-3">
-                                    <div className="flex w-full">
-                                        <span className="text-xs">결제</span>
-                                    </div>
-                                    <div className="flex w-full justify-between">
-                                        <span className="text-sm">이용금액</span>
-                                        <span className="text-sm">100,000</span>
-                                    </div>
-                                    <div className="flex w-full">
-                                        <div className="flex w-full border-2 border-gray-50"></div>
-                                    </div>
-                                    <div className="flex w-full justify-between">
-                                        <span className="text-base font-semibold">결제 금액</span>
-                                        <span className="text-base font-semibold">100,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-full bg-white p-5">
-                                <div className="flex flex-col w-full space-y-3">
-                                    <div className="flex w-full">
-                                        <span className="text-xs">결제 수단</span>
-                                    </div>
-                                    <div className="flex w-full justify-between">
-                                        <div className="flex items-center">
-                                            <input
-                                                checked={true}
-                                                type="radio"
-                                                value=""
-                                                className="w-4 h-4 bg-gray-100 focus:ring-blue-500"
-                                                onChange={() => console.debug('click')}
-                                            />
-                                            <label className="ms-2 text-sm font-medium text-gray-900 items-center flex gap-2">
+                                <PayFigcaption>
+                                    <InfoWrapper>
+                                        <TextLargeWhite>12월 17일 일요일</TextLargeWhite>
+                                        <TextLargeWhite>21:00 ~ 23:00</TextLargeWhite>
+                                        <TextLargeWhite>서울 은행 롯데몰 실내</TextLargeWhite>
+                                    </InfoWrapper>
+                                </PayFigcaption>
+                            </PayFigure>
+                        </RightItemSection>
+                    </SectionWrapper>
+                </SectionContainer>
+                <SectionContainer>
+                    <SectionWrapper>
+                        <PaySection>
+                            <PayContainer>
+                                <SelectSection>
+                                    <ContentsWrapper>
+                                        <TextXs>결제</TextXs>
+                                    </ContentsWrapper>
+                                    <PayWrapper>
+                                        <TextSmall>이용금액</TextSmall>
+                                        <TextSmall>100,000</TextSmall>
+                                    </PayWrapper>
+                                    <ContentsWrapper>
+                                        <GrayBar></GrayBar>
+                                    </ContentsWrapper>
+                                    <PayWrapper>
+                                        <DetailTitle>결제 금액</DetailTitle>
+                                        <DetailTitle>100,000</DetailTitle>
+                                    </PayWrapper>
+                                </SelectSection>
+                            </PayContainer>
+                            <PayContainer>
+                                <SelectSection>
+                                    <ContentsWrapper>
+                                        <TextXs>결제 수단</TextXs>
+                                    </ContentsWrapper>
+                                    <PayWrapper>
+                                        <SubTitle>
+                                            <PayRadioBtn checked={true} type="radio" value="" onChange={() => console.debug('click')} />
+                                            <PayLabel>
                                                 카카오페이
-                                                <div className="flex">
-                                                    <img
-                                                        className="h-4"
+                                                <Flex>
+                                                    <PayH4
                                                         src="https://d31wz4d3hgve8q.cloudfront.net/static/img/ic_kakaopay.png"
-                                                        alt="..."></img>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-full bg-white p-5">
-                                <div className="flex flex-col w-full space-y-3">
-                                    <div className="flex flex-col w-full border-b border-gray-200 py-5">
-                                        <div
-                                            className="flex flex-nowrap w-full justify-between cursor-pointer"
+                                                        alt="..."></PayH4>
+                                                </Flex>
+                                            </PayLabel>
+                                        </SubTitle>
+                                    </PayWrapper>
+                                </SelectSection>
+                            </PayContainer>
+                            <PayContainer>
+                                <SelectSection>
+                                    <PayExplainSection>
+                                        <PayExplainContainer
                                             onClick={() =>
                                                 setPageState(prevState => ({
                                                     ...prevState,
@@ -108,39 +140,37 @@ const PaymentPage = () => {
                                                     },
                                                 }))
                                             }>
-                                            <span className="text-xs">이것만은 꼭!</span>
-                                            <div className="text-xs">
+                                            <TextXs>이것만은 꼭!</TextXs>
+                                            <TextXs>
                                                 {pageState.contentsToggle.step1 ? (
-                                                    <svg
+                                                    <Svg4
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="currentColor"
-                                                        className="w-4 h-4">
+                                                        stroke="currentColor">
                                                         <path
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                                                         />
-                                                    </svg>
+                                                    </Svg4>
                                                 ) : (
-                                                    <svg
+                                                    <Svg4
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="currentColor"
-                                                        className="w-4 h-4">
+                                                        stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                                    </svg>
+                                                    </Svg4>
                                                 )}
-                                            </div>
-                                        </div>
-                                        <div className="flex w-full justify-between">
-                                            <div className="flex items-center">
+                                            </TextXs>
+                                        </PayExplainContainer>
+                                        <PayWrapper>
+                                            <SubTitle>
                                                 {pageState.contentsToggle.step1 && (
-                                                    <span className="w-full text-xs text-gray-500 font-sans text-left whitespace-pre-line ">
+                                                    <PayExplainWrapper>
                                                         {`
                                                     제시간에 경기를 마쳐 주세요. 예약 시간을 초과하지 않도록 3~5분 전에 마무리 하는 게 좋습니다.
 
@@ -151,14 +181,13 @@ const PaymentPage = () => {
                                                     이용자 부주의로 시설을 파손하면, 손해배상을 청구할 수 있습니다. 이 점 유의해 주세요.
 
                                                     `}
-                                                    </span>
+                                                    </PayExplainWrapper>
                                                 )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col w-full border-b border-gray-200 py-5">
-                                        <div
-                                            className="flex flex-nowrap w-full justify-between cursor-pointer"
+                                            </SubTitle>
+                                        </PayWrapper>
+                                    </PayExplainSection>
+                                    <PayExplainSection>
+                                        <PayExplainContainer
                                             onClick={() =>
                                                 setPageState(prevState => ({
                                                     ...prevState,
@@ -168,39 +197,37 @@ const PaymentPage = () => {
                                                     },
                                                 }))
                                             }>
-                                            <span className="text-xs">부상과 보험</span>
-                                            <div className="text-xs">
+                                            <TextXs>부상과 보험</TextXs>
+                                            <TextXs>
                                                 {pageState.contentsToggle.step2 ? (
-                                                    <svg
+                                                    <Svg4
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="currentColor"
-                                                        className="w-4 h-4">
+                                                        stroke="currentColor">
                                                         <path
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                                                         />
-                                                    </svg>
+                                                    </Svg4>
                                                 ) : (
-                                                    <svg
+                                                    <Svg4
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="currentColor"
-                                                        className="w-4 h-4">
+                                                        stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                                    </svg>
+                                                    </Svg4>
                                                 )}
-                                            </div>
-                                        </div>
-                                        <div className="flex w-full justify-between">
-                                            <div className="flex items-center">
+                                            </TextXs>
+                                        </PayExplainContainer>
+                                        <PayWrapper>
+                                            <SubTitle>
                                                 {pageState.contentsToggle.step2 && (
-                                                    <span className="w-full text-xs text-gray-500 font-sans text-left whitespace-pre-line ">
+                                                    <PayExplainWrapper>
                                                         {`
                                                     플랩은 상대를 배려하고, 나를 지키는 안전한 플레이를 권장합니다.
 
@@ -220,14 +247,13 @@ const PaymentPage = () => {
                                                     *자주 묻는 질문에서 '부상'을 검색해 법적 보상에 대한 자세한 내용을 확인해 보세요.
 
                                                     `}
-                                                    </span>
+                                                    </PayExplainWrapper>
                                                 )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col w-full border-b border-gray-200 py-5">
-                                        <div
-                                            className="flex flex-nowrap w-full justify-between cursor-pointer space-y-2"
+                                            </SubTitle>
+                                        </PayWrapper>
+                                    </PayExplainSection>
+                                    <PayExplainSection>
+                                        <PayExplainContainer
                                             onClick={() =>
                                                 setPageState(prevState => ({
                                                     ...prevState,
@@ -237,78 +263,62 @@ const PaymentPage = () => {
                                                     },
                                                 }))
                                             }>
-                                            <span className="text-xs">환불 안내</span>
-                                            <div className="text-xs">
+                                            <TextXs>환불 안내</TextXs>
+                                            <TextXs>
                                                 {pageState.contentsToggle.step3 ? (
-                                                    <svg
+                                                    <Svg4
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="currentColor"
-                                                        className="w-4 h-4">
+                                                        stroke="currentColor">
                                                         <path
                                                             strokeLinecap="round"
                                                             strokeLinejoin="round"
                                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                                                         />
-                                                    </svg>
+                                                    </Svg4>
                                                 ) : (
-                                                    <svg
+                                                    <Svg4
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
                                                         viewBox="0 0 24 24"
                                                         strokeWidth={1.5}
-                                                        stroke="currentColor"
-                                                        className="w-4 h-4">
+                                                        stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                                    </svg>
+                                                    </Svg4>
                                                 )}
-                                            </div>
-                                        </div>
-                                        <div className="flex w-full justify-between">
-                                            <div className="flex w-full items-center">
+                                            </TextXs>
+                                        </PayExplainContainer>
+                                        <PayWrapper>
+                                            <SubContent>
                                                 {pageState.contentsToggle.step3 && (
-                                                    <div className="flex flex-col w-full space-y-2">
-                                                        <div className="flex flex-col w-full space-y-1">
-                                                            <span className="text-xs">취소 시 환불 기준</span>
-                                                            <div className="flex w-full">
-                                                                <div className="grid grid-cols-2 w-full border rounded-lg border-gray-400">
-                                                                    <div className="flex text-xs border-b border-r border-gray-400 px-2 py-2">
-                                                                        7일 전
-                                                                    </div>
-                                                                    <div className="flex text-xs border-b border-gray-400 px-2 py-2">
-                                                                        100% 환불
-                                                                    </div>
-                                                                    <div className="flex text-xs border-b border-r border-gray-400 px-2 py-2">
-                                                                        5일 전
-                                                                    </div>
-                                                                    <div className="flex text-xs border-b border-gray-400 px-2 py-2">
-                                                                        80% 환불
-                                                                    </div>
-                                                                    <div className="flex text-xs border-b border-r border-gray-400 px-2 py-2">
-                                                                        3일 전
-                                                                    </div>
-                                                                    <div className="flex text-xs border-b border-gray-400 px-2 py-2">
-                                                                        50% 환불
-                                                                    </div>
-                                                                    <div className="flex text-xs border-r border-gray-400 px-2 py-2">
-                                                                        2일 전 ~ 예약 당일
-                                                                    </div>
-                                                                    <div className="flex text-xs px-2 py-2">환불 불가</div>
-                                                                </div>
-                                                            </div>
-                                                            <span className="text-xs font-semibold">
+                                                    <ContentsSection>
+                                                        <SubInfoSection>
+                                                            <TextXs>취소 시 환불 기준</TextXs>
+                                                            <ContentsWrapper>
+                                                                <Grid>
+                                                                    <SmallText>7일 전</SmallText>
+                                                                    <SmallText>100% 환불</SmallText>
+                                                                    <SmallText>5일 전</SmallText>
+                                                                    <SmallText>80% 환불</SmallText>
+                                                                    <SmallText>3일 전</SmallText>
+                                                                    <SmallText>50% 환불</SmallText>
+                                                                    <SmallBorderRText>2일 전 ~ 예약 당일</SmallBorderRText>
+                                                                    <RuleTextSmall>환불 불가</RuleTextSmall>
+                                                                </Grid>
+                                                            </ContentsWrapper>
+                                                            <ContentsXsTitle>
                                                                 결제 완료 후 30분 이내는 무료 취소가 가능합니다. (하루 1회 제한)
-                                                            </span>
-                                                            <span className="text-xs text-gray-400">
+                                                            </ContentsXsTitle>
+                                                            <TextGray>
                                                                 환불 수수료율은 위 표와 같이 적용되며, 예약 시간에 가까울수록 취소 수수료가
                                                                 큽니다.
-                                                            </span>
-                                                        </div>
-                                                        <div className="flex flex-col w-full space-y-1">
-                                                            <div className="mb-2 text-xs font-semibold">강수 시 변경 및 환불 규정</div>
-                                                            <ul className="space-y-1 text-xs text-gray-500 list-disc list-inside">
+                                                            </TextGray>
+                                                        </SubInfoSection>
+                                                        <SubInfoSection>
+                                                            <PayXsText>강수 시 변경 및 환불 규정</PayXsText>
+                                                            <PayRuleList>
                                                                 <li>
                                                                     예약 시작 2시간 전 기상청 날씨누리 기준 시간당 5mm 이상의 강수량이
                                                                     예보되는 경우, 예약 날짜를 변경할 수 있습니다.
@@ -319,40 +329,40 @@ const PaymentPage = () => {
                                                                 </li>
                                                                 <li>실내 구장의 경우, 변경 및 환불 가능 조건에 해당하지 않습니다.</li>
                                                                 <li> 변경 및 환불 필요시 직접 문의주셔야 확인 후 안내 드릴 수 있습니다.</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                                            </PayRuleList>
+                                                        </SubInfoSection>
+                                                    </ContentsSection>
                                                 )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col w-full border-gray-200 py-5">
-                                        <div className="flex w-full">
+                                            </SubContent>
+                                        </PayWrapper>
+                                    </PayExplainSection>
+                                    <PayBottomSection>
+                                        <ContentsWrapper>
                                             <OraCheckBox
                                                 Checked={false}
                                                 LavelName={`네, 위내용을 보고 동의해요`}
                                                 HandleOnChange={() => console.debug('checked')}
                                             />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col w-full border-gray-200 py-5">
-                                        <div className="flex w-full">
+                                        </ContentsWrapper>
+                                    </PayBottomSection>
+                                    <PayBottomSection>
+                                        <ContentsWrapper>
                                             <OraButton
                                                 ButtonName={`100,000원 결제하기`}
                                                 HandleClick={() => console.debug('click')}
                                                 ButtonColor={`blue`}
                                             />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+                                        </ContentsWrapper>
+                                    </PayBottomSection>
+                                </SelectSection>
+                            </PayContainer>
+                        </PaySection>
+                    </SectionWrapper>
+                </SectionContainer>
+            </PayMainSection>
 
             <Footer />
-        </div>
+        </DefalutMainContainer>
     );
 };
 

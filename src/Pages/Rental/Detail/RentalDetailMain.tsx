@@ -33,6 +33,7 @@ const {
     Flex,
     FlexItem,
     ItemWrapper,
+    RuleTextSmall,
 } = LayoutStyles.DefalutLayoutStyle;
 
 const {
@@ -98,7 +99,6 @@ const {
     RuleExtraTitle,
     RuleExtraInfoList,
     UnderlineText,
-    RuleTextSmall,
     DashText,
 } = RentalStyles.Detail;
 

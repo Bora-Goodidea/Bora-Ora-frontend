@@ -19,6 +19,7 @@ export default {
         SmallText: tw.div`flex text-xs border-b border-r border-gray-400 px-2 py-2`,
         SmallBorderText: tw.div`flex text-xs border-b border-gray-400 px-2 py-2`,
         SmallBorderRText: tw.div`flex text-xs border-r border-gray-400 px-2 py-2`,
+        RuleTextSmall: tw.div`flex text-xs px-2 py-2`,
         SubInfoSection: tw.div`flex flex-col w-full space-y-1`,
         MainContainer: tw.main`flex-1 w-full`,
         MainEmptyDiv: tw.div``,
