@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@Page/Header';
-import Footer from '@Page/Publish/Footer';
+import Footer from '@Page/Footer';
 import LayoutStyles from '@Style/LayoutStyles';
 import Slider from 'react-slick';
 import TemporaryData from '@Common/TemporaryData';

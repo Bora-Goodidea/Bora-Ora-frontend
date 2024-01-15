@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '@Page/Header';
-import Footer from '@Page/Publish/Footer';
+import Footer from '@Page/Footer';
 import { OraCheckBox, OraButton } from '@Elements';
 import { ElementStyles, LayoutStyles } from '@Styles';
 import PayStyles from '@Style/PayStyles';

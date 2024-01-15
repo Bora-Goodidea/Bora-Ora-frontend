@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { OraModal, OraButton } from '@Elements';
 import Header from '@Page/Header';
-import Footer from '@Page/Publish/Footer';
+import Footer from '@Page/Footer';
 import LayoutStyles from '@Style/LayoutStyles';
 import AuthStyles from '@Style/AuthStyles';
 import ElementStyles from '@Style/ElementStyles';

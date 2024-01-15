@@ -8,7 +8,7 @@ import lodash from 'lodash';
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
 import { OraModal, OraButton, OraCheckBox } from '@Elements';
-import Footer from '@Page/Publish/Footer';
+import Footer from '@Page/Footer';
 import ElementStyles from '@Style/ElementStyles';
 
 const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, MainEmptyDiv, MainWrapper, Flex } =
