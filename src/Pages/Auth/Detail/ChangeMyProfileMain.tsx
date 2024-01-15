@@ -1,5 +1,5 @@
 import { OraButton } from '@Elements';
-import Header from '@Page/Publish/Header';
+import Header from '@Page/Header';
 import Footer from '@Page/Publish/Footer';
 import LayoutStyles from '@Style/LayoutStyles';
 import AuthStyles from '@Style/AuthStyles';

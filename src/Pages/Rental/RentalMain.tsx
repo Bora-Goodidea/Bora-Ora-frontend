@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '@Page/Publish/Header';
+import Header from '@Page/Header';
 import Footer from '@Page/Publish/Footer';
 import LayoutStyles from '@Style/LayoutStyles';
 import Slider from 'react-slick';
@@ -29,6 +29,7 @@ const {
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
 const { Svg4, Svg5, Svg6 } = ElementStyles.SvgStyle;
+const { ModalTitle, ModalFlexTitle, ModalListSection, ModalListTitle } = ElementStyles.OraModalStyle;
 const {
     MainSectionContainer,
     MainSlideFigure,
@@ -54,8 +55,6 @@ const {
 } = LayoutStyles.MainLayoutStyle;
 
 const { MatchListContainer } = MatchStyles.MatchLayoutStyle;
-
-const { ModalTitle, ModalFlexTitle, ModalListSection, ModalListTitle } = LayoutStyles.ModalLayout;
 
 const {
     RentalSection,

@@ -23,9 +23,6 @@ const {
 } = LayoutStyles.DefalutLayoutStyle;
 const { InfoWrapper, ItemContainer } = LayoutStyles.MainLayoutStyle;
 const {
-    BackgroundSection,
-    BackgroundWrapper,
-    HeaderText,
     CompleteImgSection,
     CompleteImg,
     Text2Xl,
@@ -56,7 +53,17 @@ const {
     SelectButtonIcon,
 } = AuthStyles.RegisterCompleteLayoutStyle;
 const { AuthInputSection } = AuthStyles.EmailLayoutStyle;
-const { HeaderSection, HeaderContainer, HeaderWrapper, HiddenHeader, SearchIcon, HeaderSubSection } = ElementStyles.OraHeaderStyle;
+const {
+    HeaderSection,
+    HeaderContainer,
+    HeaderWrapper,
+    HiddenHeader,
+    SearchIcon,
+    HeaderSubSection,
+    BackgroundSection,
+    BackgroundWrapper,
+    HeaderText,
+} = ElementStyles.OraHeaderStyle;
 const { Svg6, GraySvg4, HoverGraySvg6 } = ElementStyles.SvgStyle;
 const { SelectButtonSection, FourthDivide } = ElementStyles.OraSelectStyle;
 

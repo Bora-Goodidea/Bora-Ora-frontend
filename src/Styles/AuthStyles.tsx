@@ -46,9 +46,6 @@ export default {
         JoinExtraText: tw.span`text-xs cursor-pointer`,
     },
     RegisterCompleteLayoutStyle: {
-        BackgroundSection: tw.div`bg-gray-200 w-full md:max-w-screen-lg`,
-        BackgroundWrapper: tw.div`flex flex-nowrap items-center justify-between py-1`,
-        HeaderText: tw.span`self-center text-2xl font-semibold whitespace-nowrap`,
         CompleteImgSection: tw.div`flex flex-col w-full space-y-20`,
         CompleteImg: tw.img`w-80`,
         Text2Xl: tw.span`text-2xl`,

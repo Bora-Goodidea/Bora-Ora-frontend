@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MatchStyles from '@Style/MatchStyles';
-import Header from '@Page/Publish/Header';
+import Header from '@Page/Header';
 import LayoutStyles from '@Style/LayoutStyles';
 import TemporaryData from '@Common/TemporaryData';
 import MatMatchList from '@Common/MatchList.json';
@@ -16,7 +16,10 @@ const { DefalutMainContainer, SectionContainer, SectionWrapper, MainContainer, M
 const { HeaderTabSection, HeaderTab, HeaderClickTitle, HeaderIconContainer, HeaderTitle } = LayoutStyles.HeaderLayoutStyle;
 const { FilteringButton } = LayoutStyles.FilteringLayoutStyle;
 const { MainSectionContainer, MainSlideFigure, MainImg, MainFigcaption, MainP, SubTitle } = LayoutStyles.MainLayoutStyle;
-const { Svg4 } = ElementStyles.SvgStyle;
+const { Svg3, Svg4 } = ElementStyles.SvgStyle;
+const { TextLargeWhite, TextSmallWhite, TextLargeRed, TextSmallRed, TextLargeBlue, TextSmallBlue, TextLarge, TextSmall } =
+    ElementStyles.TextStyle;
+const { ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } = ElementStyles.OraModalStyle;
 
 const {
     HeaderDivIcon,
@@ -28,17 +31,8 @@ const {
     DateSliderSection,
     DateSliderDiv,
     DateIndexZeroDiv,
-    TextLargeWhite,
-    TextSmallWhite,
     DateWeekZeroDiv,
-    TextLargeRed,
-    TextSmallRed,
-    TextLargeBlue,
-    TextSmallBlue,
-    TextLarge,
-    TextSmall,
     FilteringContainer,
-    FilteringSectionContainer,
     FilteringSelectedButton,
     MatchListContainer,
     MatchListWrapper,
@@ -46,13 +40,10 @@ const {
     MatchInfoTime,
     MatchInfoWrapper,
     MatchTitle,
-    MatchSvg,
     MatchSubInfo,
     MatchButtonContainer,
     MatchButtonWrapper,
 } = MatchStyles.MatchLayoutStyle;
-
-const { ModalTitle, ModalFlexTitle, ModalContentSection, ModalContent, ModalItemList, ModalItem } = LayoutStyles.ModalLayout;
 
 const StyledSlider = styled(Slider)`
     width: 100%;
@@ -275,7 +266,7 @@ const MatchMain = () => {
                         </DateSectionDiv>
                         <FilteringContainer>
                             <div className="grid grid-row-1 grid-flow-col gap-2">
-                                <FilteringSectionContainer>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() => {
                                             setPageState(prevState => ({
@@ -296,8 +287,8 @@ const MatchMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringButton>
-                                </FilteringSectionContainer>
-                                <FilteringSectionContainer>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton>
                                         <Svg4
                                             xmlns="http://www.w3.org/2000/svg"
@@ -313,13 +304,13 @@ const MatchMain = () => {
                                         </Svg4>
                                         <span>혜택</span>
                                     </FilteringButton>
-                                </FilteringSectionContainer>
-                                <FilteringSectionContainer>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton>
                                         <span>마감 가리기</span>
                                     </FilteringButton>
-                                </FilteringSectionContainer>
-                                <FilteringSectionContainer>
+                                </Flex>
+                                <Flex>
                                     <FilteringSelectedButton
                                         onClick={() => {
                                             setPageState(prevState => ({
@@ -340,8 +331,8 @@ const MatchMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringSelectedButton>
-                                </FilteringSectionContainer>
-                                <FilteringSectionContainer>
+                                </Flex>
+                                <Flex>
                                     <FilteringButton
                                         onClick={() => {
                                             setPageState(prevState => ({
@@ -362,7 +353,7 @@ const MatchMain = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </Svg4>
                                     </FilteringButton>
-                                </FilteringSectionContainer>
+                                </Flex>
                             </div>
                         </FilteringContainer>
                     </DateSectionWrapper>
@@ -380,7 +371,7 @@ const MatchMain = () => {
                                         <MatchInfoWrapper>
                                             <MatchTitle>{e.label_title}</MatchTitle>
                                             <SubTitle>
-                                                <MatchSvg
+                                                <Svg3
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
                                                     viewBox="0 0 24 24"
@@ -396,7 +387,7 @@ const MatchMain = () => {
                                                         strokeLinejoin="round"
                                                         d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z"
                                                     />
-                                                </MatchSvg>
+                                                </Svg3>
                                                 <MatchSubInfo>남녀모두 · 6vs6 · 모든 레벨</MatchSubInfo>
                                             </SubTitle>
                                         </MatchInfoWrapper>
