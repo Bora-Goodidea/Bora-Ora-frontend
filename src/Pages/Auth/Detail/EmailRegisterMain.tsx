@@ -28,7 +28,7 @@ const {
     JoinExtraText,
 } = AuthStyles.EmailLayoutStyle;
 const { SelectLabel, Select } = ElementStyles.OraSelectStyle;
-const { ModalListSection } = LayoutStyles.ModalLayout;
+const { ModalListSection } = ElementStyles.OraModalStyle;
 const { SubTitle } = LayoutStyles.MainLayoutStyle;
 const EmailRegisterPage = () => {
     return (

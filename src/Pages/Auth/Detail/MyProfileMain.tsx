@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { OraModal, OraButton } from '@Elements';
-import Header from '@Page/Publish/Header';
+import Header from '@Page/Header';
 import Footer from '@Page/Publish/Footer';
 import LayoutStyles from '@Style/LayoutStyles';
 import AuthStyles from '@Style/AuthStyles';
 import ElementStyles from '@Style/ElementStyles';
 
 const { Svg6 } = ElementStyles.SvgStyle;
-const { Wapper } = ElementStyles.OraSelectStyle;
-const { ModalTitle, ModalFlexTitle } = LayoutStyles.ModalLayout;
+const { Wrapper } = ElementStyles.OraSelectStyle;
+const { ModalTitle, ModalFlexTitle } = ElementStyles.OraModalStyle;
 const { DefalutMainContainer, SectionContainer, SectionWrapper, Flex, FlexItemCenter } = LayoutStyles.DefalutLayoutStyle;
 const { ItemContainer, InfoWrapper, TextGray } = LayoutStyles.MainLayoutStyle;
 const {
@@ -214,7 +214,7 @@ const MyProfileMain = () => {
             {pageState.modal.qrCode && (
                 <OraModal
                     Children={
-                        <Wapper>
+                        <Wrapper>
                             <ModalTitle>공유하기</ModalTitle>
                             <ModalFlexTitle>
                                 <FlexItemCenter>
@@ -227,7 +227,7 @@ const MyProfileMain = () => {
                                     <QrText>내 프로필을 QR코드로 공유해요</QrText>
                                 </FlexItemCenter>
                             </ModalFlexTitle>
-                        </Wapper>
+                        </Wrapper>
                     }
                     Buttons={
                         <OraButton

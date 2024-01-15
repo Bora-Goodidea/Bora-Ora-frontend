@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Header from '@Page/Publish/Header';
+import Header from '@Page/Header';
 import Footer from '@Page/Publish/Footer';
 import { OraCheckBox, OraButton } from '@Elements';
 import { ElementStyles, LayoutStyles } from '@Styles';
@@ -43,9 +43,9 @@ const {
 const { RightItemSection } = AuthStyles.MyProfile;
 const { SelectSection } = AuthStyles.RegisterCompleteLayoutStyle;
 const { MainImg, InfoWrapper, SubTitle, SubContent, TextGray } = LayoutStyles.MainLayoutStyle;
-const { TextLargeWhite, TextSmall } = MatchStyles.MatchLayoutStyle;
 const { DetailTitle } = MatchStyles.DetailLayoutStyle;
 const { Svg4 } = ElementStyles.SvgStyle;
+const { TextLargeWhite, TextSmall } = ElementStyles.TextStyle;
 
 const initializeState = {
     contentsToggle: {

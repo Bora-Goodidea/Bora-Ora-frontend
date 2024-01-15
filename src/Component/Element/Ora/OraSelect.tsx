@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import ElementStyles from '@Style/ElementStyles';
 
-const { Wapper, SelectLabel, Select } = ElementStyles.OraSelectStyle;
+const { Wrapper, SelectLabel, Select } = ElementStyles.OraSelectStyle;
 
 const OraSelect = ({
     Label,
@@ -15,7 +15,7 @@ const OraSelect = ({
     HandleOnChange?: ({ value, text }: { value: string; text: string }) => void;
 }) => {
     return (
-        <Wapper>
+        <Wrapper>
             {Label && <SelectLabel>{Label}</SelectLabel>}
             <Select
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -34,7 +34,7 @@ const OraSelect = ({
                     );
                 })}
             </Select>
-        </Wapper>
+        </Wrapper>
     );
 };
 

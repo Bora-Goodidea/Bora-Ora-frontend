@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TemporaryData from '@Common/TemporaryData';
-import Header from '@Page/Publish/Header';
+import Header from '@Page/Header';
 import Footer from '@Page/Publish/Footer';
 import Slider from 'react-slick';
 import lodash from 'lodash';
@@ -38,8 +38,9 @@ const {
     HalfDivide,
 } = LayoutStyles.DefalutLayoutStyle;
 const { Svg4, Svg5 } = ElementStyles.SvgStyle;
+const { TextSmall, TextLarge } = ElementStyles.TextStyle;
 const { RightItemIcon, LeftItem } = AuthStyles.MyProfile;
-const { TextSmall, DateSectionDiv, TextLarge } = MatchStyles.MatchLayoutStyle;
+const { DateSectionDiv } = MatchStyles.MatchLayoutStyle;
 const { MainSlideFigure, MainP, InfoWrapper, TextGray, ReserSection } = LayoutStyles.MainLayoutStyle;
 const {
     DetailMainSection,

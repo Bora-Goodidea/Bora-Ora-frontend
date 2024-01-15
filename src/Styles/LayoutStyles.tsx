@@ -74,16 +74,6 @@ export default {
     FilteringLayoutStyle: {
         FilteringButton: tw.button`bg-white text-sm text-gray-400 py-1 p-3 rounded-full border inline-flex items-center`,
     },
-    ModalLayout: {
-        ModalTitle: tw.div`w-full text-sm pl-5`,
-        ModalFlexTitle: tw.div`flex flex-col w-full pt-3`,
-        ModalContentSection: tw.div`w-full pt-3`,
-        ModalContent: tw.div`w-full pl-10 border-b cursor-pointer`,
-        ModalItemList: tw.div`flex pl-10 py-3 border-b`,
-        ModalItem: tw.p`text-xs py-3`,
-        ModalListSection: tw.div`flex flex-nowrap w-full`,
-        ModalListTitle: tw.div`w-full text-xs pl-5`,
-    },
     SplashComponentStyle: {
         Wapper: tw.div`flex h-full w-full items-center justify-center`,
         Text: tw.span`sr-only`,

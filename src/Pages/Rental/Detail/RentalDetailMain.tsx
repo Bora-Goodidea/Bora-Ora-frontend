@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import lodash from 'lodash';
-import Header from '../../Publish/Header';
+import Header from '@Page/Header';
 import Slider from 'react-slick';
 import TemporaryData from '@Common/TemporaryData';
 import RentalDetailJson from '@Common/RentalDetail.json';
@@ -54,8 +54,10 @@ const {
     SubTitle,
     MainImg,
 } = LayoutStyles.MainLayoutStyle;
-const { ModalFlexTitle, ModalTitle } = LayoutStyles.ModalLayout;
+const { ModalFlexTitle, ModalTitle } = ElementStyles.OraModalStyle;
 const { Svg5, Svg6 } = ElementStyles.SvgStyle;
+const { TextLarge, TextSmall, TextLargeWhite, TextSmallWhite, TextLargeRed, TextSmallRed, TextLargeBlue, TextSmallBlue } =
+    ElementStyles.TextStyle;
 
 const {
     RentalImgWrapper,
@@ -102,21 +104,7 @@ const {
     DashText,
 } = RentalStyles.Detail;
 
-const {
-    TextLarge,
-    TextSmall,
-    DateSectionWrapper,
-    DateSliderSection,
-    DateSliderDiv,
-    DateIndexZeroDiv,
-    DateWeekZeroDiv,
-    TextLargeWhite,
-    TextSmallWhite,
-    TextLargeRed,
-    TextSmallRed,
-    TextLargeBlue,
-    TextSmallBlue,
-} = MatchStyles.MatchLayoutStyle;
+const { DateSectionWrapper, DateSliderSection, DateSliderDiv, DateIndexZeroDiv, DateWeekZeroDiv } = MatchStyles.MatchLayoutStyle;
 
 const StyledSlider = styled(Slider)`
     width: 100%;
