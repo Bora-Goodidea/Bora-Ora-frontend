@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import LayoutStyles from '@Style/LayoutStyles';
 import AuthStyles from '@Style/AuthStyles';
 import ElementStyles from '@Style/ElementStyles';
@@ -31,6 +33,48 @@ const { SelectLabel, Select } = ElementStyles.OraSelectStyle;
 const { ModalListSection } = ElementStyles.OraModalStyle;
 const { SubTitle } = LayoutStyles.MainLayoutStyle;
 const EmailRegisterPage = () => {
+    const initializeState = {
+        join: {
+            email: '',
+            password: '',
+            passwordConfirm: '',
+            name: '',
+            birth: {
+                year: '',
+                month: '',
+                day: '',
+            },
+        },
+        checkState: {
+            status: false,
+            type: null,
+            message: '',
+        },
+    };
+    const [pageState, setPageState] = useState<{
+        join: {
+            email: string;
+            password: string;
+            passwordConfirm: string;
+            name: string;
+            birth: {
+                year: string;
+                month: string;
+                day: string;
+            };
+        };
+        checkState: {
+            status: boolean;
+            type: null | string | 'email' | 'password' | 'passwordConfirm' | 'name';
+            message: string;
+        };
+    }>(initializeState);
+
+    useEffect(() => {
+        console.debug(pageState);
+        console.debug(setPageState);
+    }, [pageState]);
+
     return (
         <DefalutMainContainer>
             <SectionContainer></SectionContainer>
