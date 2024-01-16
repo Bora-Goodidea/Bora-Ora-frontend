@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
 import LayoutStyles from '@Style/LayoutStyles';
 import AuthStyles from '@Style/AuthStyles';
 import ElementStyles from '@Style/ElementStyles';
+import { MutableRefObject } from 'react';
 
 const {
     DefalutMainContainer,
@@ -32,49 +31,27 @@ const {
 const { SelectLabel, Select } = ElementStyles.OraSelectStyle;
 const { ModalListSection } = ElementStyles.OraModalStyle;
 const { SubTitle } = LayoutStyles.MainLayoutStyle;
-const EmailRegisterPage = () => {
-    const initializeState = {
-        join: {
-            email: '',
-            password: '',
-            passwordConfirm: '',
-            name: '',
-            birth: {
-                year: '',
-                month: '',
-                day: '',
-            },
-        },
-        checkState: {
-            status: false,
-            type: null,
-            message: '',
-        },
+const EmailRegisterPage = ({
+    Loading,
+    InputValue,
+    CheckState,
+    EnterRef,
+}: {
+    Loading: boolean;
+    InputValue: {
+        email: string;
+        password: string;
+        passwordConfirm: string;
+        name: string;
+        birth: {
+            year: string;
+            month: string;
+            day: string;
+        };
     };
-    const [pageState, setPageState] = useState<{
-        join: {
-            email: string;
-            password: string;
-            passwordConfirm: string;
-            name: string;
-            birth: {
-                year: string;
-                month: string;
-                day: string;
-            };
-        };
-        checkState: {
-            status: boolean;
-            type: null | string | 'email' | 'password' | 'passwordConfirm' | 'name';
-            message: string;
-        };
-    }>(initializeState);
-
-    useEffect(() => {
-        console.debug(pageState);
-        console.debug(setPageState);
-    }, [pageState]);
-
+    CheckState: { status: boolean; type: null | string | 'email' | 'password' | 'passwordConfirm' | 'name'; message: string };
+    EnterRef: MutableRefObject<HTMLInputElement[]>;
+}) => {
     return (
         <DefalutMainContainer>
             <SectionContainer></SectionContainer>
@@ -93,7 +70,7 @@ const EmailRegisterPage = () => {
                                     <MainEmptyDiv>
                                         <MainWrapper>
                                             <SelectLabel>이메일</SelectLabel>
-                                            <AuthInput type="email" placeholder="name@company.com" />
+                                            <AuthInput type="email" placeholder="name@company.com" required={false} />
                                         </MainWrapper>
                                     </MainEmptyDiv>
                                     <MainEmptyDiv>
