@@ -1,7 +1,7 @@
 import LayoutStyles from '@Style/LayoutStyles';
 import AuthStyles from '@Style/AuthStyles';
 import ElementStyles from '@Style/ElementStyles';
-import { MutableRefObject } from 'react';
+import { ChangeEvent, MutableRefObject } from 'react';
 
 const {
     DefalutMainContainer,
@@ -32,12 +32,21 @@ const { SelectLabel, Select } = ElementStyles.OraSelectStyle;
 const { ModalListSection } = ElementStyles.OraModalStyle;
 const { SubTitle } = LayoutStyles.MainLayoutStyle;
 const EmailRegisterPage = ({
-    Loading,
+    // Loading,
+    // GenderSelect,
+    // BirthdaySelect,
     InputValue,
-    CheckState,
-    EnterRef,
+    // CheckState,
+    // EnterRef,
+    JoinupHandler,
 }: {
     Loading: boolean;
+    GenderSelect: Array<{ label: string; value: string }>;
+    BirthdaySelect: {
+        year: number[];
+        month: number[];
+        day: number[];
+    };
     InputValue: {
         email: string;
         password: string;
@@ -51,6 +60,7 @@ const EmailRegisterPage = ({
     };
     CheckState: { status: boolean; type: null | string | 'email' | 'password' | 'passwordConfirm' | 'name'; message: string };
     EnterRef: MutableRefObject<HTMLInputElement[]>;
+    JoinupHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }) => {
     return (
         <DefalutMainContainer>
@@ -70,7 +80,14 @@ const EmailRegisterPage = ({
                                     <MainEmptyDiv>
                                         <MainWrapper>
                                             <SelectLabel>이메일</SelectLabel>
-                                            <AuthInput type="email" placeholder="name@company.com" required={false} />
+                                            <AuthInput
+                                                type="email"
+                                                placeholder="name@company.com"
+                                                required={false}
+                                                name="email"
+                                                value={InputValue.email}
+                                                onChange={e => JoinupHandler(e)}
+                                            />
                                         </MainWrapper>
                                     </MainEmptyDiv>
                                     <MainEmptyDiv>
@@ -78,13 +95,27 @@ const EmailRegisterPage = ({
                                             <HalfDivide>
                                                 <MainWrapper>
                                                     <SelectLabel>비밀번호</SelectLabel>
-                                                    <AuthInput type="password" placeholder="********" />
+                                                    <AuthInput
+                                                        type="password"
+                                                        placeholder="********"
+                                                        required={false}
+                                                        name="password"
+                                                        value={InputValue.password}
+                                                        onChange={e => JoinupHandler(e)}
+                                                    />
                                                 </MainWrapper>
                                             </HalfDivide>
                                             <HalfDivide>
                                                 <MainWrapper>
                                                     <SelectLabel>비밀번호 확인</SelectLabel>
-                                                    <AuthInput type="password" placeholder="********" />
+                                                    <AuthInput
+                                                        type="password"
+                                                        placeholder="********"
+                                                        required={false}
+                                                        name="passwordConfirm"
+                                                        value={InputValue.passwordConfirm}
+                                                        onChange={e => JoinupHandler(e)}
+                                                    />
                                                 </MainWrapper>
                                             </HalfDivide>
                                         </AuthInputSection>
@@ -98,7 +129,14 @@ const EmailRegisterPage = ({
                                             <HalfDivide>
                                                 <MainWrapper>
                                                     <SelectLabel>이름</SelectLabel>
-                                                    <AuthInput type="email" placeholder="name@company.com" />
+                                                    <AuthInput
+                                                        type="text"
+                                                        placeholder="김보라"
+                                                        required={false}
+                                                        name="name"
+                                                        value={InputValue.name}
+                                                        onChange={e => JoinupHandler(e)}
+                                                    />
                                                 </MainWrapper>
                                             </HalfDivide>
                                             <HalfDivide>

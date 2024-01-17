@@ -7,11 +7,18 @@ const pageName = `이메일 인증`;
 
 const initializeState = {
     loading: false,
+    genderSelect: [],
+    birthdaySelect: {
+        year: [],
+        month: [],
+        day: [],
+    },
     joinup: {
         email: '',
         password: '',
         passwordConfirm: '',
         name: '',
+        gender: '',
         birth: {
             year: '',
             month: '',
@@ -27,13 +34,20 @@ const initializeState = {
 const EmailAuthPage = () => {
     const enterInputRef = useRef<HTMLInputElement[]>([]);
 
-    const [pageState /*setPageState*/] = useState<{
+    const [pageState, setPageState] = useState<{
         loading: boolean;
+        genderSelect: Array<{ label: string; value: string }>;
+        birthdaySelect: {
+            year: number[];
+            month: number[];
+            day: number[];
+        };
         joinup: {
             email: string;
             password: string;
             passwordConfirm: string;
             name: string;
+            gender: string;
             birth: {
                 year: string;
                 month: string;
@@ -47,6 +61,17 @@ const EmailAuthPage = () => {
         };
     }>(initializeState);
 
+    const joinupHandler = (e: { target: { name: string; value: string } }) => {
+        const { name, value } = e.target;
+        setPageState(prev => ({
+            ...prev,
+            joinup: {
+                ...prev.joinup,
+                [name]: value,
+            },
+        }));
+    };
+
     return (
         <>
             <Helmet>
@@ -56,9 +81,12 @@ const EmailAuthPage = () => {
 
             <EmailRegisterMain
                 Loading={pageState.loading}
+                GenderSelect={pageState.genderSelect}
+                BirthdaySelect={pageState.birthdaySelect}
                 InputValue={pageState.joinup}
                 CheckState={pageState.checkState}
                 EnterRef={enterInputRef}
+                JoinupHandler={e => joinupHandler(e)}
             />
         </>
     );
